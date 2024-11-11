@@ -1,5 +1,5 @@
 /*********************** URL *********************************/
-// const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://178.156.55.174:1234"; // Per la web
 const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
    * @throws Mostra un missatge d'error a la consola si la petició falla.
    */
   try {
-    const peticio = await fetch(`${baseUrl}/api/Noticies`, {
+    const peticio = await fetch(`${baseUrl}/api/noticies`, {
       method: "GET",
       headers: {
         Accept: "application/json",

@@ -1,5 +1,5 @@
 /*********************** URL *********************************/
-// const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://178.156.55.174:1234"; // Per la web
 const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
@@ -72,17 +72,33 @@ let llistaNoticies = async () => {
  */
 
 let eliminarNoticia = async (idNoticia) => {
-  const peticio = await fetch(`${baseUrl}/api/noticia/${idNoticia}`, {
-    method: "DELETE",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  });
-  llistaNoticies();
-  amagarFormulari();
+  //Missatge de confirmació abans d'eliminar la notícia
+  const confirmacio = window.confirm(
+    "Estàs segur que vols eliminar aquesta notícia?"
+  );
+  if (confirmacio) {
+    try {
+      const peticio = await fetch(`${baseUrl}/api/noticia/${idNoticia}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      //Si l'eliminació te exit, actualitza la llista i amaga el formulari.
+      if (peticio.ok) {
+        llistaNoticies();
+        amagarFormulari();
+      } else {
+        alert(
+          "No s'ha pogut eliminar la notícia. Si us plau, intenta-ho més tard."
+        );
+      }
+    } catch (error) {
+      console.error("Error en la petició:", error);
+    }
+  }
 };
-
 /**
  * ***** EditarNotícia *****
  * Mètode GET de l'API per obtenir la informació d'una notícia per editar-la.

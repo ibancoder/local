@@ -1,5 +1,5 @@
 /*********************** URL *********************************/
-// const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://178.156.55.174:1234"; // Per la web
 const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 //*** FORMULARI ***/
@@ -203,7 +203,7 @@ let registrarUsuari = async () => {
     const resposta = await peticio.json();
     alert("Usuari registrat correctament!");
     netejarFormulari();
-    //mostrarLogin();****************pendent **************??????????????????
+    mostrarLogin();
   } catch (error) {
     console.error("Error durant la petició:", error);
     alert("Hi ha hagut un error en registrar l'usuari.");
@@ -225,11 +225,11 @@ function netejarFormulari() {
 }
 
 /**
- * Funció per mostrar el login de nou per iniciar sessió  ???????????????????
+ * Funció per mostrar el login de nou per iniciar sessió  
  */
 function mostrarLogin() {
   const divLogin = document.getElementById("login");
-  console.log("divlogin:"+divLogin)
+  console.log("divlogin:" +divLogin)
   //Mostrar la div
   divLogin.style.display = "block";
   //Desplaçar cap a dal

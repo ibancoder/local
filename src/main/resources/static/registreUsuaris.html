@@ -29,8 +29,8 @@
           <h1 class="mb-4"><i class="fa-regular fa-address-book"></i> Registre Usuaris <i class="fa-regular fa-address-book"></i></h1>
           <p class="fw-bold">
             Vols formar part de la nostra comunitat? <br>
-            Pots registrar-te en la nostra pàgina web i tindrás accés al teu espai <br>
-            on podras veure els teus apadrinaments, les teves donacions, etc...
+            Pots registrar-te en la nostra pàgina web i tindràs accés al teu espai <br>
+            on podràs veure els teus apadrinaments, les teves donacions, etc. <!------AQUI etc sense ... -->
           </p>
         </section>
         <br>
@@ -79,15 +79,23 @@
             <div class="contenidor-pass form-group col-md-11 col-12 mb-3 mt-3">
               <label for="inputPassword" class="form-label col-md-2"><i class="fa-solid fa-lock"></i> Password:</label>
               <input type="password" class="form-control form-control-lg" id="inputPassword" name="password" placeholder="Escriu el password" minlength="8" maxlength="15" autocomplete="new-password" required>
-              <img src="imatges/close.png" id="pass-icon" class="icon" title="Mostrar/Ocultar contrasenya" onclick="passVisible('inputPassword', this)">
-              <img src="imatges/paperera.png" id="pass-esborrar" class="icon" title="Esborrar contrasenya" onclick="esborrarPass('inputPassword')">
+              <button id="pass-icon" class="botoImatge" title="Mostrar/Ocultar contrasenya" aria-label="Mostrar o ocultar contrasenya" onclick="passVisible('inputPassword', this)">
+                <img class="imgMostrar" src="imatges/close.png" alt="">
+              </button>
+              <button id="pass-esborrar" class="botoImatge" title="Esborrar contrasenya" aria-label="Esborrar la contrasenya" onclick="esborrarPass('inputPassword')">
+                <img class="imgEliminar" src="imatges/paperera.png" alt="">
+              </button>
             </div>
             <!-- Camp password-->
             <div class="contenidor-pass form-group col-md-11 col-12 mb-3 mt-3">
               <label for="inputPassword2" class="form-label col-md-2"><i class="fa-solid fa-lock"></i> Password:</label>            
               <input type="password" class="form-control form-control-lg" id="inputPassword2" name="password2" placeholder="Confirma el password" minlength="8" maxlength="15" autocomplete="current-password" required>
-              <img src="imatges/close.png" id="pass-icon" class="icon" title="Mostrar/Ocultar contrasenya" onclick="passVisible('inputPassword2', this)"> 
-              <img src="imatges/paperera.png" id="pass-esborrar" class="icon" title="Esborrar contrasenya" onclick="esborrarPass('inputPassword2')">
+              <button id="pass-icon" class="botoImatge" title="Mostrar/Ocultar contrasenya" aria-label="Mostrar o ocultar contrasenya" onclick="passVisible('inputPassword', this)">
+                <img class="imgMostrar" src="imatges/close.png" alt="">
+              </button>
+              <button id="pass-esborrar" class="botoImatge" title="Esborrar contrasenya" aria-label="Esborrar la contrasenya" onclick="esborrarPass('inputPassword')">
+                <img class="imgEliminar" src="imatges/paperera.png" alt="">
+              </button>
             </div>
 
             <!--- RECAPTCHA I BOTO ENVIAMENT-->
@@ -101,7 +109,7 @@
             </div>
           </div>          
           <div>
-            <h6><i class="fa-solid fa-arrow-right"></i> Si ja tens un compte: <button type="button" class="btnA" onclick="location.href='/login.html'">Iniciar Sessió</button></h6>
+            <h6><i class="fa-solid fa-arrow-right"></i> Si ja tens un compte: <button type="button" class="btnA" onclick="location.href='#loginSection'">Iniciar Sessió</button></h6>
           </div>
         </form>
         <br>

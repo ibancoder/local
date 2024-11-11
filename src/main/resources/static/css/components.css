@@ -248,6 +248,22 @@ footer {
     }
 }
 
+/*** Botó per imatges ***********************************************************************************************************/
+.botoImatge {
+    border: none; 
+    background-color: #F2F5FD;
+    padding: 0% !important;
+    width: 50px !important;
+    
+    .imgMostrar {
+        width: 27px;
+    }
+
+    .imgEliminar {
+        width: 20px;
+    }
+}
+
 
 /*** RESPONSIVE ***/
 

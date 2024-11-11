@@ -1,11 +1,11 @@
 /*********************** URL *********************************/
-// const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://178.156.55.174:1234"; // Per la web
 const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
  * ID de l'usuari emmagatzemat en el LocalStorage del navegador.
  */
-const idUsuari = localStorage.getItem("idUsuari");
+const idUsuari = localStorage.getItem("idUsuari") || sessionStorage.getItem("idUsuari");
 console.log(idUsuari);
 
 /**
@@ -14,44 +14,38 @@ console.log(idUsuari);
  */
 document.addEventListener("DOMContentLoaded", function () {
   if (idUsuari) {
-    /**
-     * Funció asincroma per obtenir les dades de l'usuari desde la API
-     * Si la resposta es correcta, mostra les dades de l'usuari a la interface.
-     * @async
-     * @function mostraDadesUsuari
-     */
-    async function mostraDadesUsuari() {
-      const response = await fetch(`${baseUrl}/api/usuari/${idUsuari}`);
-      if (response.ok) {
-        const usuari = await response.json();
-        //Mostrem les dades de l'usuari.
-        document.getElementById("nomUsuari").textContent = usuari.nomUsuari;
-        document.getElementById("nom").textContent = usuari.nom;
-        document.getElementById("cognoms").textContent = usuari.cognoms;
-        document.getElementById("email").textContent = usuari.email;
-        document.getElementById("telefon").textContent = usuari.telefon;
-        document.getElementById("password").textContent = usuari.password;
-
-        // Si modifiquem l'avatar afegim a imgCanviar la foto, si no hi ha foto mostra la foto per defecte.
-        if (usuari.foto) {
-          imgCanviar = document.getElementById("imgCanviar").src = usuari.foto;
-          console.log(usuari.foto);
-        } else {
-          imgCanviar.src = "/imatges/perfilLlop.jpeg";
-        }
-      } else {
-        console.error(
-          "Error al obtener los datos del usuario:",
-          response.status
-        );
-      }
-    }
     mostraDadesUsuari();
   } else {
     console.error("No se encontró el idUsuari en localStorage.");
-    window.location.href = "/login.html";
+    //window.location.href = "/index.html"; ???????????????????????????????????????????
   }
 });
+
+/**
+ * Funció asincroma per obtenir les dades de l'usuari desde la API
+ * Si la resposta es correcta, mostra les dades de l'usuari a la interface.
+ * @async
+ * @function mostraDadesUsuari
+ */
+async function mostraDadesUsuari() {
+  try {
+    const response = await fetch(`${baseUrl}/api/usuari/${idUsuari}`);
+    if (!response.ok) throw new Error(`Error ${response.status}`);
+    const usuari = await response.json();
+    //Mostrem les dades de l'usuari.
+    document.getElementById("nomUsuari").textContent = usuari.nomUsuari;
+    document.getElementById("nom").textContent = usuari.nom;
+    document.getElementById("cognoms").textContent = usuari.cognoms;
+    document.getElementById("email").textContent = usuari.email;
+    document.getElementById("telefon").textContent = usuari.telefon;
+    document.getElementById("password").textContent = usuari.password;
+    // Si modifiquem l'avatar afegim a imgCanviar la foto, si no hi ha foto mostra la foto per defecte.
+    document.getElementById("imgCanviar").src = usuari.foto || "/imatges/perfilLlop.jpeg";    
+  } catch {
+    console.error("Error en obtenir les dades de l'usuari:", error);
+    alert("Error en carregar les dades de l'usuari. Torna a intentar-ho més tard.");
+  }
+}
 
 /**
  * Funcionalitat per fer el canvi de imatge o avatar.
@@ -59,11 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 document.addEventListener("click", async function (event) {
   event.preventDefault();
-  let targetBoto = event.target.closest("button");
-  let imgCanviar = document.getElementById("imgCanviar");
+  const targetBoto = event.target.closest("button");
+  const imgCanviar = document.getElementById("imgCanviar");
+
   if (targetBoto && targetBoto.parentElement.id === "escollirImgPerfil") {
     //Obtenim la imatge
-    let urlimatge = obtenirImatge(targetBoto.id);
+    const urlimatge = obtenirImatge(targetBoto.id);
     //Imatge a canviar
     imgCanviar.src = urlimatge;
 
@@ -104,7 +99,8 @@ document.addEventListener("click", async function (event) {
         console.error("Error durant la petició:", error);
         alert("Hi ha hagut un error al carregar la imatge.");
       }
-    } else if (urlimatge) {
+    } else if (!urlimatge) {
+      /**modifico aqui urlimatge por !urlimatge */
       alert("Selecciona una imatge abans de desar-la.");
     }
   }

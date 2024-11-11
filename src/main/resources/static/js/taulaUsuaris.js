@@ -1,5 +1,5 @@
 /*********************** URL *********************************/
-// const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://178.156.55.174:1234"; // Per la web
 const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
