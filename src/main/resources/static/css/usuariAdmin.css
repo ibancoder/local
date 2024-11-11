@@ -1,0 +1,11 @@
+.partsAdmin {
+    margin: 0 auto;
+    margin-bottom: 6%;
+    padding: 3%;
+    border-radius: 5%;
+
+    a {
+        margin-left: 5%;
+        margin-top: 3%;
+    }
+}

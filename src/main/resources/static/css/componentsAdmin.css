@@ -1,0 +1,139 @@
+/***BANNER, FOOTER***/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    padding: 1%;
+
+    a {
+        font-size: larger;
+    }
+}
+
+/***MAIN, TITOL***/
+main {
+    background-color: #F2F5FD;
+    flex: 1;
+
+    > section:first-of-type { 
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../imatges/fondo.png');
+        background-position: 129%;
+        background-size: 55%;
+        margin-bottom: 3%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+}
+
+
+/*** TAULES ***/
+table {
+    text-align: center;
+    line-height: 40px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 1400px; /*****************AQUIIII***********************************/
+    margin: 60px auto;
+    border-radius: .25rem;    
+}
+
+thead tr:first-child {
+    border: none;   
+}
+
+th:first-child,
+td:first-child {
+    padding: 0 15px 0 20px;
+}
+
+th {
+    font-weight: 500;
+    padding: 10px;
+}
+
+thead tr:last-child th {
+    border-bottom: 3px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2;
+    cursor: default;
+}
+
+tbody tr:last-child td {
+    border: none;
+}
+
+tbody td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+td {
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
+td:last-child {
+    text-align: right;
+    padding-right: 10px;
+}
+
+
+/*** Estil Lila ***/
+.lila {
+    /*Taules*/
+    table {
+        border: 2px solid #887BFF;  
+    }
+
+    thead tr:first-child {
+        background: #7161FF;
+        color: #fff;
+    }
+}
+
+/*** Estil rosa ***/
+.rosa {
+    /*Taules*/
+    table {
+        border: 2px solid #FF887B;  
+    }
+
+    thead tr:first-child {
+        background: #FF7161;
+        color: #fff;
+    }
+}
+
+
+/** Contenidor flexible reCAPTCHA **/
+.recaptcha-container {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+/*** RESPONSIVE ***/
+@media (max-width: 400px) { 
+    .g-recaptcha {
+      transform: scale(0.75); 
+      transform-origin: 0 0;
+    }
+}
+
+/** Tablets **/
+@media (min-width: 576px) {
+    .g-recaptcha {
+        transform: scale(0.85); 
+        transform-origin: 0 0; 
+    }
+}

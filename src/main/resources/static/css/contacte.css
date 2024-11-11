@@ -1,0 +1,36 @@
+#secContacte {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.form-check-label {
+  a {
+      background-color: #F2F5FD;
+      box-shadow: none;
+  }
+}
+
+/****** part js *****/
+#mailto{
+  opacity: 0;  /* ocultem l'element*/
+}
+
+.linia {   /** Linia a registre  ???? si es vol*/
+  border: 2px solid #FF887B; 
+  margin: 20px 0; 
+}
+
+/** CSS Registre.html PASSWWORD**/
+.contenidor-pass{
+  display: inline-flex;
+  border: 2px solid #FF887B;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.icon{
+  height: 20px;
+  margin: 5px;
+  cursor: pointer;  
+}

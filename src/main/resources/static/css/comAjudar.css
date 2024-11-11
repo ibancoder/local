@@ -1,0 +1,29 @@
+.horizontal-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* espai entre enllaços */
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+.horizontal-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.horizontal-links a:hover {
+  color: #887bff;
+}
+
+.arrow-up {
+    display: flex;
+    justify-content: right;
+    position: relative;    
+    margin-bottom: 20px;       
+    padding: auto;
+  }
+  

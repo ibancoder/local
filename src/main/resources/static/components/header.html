@@ -1,0 +1,64 @@
+<div class="banner row align-items-center lila">
+    <div class="col-xl-5 textBanner d-none d-xl-block">
+        <p>Associació per la Protecció dels Animals</p>
+    </div>
+    <div class="col-xl-2 textBanner d-none d-xl-block">
+        <p>Lluçanès - Osona (bcn)</p>
+    </div>
+    <div class="col-5 col-xl-2 textBanner">
+        <p><i class="fa-solid fa-phone"></i> 637 342 105</p> <!--AQUIIIIIIIIIIIIII-->
+    </div>
+    <div class="col-7 col-xl-3 text-end"> <!--AQUIIIIIIIIIIIIII-->
+        <button type="button" onclick="alert('Aquí envia a la web del banc')"><i class="fa-solid fa-heart"
+                style="color: white;"></i> Donar</button>
+        <button class="btnUsuari" type="button"><i class="fa-solid fa-user" style="color: white;"></i> Usuari</button>
+        <div id="login">
+            <h2 class="text-center mb-5">Iniciar Sessió</h2>
+            <!-------------------------------- LOGIN --------------------------------------->
+            <form id="loginFormHeader" class="needs-validation form text-start"> <!--AQUIIIIIIIIIIIIII-->
+                <!-- Camp usuari -->
+                <div class="form-group mb-4">
+                    <label for="nomUsuari" class="form-label"><i class="fa-solid fa-at"></i> Nom usuari:</label>
+                    <input type="text" class="form-control form-control-lg" id="nomUsuari" name="nomUsuari" required> <!--AQUIIIIIIIIIIIIII-->
+                </div>
+                <!-- Camp password -->
+                <div class="form-group mb-4">
+                    <label for="password" class="form-label"><i class="fa-solid fa-lock"></i> Contrasenya:</label> <!--AQUIIIIIIIIIIIIII-->
+                    <input type="password" class="form-control form-control-lg" id="password" name="password"
+                        autocomplete="current-password" required>
+                </div>
+                <!-- Camp checkbox -->
+                <div class="form-group mb-4">
+                    <input type="checkbox" name="connected" class="form-check-input" id="connected">
+                    <label for="connected" class="form-check-label">Mantenir la connexió</label>
+                </div>
+                <!-- Botó enviament -->
+                <div class="d-grid">
+                    <button class="btn-lg w-100" id="btnLogin" type="submit">Iniciar Sessió</button>
+                </div>
+                <!-- Capa Registre -->
+                <div class="my-3">
+                    <span>No tens compte d'usuari? <a href="./registreUsuaris.html">Registra't</a></span><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg row">
+    <div class="col-5 col-md-4 col-lg-3 col-xl-2">
+        <img src="./imatges/LogoPetitTransparent.png" alt="Logo que te escrit Refugi Lobita amb un llop blanc dins la O"
+            class="img-fluid" />
+    </div>
+    <div class="col-7 col-md-12 col-lg-9">
+        <ul class="row">
+            <li class="nav-item col-md-6 col-xl-3"><a class="nav-link" href="/index.html">
+                    <span><i class="fa-solid fa-house"></i> Inici</span></a></li>
+            <li class="nav-item col-md-6 col-xl-3"><a class="nav-link" href="/comAjudar.html">
+                    <span><i class="fa-solid fa-handshake-angle"></i> Com ajudar?</span></a></li>
+            <li class="nav-item col-md-6 col-xl-3"><a class="nav-link" href="/animals.html">
+                    <span><i class="fa-solid fa-paw"></i> Animals</span></a></li>
+            <li class="nav-item col-md-6 col-xl-3"><a class="nav-link" href="/contacte.html">
+                    <span><i class="fa-solid fa-address-book"></i> Contacte</span></a></li>
+        </ul>
+    </div>
+</nav>
