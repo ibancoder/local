@@ -50,7 +50,7 @@ public class NoticiesController {
      * @return La llista de notícies.
      */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
-    @GetMapping("/api/Noticies")
+    @GetMapping("/api/noticies")
     public List<Noticies> getNoticies() { return noticiesRepository.findAll(); }
 
 
