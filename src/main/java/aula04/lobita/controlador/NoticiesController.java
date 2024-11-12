@@ -84,7 +84,7 @@ public class NoticiesController {
      * @return Retorna la notícia creada o un error si hi ha problema amb la validació.
      */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
-    @PostMapping("/api/Noticies")
+    @PostMapping("/api/noticies")
     public ResponseEntity<Noticies> guardarNoticia(
             @RequestParam("dataNoticia") String dataNoticia,
             @RequestParam("titol") String titol,
@@ -138,7 +138,7 @@ public class NoticiesController {
      * @return Retorna la notícia actualitzada o un error.
      */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
-    @PutMapping("/api/Noticies")
+    @PutMapping("/api/noticies")
     public ResponseEntity<Noticies> actualitzarNoticia(@RequestBody Noticies noticies) {
         if (noticies.getIdNoticia() == null || !noticiesRepository.existsById(noticies.getIdNoticia())) {
             return ResponseEntity.badRequest().build();
