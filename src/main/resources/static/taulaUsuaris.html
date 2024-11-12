@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Refugi Lobita - Taula Usuaris</title>
+    <title>Refugi Lobita - Taula d'usuaris</title>
     <!-- Enllaços CSS -->
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/componentsAdmin.css">
@@ -21,7 +21,7 @@
 
 <body>
     <header id="headerPetit" class="container-fluid">
-        <!--Es coloca el header desde el js-->
+         <!--El header es col·loca des del js-->
     </header>
 
     <main class="lila fondoLila">
@@ -31,14 +31,14 @@
             <br><br>
         </section>
         <br>
-        <!-- TAULA DE USUARIS -->
+        <!-- TAULA D'USUARIS -->
         <section class="form">
             <div class="justify-content-center table-responsive">
-                <h2 class="text-center mb-5"><i class="fa-regular fa-user"></i> Taula de Usuaris</h2>
+                <h2 class="text-center mb-5"><i class="fa-regular fa-user"></i> Taula d'usuaris</h2>
                 <table id="taula">
                     <thead>
                         <tr>
-                            <th colspan="11">Usuaris</th>
+                            <th colspan="10">Usuaris</th>
                         </tr>
                         <tr>
                             <th>ID</th>
@@ -46,9 +46,8 @@
                             <th>Cognoms</th>
                             <th>Email</th>
                             <th>Telèfon</th>
-                            <th>Nom Usuari</th>
-                            <th>Password</th>
-                            <th>Data Alta</th>
+                            <th>Nom d'usuari</th>                           
+                            <th>Data d'alta</th>
                             <th>Actiu</th>
                             <th>Modifica</th>
                             <th>Elimina</th>
@@ -65,7 +64,7 @@
             <br>
             <form class="form needs-validation" method="POST" id="formulari">
                 <div class="row justify-content-center">
-                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modifica l'usuari:</h2>
+                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modificació de l'usuari:</h2>
                     <!-- Camp nom -->
                     <div class="form-group col-md-6 col-12 mb-3">
                         <label for="nom" class="form-label"><i class="fa-solid fa-signature"></i> Nom</label>
@@ -88,7 +87,7 @@
                     <div class="form-group col-md-6 col-12 mb-3">
                         <label for="telefon" class="form-label"><i class="fa-solid fa-phone"></i> Telèfon de
                             Contacte</label>
-                        <input type="tel" class="form-control form-control-lg" id="telefon" name="telefon"
+                        <input type="tel" class="form-control form-control-lg" id="telefon" name="telefon" 
                             maxlength="9">
                     </div>
                     <!-- Camp nom usuari -->
@@ -96,24 +95,24 @@
                         <label for="nomUsuari" class="form-label form-group col-md-10 col-12 mb-3"><i
                                 class="fa-solid fa-user"></i> Nom d'usuari</label>
                         <input type="text" class="form-control form-control-lg" id="nomUsuari" name="nomUsuari"
-                            maxlength="30">
+                            maxlength="12">
                     </div>
                     <!-- Camp password-->
                     <div class="form-group col-md-6 col-12 mb-3">
                         <label for="password" class="form-label form-group col-md-10 col-12 mb-3"><i
-                                class="fa-solid fa-lock"></i> Password: </label>
+                                class="fa-solid fa-lock"></i> Contrasenya: </label>
                         <input type="password" class="form-control form-control-lg" id="password" name="password"
                             minlength="8" maxlength="15" autocomplete="new-password" required>
                     </div>
                     <!-- Camp usuari actiu -->
                     <div class="form-group col-md-12 col-12 mb-3">
-                        <label for="actiu" class="form-label"><i class="fa-solid fa-check"></i> Aquest usuari és Actiu?
+                        <label for="actiu" class="form-label"><i class="fa-solid fa-check"></i> Aquest usuari està actiu?
                         </label>
                         <input type="checkbox" class="form-check-input" id="actiu" name="actiu">
                     </div>
                     <div class="row justify-content-center">
                         <div class="form-group col-md-10 col-12 text-center lila">
-                            <button class="w-50" id="btnModificarUsuari" type="submit">Modificar Usuari</button>
+                            <button class="w-50" id="btnModificarUsuari" type="submit">Modifica l'usuari</button>
                         </div>
                     </div>
                 </div>
@@ -123,7 +122,7 @@
     </main>
 
     <footer id="footerPetit" class="bg-dark container-fluid lila">
-        <!--Es coloca el footer desde el js-->
+        <!--El footer es col·loca des del js-->
     </footer>
 
     <!-- Enllaços bootstrap -->
@@ -136,6 +135,8 @@
     <script type="module" src="js/components.js"></script>
     <!--taulaUsuaris.js-->
     <script src="/js/taulaUsuaris.js"></script>
+    <!--adminAuth.js-->
+    <script src="js/adminAuth.js"></script>
 
 </body>
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Refugi Lobita - Registre Usuaris</title>
+  <title>Refugi Lobita - Registre d'usuaris</title>
   <!-- Enllaços CSS -->
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/fonts.css">
@@ -19,24 +19,24 @@
 
 <body>
   <header id="header" class="container-fluid">
-    <!--Es coloca el header desde el js-->
+      <!--El header es col·loca des del js-->
   </header>
   <main class="rosa">
     <div class="portada">
       <div class="container-fluid">
         <div id="espaiNav"></div>
         <section id="secContacte" class="fondoRosa text-center p-4">
-          <h1 class="mb-4"><i class="fa-regular fa-address-book"></i> Registre Usuaris <i class="fa-regular fa-address-book"></i></h1>
+          <h1 class="mb-4"><i class="fa-regular fa-address-book"></i> Registre d'usuaris <i class="fa-regular fa-address-book"></i></h1>
           <p class="fw-bold">
             Vols formar part de la nostra comunitat? <br>
-            Pots registrar-te en la nostra pàgina web i tindràs accés al teu espai <br>
-            on podràs veure els teus apadrinaments, les teves donacions, etc. <!------AQUI etc sense ... -->
+            Pots registrar-te a la nostra pàgina web i tindràs accés al teu espai <br>
+            on podràs veure els teus apadrinaments, donacions, etc.
           </p>
         </section>
         <br>
 
         <form class="form sombraRosa needs-validation" id="formulari">
-          <!------------------------------------------ DADES PERSONALS ***********************************-->
+          <!--*************  DADES PERSONALS *******************-->
           <h4 class="mb-3">Dades Personals:</h4>
           <div class="row justify-content-center">          
             <!-- Camp nom -->
@@ -66,34 +66,34 @@
               <label for="proteccioDades" class="form-check-label"> He llegit i accepto la <a href="#" class="btnA">política de privacitat</a> </label> 
             </div>
           </div>
-          <!-------------------------------------------- DADES INICI SESSIÓ  ***********************************-->
+          <!--**************  DADES INICI SESSIÓ  ****************-->
           <hr class="linia">
           <h4 class="mb-3">Dades Inici Sessió:</h4>
           <div class="row justify-content-center">
             <!-- Camp nom usuari-->
             <div class="contenidor-pass form-group col-md-11 col-12 mb-3 mt-3">
               <label for="inputNomUsuari" class="form-label col-md-2"><i class="fa-solid fa-user"></i> Nom Usuari</label>
-              <input type="text" class="form-control form-control-lg" id="inputNomUsuari" name="nomUsuari" placeholder="Escriu el nom d'usuari" maxlength="30" autocomplete="username" required>
+              <input type="text" class="form-control form-control-lg" id="inputNomUsuari" name="nomUsuari" placeholder="Escriu el nom d'usuari" maxlength="12" autocomplete="username" required>
             </div>
             <!-- Camp password-->
             <div class="contenidor-pass form-group col-md-11 col-12 mb-3 mt-3">
-              <label for="inputPassword" class="form-label col-md-2"><i class="fa-solid fa-lock"></i> Password:</label>
-              <input type="password" class="form-control form-control-lg" id="inputPassword" name="password" placeholder="Escriu el password" minlength="8" maxlength="15" autocomplete="new-password" required>
-              <button id="pass-icon" class="botoImatge" title="Mostrar/Ocultar contrasenya" aria-label="Mostrar o ocultar contrasenya" onclick="passVisible('inputPassword', this)">
+              <label for="inputPassword" class="form-label col-md-2"><i class="fa-solid fa-lock"></i> Contrasenya:</label>
+              <input type="password" class="form-control form-control-lg" id="inputPassword" name="password" placeholder="Escriu la teva contrasenya" minlength="8" maxlength="15" autocomplete="new-password" required>
+              <button type="button" class="botoImatge" title="Mostrar/Ocultar contrasenya" aria-label="Mostrar o ocultar contrasenya" onclick="passVisible('inputPassword', this)">
                 <img class="imgMostrar" src="imatges/close.png" alt="">
               </button>
-              <button id="pass-esborrar" class="botoImatge" title="Esborrar contrasenya" aria-label="Esborrar la contrasenya" onclick="esborrarPass('inputPassword')">
+              <button type="button" class="botoImatge" title="Esborrar contrasenya" aria-label="Esborrar la contrasenya" onclick="esborrarPass('inputPassword')">
                 <img class="imgEliminar" src="imatges/paperera.png" alt="">
               </button>
             </div>
             <!-- Camp password-->
             <div class="contenidor-pass form-group col-md-11 col-12 mb-3 mt-3">
-              <label for="inputPassword2" class="form-label col-md-2"><i class="fa-solid fa-lock"></i> Password:</label>            
-              <input type="password" class="form-control form-control-lg" id="inputPassword2" name="password2" placeholder="Confirma el password" minlength="8" maxlength="15" autocomplete="current-password" required>
-              <button id="pass-icon" class="botoImatge" title="Mostrar/Ocultar contrasenya" aria-label="Mostrar o ocultar contrasenya" onclick="passVisible('inputPassword', this)">
+              <label for="inputPassword2" class="form-label col-md-2"><i class="fa-solid fa-lock"></i> Contrasenya:</label>            
+              <input type="password" class="form-control form-control-lg" id="inputPassword2" name="password2" placeholder="Confirma la teva contrasenya" minlength="8" maxlength="15" autocomplete="current-password" required>
+              <button type="button" class="botoImatge" title="Mostrar/Ocultar contrasenya" aria-label="Mostrar o ocultar contrasenya" onclick="passVisible('inputPassword2', this)">
                 <img class="imgMostrar" src="imatges/close.png" alt="">
               </button>
-              <button id="pass-esborrar" class="botoImatge" title="Esborrar contrasenya" aria-label="Esborrar la contrasenya" onclick="esborrarPass('inputPassword')">
+              <button type="button" class="botoImatge" title="Esborrar contrasenya" aria-label="Esborrar la contrasenya" onclick="esborrarPass('inputPassword2')">
                 <img class="imgEliminar" src="imatges/paperera.png" alt="">
               </button>
             </div>
@@ -105,7 +105,7 @@
             </div>
             <!-- Botó enviament -->
             <div class="form-group col-md-12 col-12 text-center mb-3 lila">
-              <button id="btn" type="submit" id="btnRegistreUsuari">Enviar</button>
+              <button type="submit" id="btnRegistreUsuari">Enviar</button>
             </div>
           </div>          
           <div>
@@ -131,6 +131,8 @@
   <script type="module" src="js/components.js"></script>
   <!-- RegistreUsuaris.js -->
   <script src="js/registreUsuaris.js"></script>
+  <!--adminAuth.js-->
+  
 
 </body>
 
