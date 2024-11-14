@@ -12,6 +12,7 @@ import java.time.LocalDate;
 public class Animals {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idanimal", nullable = false)
     private Integer idAnimal;
 
@@ -24,12 +25,14 @@ public class Animals {
     @Column(name = "idtipusanimal", nullable = false)
     private Integer idTipusAnimal;
 
-    @Column(name = "idtipusraca", nullable = false)
-    private Integer idTipusRaca;
+    @Column(name = "tipusraca", nullable = false)
+    private String tipusRaca;
 
+    // Estats fixes
     @Column(name = "idestatsalut", nullable = false)
     private Integer idEstatSalut;
 
+    //estat animal es refereix a si esta adoptat o apradinat
     @Column(name = "idestatanimal", nullable = false)
     private Integer idEstatAnimal;
 
@@ -57,11 +60,11 @@ public class Animals {
     @Column(name = "vacunat", nullable = false)
     private Boolean vacunat;
 
-    @Column(name = "xip", nullable = false)
+    @Column(name = "xip")
     private String xip;
 
-    @Column(name = "idcomportament", nullable = false)
-    private Integer idComportament;
+    @Column(name = "comportament", nullable = false)
+    private String Comportament;
 
     @Column(name = "necessitats", nullable = false)
     private String necessitats;
@@ -78,11 +81,11 @@ public class Animals {
         super();
     }
 
-    public Animals(String nomAnimal, LocalDate dataEntrada, Integer idTipusAnimal, Integer idTipusRaca, Integer idEstatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, Integer idComportament, String necessitats, String fotoUrl, String observacions) {
+    public Animals(String nomAnimal, LocalDate dataEntrada, Integer idTipusAnimal, String tipusRaca, Integer idEstatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String observacions) {
         this.nomAnimal = nomAnimal;
         this.dataEntrada = dataEntrada;
         this.idTipusAnimal = idTipusAnimal;
-        this.idTipusRaca = idTipusRaca;
+        this.tipusRaca = tipusRaca;
         this.idEstatSalut = idEstatSalut;
         this.idEstatAnimal = idEstatAnimal;
         this.dataAdopcio = dataAdopcio;
@@ -94,7 +97,7 @@ public class Animals {
         this.esterilitzat = esterilitzat;
         this.vacunat = vacunat;
         this.xip = xip;
-        this.idComportament = idComportament;
+        this.Comportament = comportament;
         this.necessitats = necessitats;
         this.fotoUrl = fotoUrl;
         Observacions = observacions;
