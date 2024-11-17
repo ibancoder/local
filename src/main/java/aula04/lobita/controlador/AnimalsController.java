@@ -23,15 +23,15 @@ public class AnimalsController {
      * @param animalsRepository Repository to access to Animals.
      */
     public AnimalsController(AnimalsRepository animalsRepository) { this.animalsRepository = animalsRepository; }
-
+    /**
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/crearanimals")
     public void crearAnimals(){
-        Animals animal1 = new Animals("Paris",dataActual, 1,"1",1,1,dataActual,dataActual,"blanc",11F,"40cm",dataActual,true,true,"9032482038","1","Cap necessitat","/imatges/perfilCaball.jpeg","Cap observacio");
-        Animals animal2 = new Animals("Triana",dataActual, 1,"1",1,1,dataActual,dataActual,"negre",9F,"40cm",dataActual,true,true,"9032482038","1","Cap necessitat","/imatges/perfilCaball.jpeg","Cap observacio");
+        Animals animal1 = new Animals("Paris",dataActual,"1",1,1,dataActual,dataActual,"blanc",11F,"40cm",dataActual,true,true,"9032482038","1","Cap necessitat","/imatges/perfilCaball.jpeg","Cap observacio");
+        Animals animal2 = new Animals("Triana",dataActual, "1",1,1,dataActual,dataActual,"negre",9F,"40cm",dataActual,true,true,"9032482038","1","Cap necessitat","/imatges/perfilCaball.jpeg","Cap observacio");
         animalsRepository.save(animal1);
         animalsRepository.save(animal2);
-    }
+    }*/
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/animals")
     public List<Animals> getAllAnimals(){
@@ -58,7 +58,7 @@ public class AnimalsController {
                 .map(animal -> {
                     animal.setNomAnimal(updatedAnimal.getNomAnimal());
                     animal.setDataEntrada(updatedAnimal.getDataEntrada());
-                    animal.setIdTipusAnimal(updatedAnimal.getIdTipusAnimal());
+                    animal.setTipusAnimal(updatedAnimal.getTipusAnimal());
                     animal.setTipusRaca(updatedAnimal.getTipusRaca());
                     animal.setIdEstatSalut(updatedAnimal.getIdEstatSalut());
                     animal.setIdEstatAnimal(updatedAnimal.getIdEstatAnimal());
@@ -87,7 +87,7 @@ public class AnimalsController {
                 .map(animal -> {
                     if (partialAnimal.getNomAnimal() != null) animal.setNomAnimal(partialAnimal.getNomAnimal());
                     if (partialAnimal.getDataEntrada() != null) animal.setDataEntrada(partialAnimal.getDataEntrada());
-                    if (partialAnimal.getIdTipusAnimal() != null) animal.setIdTipusAnimal(partialAnimal.getIdTipusAnimal());
+                    if (partialAnimal.getTipusAnimal() != null) animal.setTipusAnimal(partialAnimal.getTipusAnimal());
                     if (partialAnimal.getTipusRaca() != null) animal.setTipusRaca(partialAnimal.getTipusRaca());
                     if (partialAnimal.getIdEstatSalut() != null) animal.setIdEstatSalut(partialAnimal.getIdEstatSalut());
                     if (partialAnimal.getIdEstatAnimal() != null) animal.setIdEstatAnimal(partialAnimal.getIdEstatAnimal());

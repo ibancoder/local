@@ -22,8 +22,9 @@ public class Animals {
     @Column(name = "dataentrada", nullable = false)
     private LocalDate dataEntrada;
 
-    @Column(name = "idtipusanimal", nullable = false)
-    private Integer idTipusAnimal;
+    @ManyToOne
+    @JoinColumn(name = "idtipusanimal", referencedColumnName = "idtipusanimal", nullable = false)
+    private TipusAnimal tipusAnimal;
 
     @Column(name = "tipusraca", nullable = false)
     private String tipusRaca;
@@ -81,10 +82,10 @@ public class Animals {
         super();
     }
 
-    public Animals(String nomAnimal, LocalDate dataEntrada, Integer idTipusAnimal, String tipusRaca, Integer idEstatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String observacions) {
+    public Animals(String nomAnimal, LocalDate dataEntrada, TipusAnimal tipusAnimal, String tipusRaca, Integer idEstatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String observacions) {
         this.nomAnimal = nomAnimal;
         this.dataEntrada = dataEntrada;
-        this.idTipusAnimal = idTipusAnimal;
+        this.tipusAnimal = tipusAnimal;
         this.tipusRaca = tipusRaca;
         this.idEstatSalut = idEstatSalut;
         this.idEstatAnimal = idEstatAnimal;
