@@ -20,7 +20,15 @@ public class TipusAnimalController {
     @PostMapping("/api/creartipusanimal")
     public void creartipusanimal(){
         TipusAnimal tipusanimal1 = new TipusAnimal(1,"Gossos", new ArrayList<>());
+        TipusAnimal tipusanimal2 = new TipusAnimal(2,"Gats", new ArrayList<>());
+        TipusAnimal tipusanimal3 = new TipusAnimal(3,"Ocells", new ArrayList<>());
+        TipusAnimal tipusanimal4 = new TipusAnimal(4,"Altres", new ArrayList<>());
+
         tipusAnimalRepository.save(tipusanimal1);
+        tipusAnimalRepository.save(tipusanimal2);
+        tipusAnimalRepository.save(tipusanimal3);
+        tipusAnimalRepository.save(tipusanimal4);
+
 
     }
 }
