@@ -40,7 +40,7 @@ public class AnimalsController {
                 dataActual,
                 tipusAnimal,
                 "Caniche",
-                1,
+                "",
                 1,
                 dataActual,
                 dataActual,
@@ -88,7 +88,7 @@ public class AnimalsController {
                     animal.setDataEntrada(updatedAnimal.getDataEntrada());
                     animal.setTipusAnimal(updatedAnimal.getTipusAnimal());
                     animal.setTipusRaca(updatedAnimal.getTipusRaca());
-                    animal.setIdEstatSalut(updatedAnimal.getIdEstatSalut());
+                    animal.setEstatSalut(updatedAnimal.getEstatSalut());
                     animal.setIdEstatAnimal(updatedAnimal.getIdEstatAnimal());
                     animal.setDataAdopcio(updatedAnimal.getDataAdopcio());
                     animal.setDataApadrinament(updatedAnimal.getDataApadrinament());
@@ -117,7 +117,7 @@ public class AnimalsController {
                     if (partialAnimal.getDataEntrada() != null) animal.setDataEntrada(partialAnimal.getDataEntrada());
                     if (partialAnimal.getTipusAnimal() != null) animal.setTipusAnimal(partialAnimal.getTipusAnimal());
                     if (partialAnimal.getTipusRaca() != null) animal.setTipusRaca(partialAnimal.getTipusRaca());
-                    if (partialAnimal.getIdEstatSalut() != null) animal.setIdEstatSalut(partialAnimal.getIdEstatSalut());
+                    if (partialAnimal.getEstatSalut() != null) animal.setEstatSalut(partialAnimal.getEstatSalut());
                     if (partialAnimal.getIdEstatAnimal() != null) animal.setIdEstatAnimal(partialAnimal.getIdEstatAnimal());
                     if (partialAnimal.getDataAdopcio() != null) animal.setDataAdopcio(partialAnimal.getDataAdopcio());
                     if (partialAnimal.getDataApadrinament() != null) animal.setDataApadrinament(partialAnimal.getDataApadrinament());
