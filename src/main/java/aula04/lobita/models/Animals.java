@@ -1,6 +1,7 @@
 package aula04.lobita.models;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 @Table(name  ="Animals")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Animals {
 
     @Id
@@ -30,8 +32,8 @@ public class Animals {
     private String tipusRaca;
 
     // Estats fixes
-    @Column(name = "idestatsalut", nullable = false)
-    private Integer idEstatSalut;
+    @Column(name = "estatsalut", nullable = false)
+    private String estatSalut;
 
     //estat animal es refereix a si esta adoptat o apradinat
     @Column(name = "idestatanimal", nullable = false)
@@ -74,20 +76,19 @@ public class Animals {
     private String fotoUrl;
 
     @Column(name = "observacions", nullable = false)
-    private String Observacions;
+    private String observacions;
+
+    @Column(name ="rip", nullable = false)
+    private Boolean rip;
 
     //Constructor
 
-    public Animals() {
-        super();
-    }
-
-    public Animals(String nomAnimal, LocalDate dataEntrada, TipusAnimal tipusAnimal, String tipusRaca, Integer idEstatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String observacions) {
+    public Animals(String nomAnimal, LocalDate dataEntrada, TipusAnimal tipusAnimal, String tipusRaca, String estatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String observacions) {
         this.nomAnimal = nomAnimal;
         this.dataEntrada = dataEntrada;
         this.tipusAnimal = tipusAnimal;
         this.tipusRaca = tipusRaca;
-        this.idEstatSalut = idEstatSalut;
+        this.estatSalut = estatSalut;
         this.idEstatAnimal = idEstatAnimal;
         this.dataAdopcio = dataAdopcio;
         this.dataApadrinament = dataApadrinament;
@@ -101,7 +102,7 @@ public class Animals {
         this.Comportament = comportament;
         this.necessitats = necessitats;
         this.fotoUrl = fotoUrl;
-        Observacions = observacions;
+        this.observacions = observacions;
     }
 
 
