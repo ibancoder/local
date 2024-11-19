@@ -19,11 +19,16 @@ public class TipusAnimal {
     @Column(name = "idtipusanimal", nullable = false, length = 2)
     private Integer idTipusAnimal;
 
-    @Column(name = "descripcio", nullable = false)
-    private String descricio;
+    @Column(name = "nomtipusanimal", nullable = false)
+    private String nomtipusanimal;
+
+    @Column(name="foto", nullable = false)
+    private String foto;
+
+    @Column(name="alt", nullable = false)
+    private String alt;
 
     @OneToMany(mappedBy = "tipusAnimal")
     private List<Animals> animals;
-
 
 }
