@@ -1,5 +1,6 @@
 package aula04.lobita.controlador;
 
+import aula04.lobita.dto.AnimalDTO;
 import aula04.lobita.models.Animals;
 import aula04.lobita.models.TipusAnimal;
 import aula04.lobita.repositori.AnimalsRepository;
@@ -62,15 +63,18 @@ public class AnimalsController {
     }
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/animals")
-    public List<Animals> getAllAnimals(){
-        return animalsRepository.findAll();
+    public List<AnimalDTO> getAllAnimals(){
+        return animalsRepository.findAll()
+                .stream()
+                .map(AnimalDTO::new)
+                .toList();
     }
 
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/animals/{id}")
-    public ResponseEntity<Animals> getAnimalById(@PathVariable Integer id){
+    public ResponseEntity<AnimalDTO> getAnimalById(@PathVariable Integer id){
         Optional<Animals> animal = animalsRepository.findById(id);
-        return animal.map(ResponseEntity::ok).orElseGet(() -> (ResponseEntity<Animals>) ResponseEntity.notFound());
+        return animal.map( a -> ResponseEntity.ok(new AnimalDTO(a))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
