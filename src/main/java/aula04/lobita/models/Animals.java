@@ -28,7 +28,7 @@ public class Animals {
     @JoinColumn(name = "idtipusanimal", referencedColumnName = "idtipusanimal", nullable = false)
     private TipusAnimal tipusAnimal;
 
-    @Column(name = "tipusraca", nullable = false)
+    @Column(name = "tipusraca", nullable = true)
     private String tipusRaca;
 
     // Estats fixes
@@ -36,14 +36,8 @@ public class Animals {
     private String estatSalut;
 
     //estat animal es refereix a si esta adoptat o apradinat
-    @Column(name = "idestatanimal", nullable = false)
-    private Integer idEstatAnimal;
-
-    @Column(name = "dataadopcio", nullable = false)
-    private LocalDate dataAdopcio;
-
-    @Column(name = "dataapadrinament", nullable = false)
-    private LocalDate dataApadrinament;
+    @Column(name = "estatanimal", nullable = false)
+    private Integer estatAnimal;
 
     @Column(name = "color", nullable = false)
     private String color;
@@ -51,11 +45,14 @@ public class Animals {
     @Column(name = "edat", nullable = false)
     private Float edat;
 
+    @Column(name="pes", nullable = false)
+    private Float pes;
+
     @Column(name = "mida", nullable = false)
     private String mida;
 
-    @Column(name = "datanaixament", nullable = false)
-    private LocalDate dataNaixament;
+    @Column(name="sexe")
+    private String sexe;
 
     @Column(name = "esterilitzat", nullable = false)
     private Boolean esterilitzat;
@@ -67,13 +64,16 @@ public class Animals {
     private String xip;
 
     @Column(name = "comportament", nullable = false)
-    private String Comportament;
+    private String comportament;
 
     @Column(name = "necessitats", nullable = false)
     private String necessitats;
 
-    @Column(name = "fotorurl", nullable = false)
+    @Column(name = "fotourl", nullable = false)
     private String fotoUrl;
+
+    @Column(name = "alt", nullable = false)
+    private String alt;
 
     @Column(name = "observacions", nullable = false)
     private String observacions;
@@ -83,28 +83,29 @@ public class Animals {
 
     //Constructor
 
-    public Animals(String nomAnimal, LocalDate dataEntrada, TipusAnimal tipusAnimal, String tipusRaca, String estatSalut, Integer idEstatAnimal, LocalDate dataAdopcio, LocalDate dataApadrinament, String color, Float edat, String mida, LocalDate dataNaixament, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String observacions) {
+
+    public Animals(String nomAnimal, LocalDate dataEntrada, TipusAnimal tipusAnimal, String tipusRaca, String estatSalut, Integer estatAnimal, String color, Float edat, Float pes, String mida, String sexe, Boolean esterilitzat, Boolean vacunat, String xip, String comportament, String necessitats, String fotoUrl, String alt, String observacions, Boolean rip) {
         this.nomAnimal = nomAnimal;
         this.dataEntrada = dataEntrada;
         this.tipusAnimal = tipusAnimal;
         this.tipusRaca = tipusRaca;
         this.estatSalut = estatSalut;
-        this.idEstatAnimal = idEstatAnimal;
-        this.dataAdopcio = dataAdopcio;
-        this.dataApadrinament = dataApadrinament;
+        this.estatAnimal = estatAnimal;
         this.color = color;
         this.edat = edat;
+        this.pes = pes;
         this.mida = mida;
-        this.dataNaixament = dataNaixament;
+        this.sexe = sexe;
         this.esterilitzat = esterilitzat;
         this.vacunat = vacunat;
         this.xip = xip;
-        this.Comportament = comportament;
+        this.comportament = comportament;
         this.necessitats = necessitats;
         this.fotoUrl = fotoUrl;
+        this.alt = alt;
         this.observacions = observacions;
+        this.rip = rip;
     }
-
 
 }
 

@@ -1,129 +1,127 @@
 /* Ocultar el password al html */
-#password{
-    display: none;
+#password {
+  display: none;
 }
 
 .banner {
-    padding: 0.5%;
+  padding: 0.5%;
 
-    a {
-        font-size: larger;
-    }
+  a {
+      font-size: larger;
+  }
 }
 
 main {
-    background-color:#f2f5fd; 
+  background-color:#f2f5fd; 
 }
 
 div:has(h1) {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /*Boto per seleccionar imatge*/
 .editarImg {
-    margin-top: 100px;
-    margin-right: -25px;
+  margin-top: 100px;
+  margin-right: -25px;
 
-    i {
-        font-size: x-large;
-        color: #B6AEFF;
-    }
+  i {
+      font-size: x-large;
+      color: #B6AEFF;
+  }
 
-    :hover {
-        color: #887BFF;
-    }
+  :hover {
+      color: #887BFF;
+  }
 }
 
 /*Caixa per seleccionar la imatge*/
 #escollirImgPerfil {
-    display: none;
-    position: absolute;
-    border: 2px solid #887BFF;
-    border-radius: 8px;
-    background-color: #887BFF; 
-    z-index: 100;
-    width: 340px;
-    padding: 1%;
+  display: none;
+  position: absolute;
+  border: 2px solid #887BFF;
+  border-radius: 8px;
+  background-color: #887BFF; 
+  z-index: 100;
+  width: 340px;
+  padding: 1%;
 
-    button {
-        margin-top: 1%;
-        margin-bottom: 1%;
-        border: 2px solid #887BFF;
-        box-shadow: 0 0 20px #FF7161;
+  button {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      border: 2px solid #887BFF;
+      box-shadow: 0 0 20px #FF7161;
 
-        img {
-            height: 80px;
-            width: 80px;
-        }
-    } 
+      img {
+          height: 80px;
+          width: 80px;
+      }
+  } 
 
-    button:hover {
-        border: 2px solid #FF887B;
-    }
+  button:hover {
+      border: 2px solid #FF887B;
+  }
 }
 
 /*móvil*/
 .editarImg:focus+#escollirImgPerfil,
 .editarImg:active+#escollirImgPerfil {
-    display: block;
+  display: block;
 }
 
 /*web*/
 .editarImg:hover+#login {
-    display: block;
+  display: block;
 }
 
 #escollirImgPerfil:hover {
-    display: block;
+  display: block;
 }
 
 
 /*Imatge de perfil*/
 .imgPerfil {
-    width: 150px; 
-    height: 150px; 
-    border: 2px solid #FF887B;
-    border-radius: 50%;
-    object-fit: cover; 
-    box-shadow: 0 0 20px #FF7161;
+  width: 150px; 
+  height: 150px; 
+  border: 2px solid #FF887B;
+  border-radius: 50%;
+  object-fit: cover; 
+  box-shadow: 0 0 20px #FF7161;
 }
 
 /*Dades perfil*/
-h2 {
-    margin-left: 9%;
+#nomUsuari { /*********************************************************AQUI**************************/
+  padding-left: 8%;
 }
 
 .textUsuari {
-    text-align: left;
-    padding-top: 2%;
-    width: 75% !important;
-    margin: 0 auto;
+  text-align: left;
+  padding-top: 2%;
+  width: 75% !important;
+  margin: 0 auto;
 
-    p {
-        font-weight: bold;
-    }
+  p {
+      font-weight: bold;
+  }
 }
 
 /*Altres dades*/
 .dadesAjuda {
-    p {
-        padding-left: 3%;
-    }
-    
-    a { 
-       text-decoration: none;
-       color: #f2f5fd;
-       padding: 0.3%;
-    }
+  p {
+      padding-left: 3%;
+  }
+  
+  a { 
+     text-decoration: none;
+     color: #f2f5fd;
+     padding: 0.3%;
+  }
 }
 
 .linia {    
-    border: 2px solid #B6AEFF; 
-    width: 100%;
-    position: absolute;
-    left: 0;
-
-    
+  border: 2px solid #B6AEFF; 
+  width: 100%;
+  position: absolute;
+  left: 0;   
 }
 
 
@@ -131,55 +129,72 @@ h2 {
 
 /** Tablets **/
 @media (min-width: 576px) {
-    .textUsuari {
-        width: 50% !important;
-    }
+  .textUsuari {
+      width: 50% !important;
+  }
 }
 
 @media (min-width: 768px) {
-    .editarImg {
-        margin-top: 150px;
-        margin-right: -35px;
-    }
+  .editarImg {
+      margin-top: 150px;
+      margin-right: -35px;
+  }
 
-    .imgPerfil {
-        width: 200px;
-        height: 200px;
-    }
+  .imgPerfil {
+      width: 200px;
+      height: 200px;
+  }
 
-    .textUsuari {
-        font-size: large;
-        margin-left: 0%; 
-        padding-top: 3%;  
-    }
+  #nomUsuari { /*********************************************************AQUI**************************/
+      padding-left: 4%;
+  }
+
+  .textUsuari {
+      font-size: large;
+      margin-left: 0%; 
+      padding-top: 3%;  
+  }
 }
 
 /** PC **/
 @media (min-width: 992px) {
-    div:has(.imgPerfil) {
-        text-align: right;
-    }
+  div:has(.imgPerfil) {
+      text-align: right;
+  }
 
-    h2 {
-        padding-right: 3%;
-    }
+  #nomUsuari { /*********************************************************AQUI**************************/
+      text-align: center;
+      padding-left: 60%;
+  }
 }
 
 @media (min-width: 1200px) {
-    #escollirImgPerfil {
-        margin-left: 25%;
-    }
+  #escollirImgPerfil {
+      margin-left: 25%;
+  }
+
+  #nomUsuari { /*********************************************************AQUI**************************/
+      padding-left: 65%;
+  }
 }
 
 @media (min-width: 1400px) {
-    .textUsuari {
-        padding-top: 2%;
-    }
+  #nomUsuari { /*********************************************************AQUI**************************/
+      padding-left: 75%;
+  }
+
+  .textUsuari {
+      padding-top: 2%;
+  }
 }
 
 /** PC pantalles grans **/
 @media (min-width: 1961px) {
-    #escollirImgPerfil {
-        width: 360px;
-    } 
+  #escollirImgPerfil {
+      width: 360px;
+  } 
+
+  #nomUsuari { /*********************************************************AQUI**************************/
+      padding-left: 80%;
+  }
 }

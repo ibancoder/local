@@ -34,16 +34,14 @@ let llistaUsuaris = async () => {
   /**
    * Itera sobre cada usuari per mostrar-ho a la taula d'usuaris.
    */
-  for (let usuari of usuaris) {
-    const imageUrl = usuari.foto ? `${baseUrl}/imatges/${usuari.foto}` : "";
+  for (let usuari of usuaris) {    
     let contingutFila = `<tr>
       <td>${usuari.idUsuari}</td>      
       <td>${usuari.nom}</td>
       <td>${usuari.cognoms}</td>      
       <td>${usuari.email}</td>      
       <td>${usuari.telefon}</td>        
-      <td>${usuari.nomUsuari}</td>      
-      <td>${usuari.password}</td> 
+      <td>${usuari.nomUsuari}</td>                 
       <td>${usuari.dataAlta}</td>  
       <td>${usuari.actiu}</td>      
       <td><i onClick="editarUsuari(${usuari.idUsuari})" class="material-icons button edit">edit</i></td>
@@ -64,15 +62,38 @@ let llistaUsuaris = async () => {
  */
 
 let eliminarUsuari = async (idUsuari) => {
-  const peticio = await fetch(`${baseUrl}/api/usuari/${idUsuari}`, {
-    method: "DELETE",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  });
-  llistaUsuaris();
-  amagarFormulari();
+  /**
+   * modificació aqui
+   */
+  //No es pot eliminar el usuari admin
+  if (idUsuari === 1 ) {
+    alert("Ho sento, no es pot eliminar l'usuari LobitaAdmin. Gràcies.");
+    return;
+  }
+  //Missatge de confirmació abans d'eliminar l'usuari
+  const confirmacio = window.confirm("Estàs segur que vols eliminar l'usuari "+idUsuari+ "?");
+  if (confirmacio) {
+    try {
+      const peticio = await fetch(`${baseUrl}/api/usuari/${idUsuari}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      //Si l'eliminació te exit, actualitza la llista i amaga el formulari.
+      if (peticio.ok) {
+        llistaUsuaris();
+        amagarFormulari();
+      } else {
+        alert(
+          "No s'ha pogut eliminar l'usuari'. Si us plau, intenta-ho més tard."
+        );
+      }
+    } catch (error) {
+      console.error("Error en la petició:", error);
+    }
+  }
 };
 
 /**

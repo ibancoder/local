@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Refugi Lobita - Animals</title>
+    <title>Refugi Lobita - Perfil animal</title>
     <!-- Enllaços CSS -->
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -24,18 +24,29 @@
             <div class="container-fluid">
                 <div id="espaiNav"></div>
                 <h1 class="text-center">
-                    <i class="fa-solid fa-paw"></i> Animals <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-paw"></i> Piru <i class="fa-solid fa-paw"></i>
                 </h1>
                 <br>
             </div>
         </section>
         <br>
         <section class="container-fluid">
-            <br>
-            <h2>Els nostres <span id="titolTipusAnimal"></span></h2>
-            <br>
-            <div id="animals" class="row text-center">
-                <!--Es criden els tipus d'animals desde el js-->
+            <div class="row">
+                <div>
+                    <img id="imgAnimal" src="" alt="">
+                </div>
+                <div>
+                    <p>Nom: <span id="nomAnimal"></span></p>
+                    <p>Edat: <span id="edat"></span></p>
+                    <p>Raça: <span id="tipusRaca"></span></p>
+                    <p>Color: <span id="color"></span></p>
+                    <p>Mida: <span id="mida"></span></p>
+                    <p>Estat de salut: <span id="estatSalut"></span></p>
+                    <p>Esterilitzat: <span id="esterilitzat"></span></p>
+                    <p>Necessitats: <span id="necessitats"></span></p>
+                    <p>Comportament: <span id="comportament"></span></p>
+                    <p>Historia: <span id="historia"></span></p>
+                </div>
             </div>
         </section>
     </main>
@@ -52,7 +63,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Components (banner, nav, footer) -->
     <script type="module" src="js/components.js"></script>
-    <script src="js/animals.js"></script>
+    
 </body>
 
 </html>

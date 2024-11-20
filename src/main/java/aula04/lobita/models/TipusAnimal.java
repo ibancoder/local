@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class TipusAnimal {
     @Id
-    @Column(name = "idtipusanimal", nullable = false, length = 2)
+    @Column(name = "idtipusanimal", nullable = false)
     private Integer idTipusAnimal;
 
     @Column(name = "nomtipusanimal", nullable = false)
@@ -28,7 +28,14 @@ public class TipusAnimal {
     @Column(name="alt", nullable = false)
     private String alt;
 
-    @OneToMany(mappedBy = "tipusAnimal")
+   /* @OneToMany(mappedBy = "tipusAnimal")
     private List<Animals> animals;
+    */
 
+    public TipusAnimal(String nomtipusanimal, String foto, String alt){
+        super();
+        this.nomtipusanimal = nomtipusanimal;
+        this.foto = foto;
+        this.alt = alt;
+    }
 }

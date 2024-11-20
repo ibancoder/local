@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     validarCamp(
       userNameRegex,
       nomUsuari,
-      "Usuari conté mínim 4 i màxim 16 caràcters."
+      "Usuari conté mínim 4 i màxim 12 caràcters."
     );
   });
 
@@ -248,13 +248,14 @@ function esborrarPass(inputId) {
 /**
  * Funció per mostrar/amagar el password amb l'icona de l'ull.
  * @param {string} inputId ID de l'input de contrasenya
- * @param {HTMLImageElement} icon Icona per indicar l'estat de visibilitat
+ * @param {HTMLImageElement} button Botó que conté la icona per indicar l'estat de visibilitat
  */
-function passVisible(inputId, icon) {
+function passVisible(inputId, button) {
   const inputField = document.getElementById(inputId);
   const isPassword = inputField.type === "password";
-  //Canvia el tipus de input
+  //Canvia el tipus d'input
   inputField.type = isPassword ? "text" : "password";
   //Canvia l'icona segons l'estat
+  const icon = button.querySelector("img");
   icon.src = isPassword ? "imatges/open.png" : "imatges/close.png";
 }

@@ -11,12 +11,7 @@
   }
 }
 
-/****** part js *****/
-#mailto{
-  opacity: 0;  /* ocultem l'element*/
-}
-
-.linia {   /** Linia a registre  ???? si es vol*/
+.linia {  
   border: 2px solid #FF887B; 
   margin: 20px 0; 
 }
@@ -29,8 +24,3 @@
   padding: 10px;
 }
 
-.icon{
-  height: 20px;
-  margin: 5px;
-  cursor: pointer;  
-}

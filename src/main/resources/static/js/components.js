@@ -1,7 +1,6 @@
 //Servidor
 //import { tancarSessio } from "http://178.156.55.174:8085/js/logout.js";
-//import { login } from "http://178.156.55.174:8085/js/login.js";
-//import { verificarSessio } from "http://178.156.55.174:8085/js/login.js";
+//import { login, verificarSessio } from "http://178.156.55.174:8085/js/login.js";
 
 //En local: borrar al final
 import { tancarSessio } from "./logout.js";

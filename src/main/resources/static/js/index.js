@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const peticio = await fetch(`${baseUrl}/api/noticies`, {
       method: "GET",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
     });

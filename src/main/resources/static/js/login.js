@@ -48,36 +48,46 @@ let iniciarSessio = async () => {
     if (response.ok) {
       const usuari = await response.json();
 
-      // Desa l'usuari a LocalStorage o SessionStorage segons la opció trioada al check "connected".
-      if (mantenirConnexió) {
-        localStorage.setItem("idUsuari", usuari.idUsuari);
+     // Desa l'usuari a LocalStorage o SessionStorage segons la opció trioada al check "connected".
+     if (mantenirConnexió) {
+      localStorage.setItem("idUsuari", usuari.idUsuari);
+      if (usuari.nomUsuari === "LobitaAdmin") {
+        localStorage.setItem("isAdmin", true);  // Guarda una marca de admin per restringuir acces. -----AQUI
       } else {
-        sessionStorage.setItem("idUsuari", usuari.idUsuari);
+        localStorage.setItem("isAdmin", false); // Marca como no admin    -----AQUI
       }
+    } else {
+      sessionStorage.setItem("idUsuari", usuari.idUsuari);
+      if (usuari.nomUsuari === "LobitaAdmin") {
+        sessionStorage.setItem("isAdmin", true);  // Guarda una marca de admin per restringuir acces. -----AQUI
+      } else {
+        sessionStorage.setItem("isAdmin", false); // Marca como no admin    -----AQUI
+      }
+    }
 
       // Actualitza el nom d'usuari per la funció actualitzarLoginSection.
       let usuariSection = usuari.nomUsuari;
       actualitzarLoginSection(usuariSection);
       console.log(usuariSection);
 
-      // Si el usuari es admin o no, redirigeix a la pàgina de l'usuari.
-      if (usuari.nomUsuari === "admin") {
-        window.location.href = "/usuariAdmin.html";
-      } else {
-        window.location.href = "/usuari.html";
-      }
-    } else if (response.status === 401) {
-      alert("Usuari o password incorrectes");
-      document.getElementById("nomUsuari").value = "";
-      document.getElementById("password").value = "";
-      document.getElementById("nomUsuari").focus();
+     // Si el usuari es admin o no, redirigeix a la pàgina de l'usuari.
+     if (usuari.nomUsuari === "LobitaAdmin") {            //------------------------------------------AQUI--------
+      window.location.href = "/usuariAdmin.html";
     } else {
-      alert("Error a l'inici de sessió");
+      window.location.href = "/usuari.html";
     }
-  } catch (error) {
-    console.error("Error en la solicitud", error);
-    alert("Error de connexió");
+  } else if (response.status === 401) {
+    alert("Usuari o password incorrectes");
+    document.getElementById("nomUsuari").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("nomUsuari").focus();
+  } else {
+    alert("Error a l'inici de sessió");
   }
+} catch (error) {
+  console.error("Error en la solicitud", error);
+  alert("Error de connexió");
+}
 };
 
 /**
@@ -93,7 +103,7 @@ function actualitzarLoginSection(usuariSection) {
     loginSection.innerHTML = `<i class="fa-solid fa-user" style="color: white;"></i> ${usuariSection}`;
     loginSection.onclick = () => {
       window.location.href =
-        usuariSection === "admin"
+        usuariSection === "LobitaAdmin"
           ? `usuariAdmin.html?id=${usuariSection}`
           : `usuari.html?id=${usuariSection}`;
     };

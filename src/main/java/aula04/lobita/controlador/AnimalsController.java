@@ -7,10 +7,17 @@ import aula04.lobita.repositori.AnimalsRepository;
 import aula04.lobita.repositori.TipusAnimalRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,30 +43,10 @@ public class AnimalsController {
     public void crearAnimals(){
         TipusAnimal tipusAnimal = tipusAnimalRepository.findById(1)
                 .orElseThrow(() -> new RuntimeException("Tipus Animal no trovat a la base de dades"));
-        Animals animal1 = new Animals(
-                "Paris",
-                dataActual,
-                tipusAnimal,
-                "Caniche",
-                "",
-                1,
-                dataActual,
-                dataActual,
-                "blanc",
-                11F,
-                "40cm",
-                dataActual,
-                true,
-                true,
-                "xsdsfkl",
-                "tranquil",
-                "cap necessitat",
-                "/imatges/perfilCaball.jpeg",
-                "cap observacio");
-        //Animals animal1 = new Animals("Paris",dataActual,1,1,1,dataActual,dataActual,"blanc",11F,"40cm",dataActual,true,true,"9032482038","1","Cap necessitat","/imatges/perfilCaball.jpeg","Cap observacio");
-        //Animals animal2 = new Animals("Triana",dataActual, "1",1,1,dataActual,dataActual,"negre",9F,"40cm",dataActual,true,true,"9032482038","1","Cap necessitat","/imatges/perfilCaball.jpeg","Cap observacio");
+        Animals animal1 = new Animals("Paris",dataActual,tipusAnimal,"Caniche","Sà",0,"Blanc",11.2F,18F,"Gran","Mascle",true,true,"dsfds322","Sociable","Cap","perro.img","imatge de gos","Cap observacio",false);
         animalsRepository.save(animal1);
-        //animalsRepository.save(animal2);
+        logger.info("Tipus animal creat o recuperat: " + tipusAnimal.getNomtipusanimal());
+        logger.info("Animal creat: "+ animal1.getNomAnimal());
     }
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/animals")
@@ -79,35 +66,99 @@ public class AnimalsController {
 
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @PostMapping("/api/animals")
-    public Animals createAnimal(@RequestBody Animals animal){
-        return animalsRepository.save(animal);
+    public ResponseEntity<Animals> guardarAnimal (
+            @RequestParam("nomAnimal") String nomAnimal,
+            @RequestParam("dataEntrada") String dataEntrada,
+            @RequestParam("idTipusAnimal") Integer idTipusAnimals,
+            @RequestParam("tipusRaca") String tipusRaca,
+            @RequestParam("estatSalut") String estatSalut,
+            @RequestParam("estatAnimal") Integer estatAnimal,
+            @RequestParam("color") String color,
+            @RequestParam("edat") Float edat,
+            @RequestParam("pes") Float pes,
+            @RequestParam("mida") String mida,
+            @RequestParam("sexe") String sexe,
+            @RequestParam("esterilitzat") boolean esterilitzat,
+            @RequestParam("vacunat") boolean vacunat,
+            @RequestParam("xip") String xip,
+            @RequestParam("comportament") String comportament,
+            @RequestParam("necessitats") String necessitats,
+            @RequestParam("foto") MultipartFile foto,
+            @RequestParam("alt") String alt,
+            @RequestParam("observacions") String observacions,
+            @RequestParam("rip") boolean rip) {
+            //Buscar "TipusAnimal" per ID
+        Optional<TipusAnimal>tipusAnimalOpt = tipusAnimalRepository.findById(idTipusAnimals);
+        if(tipusAnimalOpt.isEmpty()){
+            return ResponseEntity.badRequest().body(null); //Error si no es trova
+        }
+        TipusAnimal tipusAnimal = tipusAnimalOpt.get();
+
+        //Parse de la data d'entrada
+        LocalDate dataEntradaParse;
+        try {
+            dataEntradaParse = LocalDate.parse(dataEntrada);
+        }catch (DateTimeParseException e){
+            return ResponseEntity.badRequest().body(new Animals());
+        }
+
+        //Foto Animal
+        if (foto.isEmpty()){
+            return ResponseEntity.badRequest().body(new Animals());
+        }
+        logger.info("Nom imatge: "+ foto.getOriginalFilename());
+        logger.info("Mida imatge: " + foto.getSize() + " bytes");
+
+        //Ruta per guardar imatges al servidor
+        //String ruta = "/temp/";
+        //Ruta per guardar imatges en proves en local.
+        String ruta = "C:/Users/iban7/Desktop/Local/src/main/resources/static/imatges";
+
+        try {
+            Path rutaCompleta = Paths.get(ruta, foto.getOriginalFilename());
+            Files.write(rutaCompleta, foto.getBytes());
+        } catch (IOException e) {
+            logger.error("Error en guardar la imatge a la ruta: "+ ruta + foto.getOriginalFilename());
+            logger.error("Missatge d0error: {}", e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+        //Guardem els animals a la BBDD
+        Animals animal = new Animals(nomAnimal, dataEntradaParse, tipusAnimal, tipusRaca, estatSalut, estatAnimal, color,edat,pes,mida,sexe,
+                esterilitzat,vacunat,xip,comportament,necessitats, foto.getOriginalFilename(), alt,observacions, rip);
+        animalsRepository.save(animal);
+        return ResponseEntity.ok(animal);
     }
 
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @PutMapping("/api/animals/{id}")
-    public ResponseEntity<Animals> updateAnimal(@PathVariable Integer id, @RequestBody Animals updatedAnimal){
+    public ResponseEntity<Animals> updateAnimal(@PathVariable Integer id, @RequestBody AnimalDTO updatedAnimal){
         return animalsRepository.findById(id)
-                .map(animal -> {
-                    animal.setNomAnimal(updatedAnimal.getNomAnimal());
-                    animal.setDataEntrada(updatedAnimal.getDataEntrada());
-                    animal.setTipusAnimal(updatedAnimal.getTipusAnimal());
-                    animal.setTipusRaca(updatedAnimal.getTipusRaca());
-                    animal.setEstatSalut(updatedAnimal.getEstatSalut());
-                    animal.setIdEstatAnimal(updatedAnimal.getIdEstatAnimal());
-                    animal.setDataAdopcio(updatedAnimal.getDataAdopcio());
-                    animal.setDataApadrinament(updatedAnimal.getDataApadrinament());
-                    animal.setColor(updatedAnimal.getColor());
-                    animal.setEdat(updatedAnimal.getEdat());
-                    animal.setMida(updatedAnimal.getMida());
-                    animal.setDataNaixament(updatedAnimal.getDataNaixament());
-                    animal.setEsterilitzat(updatedAnimal.getEsterilitzat());
-                    animal.setVacunat(updatedAnimal.getVacunat());
-                    animal.setXip(updatedAnimal.getXip());
-                    animal.setComportament(updatedAnimal.getComportament());
-                    animal.setNecessitats(updatedAnimal.getNecessitats());
-                    animal.setFotoUrl(updatedAnimal.getFotoUrl());
-                    animal.setObservacions(updatedAnimal.getObservacions());
-                    return ResponseEntity.ok(animalsRepository.save(animal));
+                .map(existingAnimal -> {
+                    //Actualitza camps bàsics
+                    existingAnimal.setNomAnimal(updatedAnimal.getNomAnimal());
+                    existingAnimal.setDataEntrada(updatedAnimal.getDataEntrada());
+                    //existingAnimal.setTipusAnimal(updatedAnimal.getTipusAnimal());
+                    existingAnimal.setTipusRaca(updatedAnimal.getTipusRaca());
+                    existingAnimal.setEstatSalut(updatedAnimal.getEstatSalut());
+                    existingAnimal.setEstatAnimal(updatedAnimal.getEstatAnimal());
+                    existingAnimal.setColor(updatedAnimal.getColor());
+                    existingAnimal.setEdat(updatedAnimal.getEdat());
+                    existingAnimal.setPes(updatedAnimal.getPes());
+                    existingAnimal.setMida(updatedAnimal.getMida());
+                    existingAnimal.setSexe(updatedAnimal.getSexe());
+                    existingAnimal.setEsterilitzat(updatedAnimal.getEsterilitzat());
+                    existingAnimal.setVacunat(updatedAnimal.getVacunat());
+                    existingAnimal.setXip(updatedAnimal.getXip());
+                    existingAnimal.setComportament(updatedAnimal.getComportament());
+                    existingAnimal.setNecessitats(updatedAnimal.getNecessitats());
+                    existingAnimal.setFotoUrl(updatedAnimal.getFotoUrl());
+                    existingAnimal.setAlt(updatedAnimal.getAlt());
+                    existingAnimal.setObservacions(updatedAnimal.getObservacions());
+                    existingAnimal.setRip(updatedAnimal.getRip());
+
+                    //Actualitza la relació si es neceta
+                    return ResponseEntity.ok(animalsRepository.save(existingAnimal));
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -122,20 +173,21 @@ public class AnimalsController {
                     if (partialAnimal.getTipusAnimal() != null) animal.setTipusAnimal(partialAnimal.getTipusAnimal());
                     if (partialAnimal.getTipusRaca() != null) animal.setTipusRaca(partialAnimal.getTipusRaca());
                     if (partialAnimal.getEstatSalut() != null) animal.setEstatSalut(partialAnimal.getEstatSalut());
-                    if (partialAnimal.getIdEstatAnimal() != null) animal.setIdEstatAnimal(partialAnimal.getIdEstatAnimal());
-                    if (partialAnimal.getDataAdopcio() != null) animal.setDataAdopcio(partialAnimal.getDataAdopcio());
-                    if (partialAnimal.getDataApadrinament() != null) animal.setDataApadrinament(partialAnimal.getDataApadrinament());
+                    if (partialAnimal.getEstatAnimal() != null) animal.setEstatAnimal(partialAnimal.getEstatAnimal());
                     if (partialAnimal.getColor() != null) animal.setColor(partialAnimal.getColor());
                     if (partialAnimal.getEdat() != null) animal.setEdat(partialAnimal.getEdat());
+                    if (partialAnimal.getPes() != null) animal.setPes(partialAnimal.getPes());
                     if (partialAnimal.getMida() != null) animal.setMida(partialAnimal.getMida());
-                    if (partialAnimal.getDataNaixament() != null) animal.setDataNaixament(partialAnimal.getDataNaixament());
+                    if (partialAnimal.getSexe() != null) animal.setSexe(partialAnimal.getSexe());
                     if (partialAnimal.getEsterilitzat() != null) animal.setEsterilitzat(partialAnimal.getEsterilitzat());
                     if (partialAnimal.getVacunat() != null) animal.setVacunat(partialAnimal.getVacunat());
                     if (partialAnimal.getXip() != null) animal.setXip(partialAnimal.getXip());
                     if (partialAnimal.getComportament() != null) animal.setComportament(partialAnimal.getComportament());
                     if (partialAnimal.getNecessitats() != null) animal.setNecessitats(partialAnimal.getNecessitats());
                     if (partialAnimal.getFotoUrl() != null) animal.setFotoUrl(partialAnimal.getFotoUrl());
+                    if (partialAnimal.getAlt() != null) animal.setAlt(partialAnimal.getAlt());
                     if (partialAnimal.getObservacions() != null) animal.setObservacions(partialAnimal.getObservacions());
+                    if (partialAnimal.getRip() != null) animal.setRip(partialAnimal.getRip());
                     return ResponseEntity.ok(animalsRepository.save(animal));
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());

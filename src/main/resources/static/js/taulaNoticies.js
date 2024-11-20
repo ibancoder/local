@@ -91,14 +91,15 @@ let eliminarNoticia = async (idNoticia) => {
         amagarFormulari();
       } else {
         alert(
-          "No s'ha pogut eliminar la notícia. Si us plau, intenta-ho més tard."
-        );
+          "No s'ha pogut eliminar la notícia. Si us plau, intenta-ho més tard.");
       }
     } catch (error) {
       console.error("Error en la petició:", error);
     }
   }
 };
+
+
 /**
  * ***** EditarNotícia *****
  * Mètode GET de l'API per obtenir la informació d'una notícia per editar-la.

@@ -2,15 +2,20 @@
 //const baseUrl = "http://178.156.55.174:1234"; // Per la web
 const baseUrl = "http://localhost:1234"; // Per treballar en local
 
-// Botó per registrar la notícia.
-let boto = document.getElementById("btnRegistre");
-/**
- * Afegim un esdeveniment "click" al botó de registre per evitar que el formulari es
- * carregui de manera predeterminada i per cridar la funció "registrarNoticies".
- */
-boto.addEventListener("click", (event) => {
-  event.preventDefault();
-  registrarNoticies();
+document.addEventListener("DOMContentLoaded", () => {
+  let botoNoticia = document.getElementById("btnRegistreNoticia");  
+  if (botoNoticia) {
+    /**
+     * Afegim un esdeveniment "click" al botó de registre per evitar que el formulari es
+     * carregui de manera predeterminada i per cridar la funció "registrarNoticies".
+     */
+    botoNoticia.addEventListener("click", (event) => {
+      event.preventDefault();
+      registrarNoticies();
+    });
+  } else {
+    console.error("El botó amb 'btnRegistreNoticia' no s'ha trobat al DOM");
+  }
 });
 
 /**
@@ -40,7 +45,7 @@ let registrarNoticies = async () => {
     !urlNoticia ||
     !nomBoto
   ) {
-    alert("Tots els camps són obligatoris.");
+    alert("Tots els camps són obligatoris!");
     return;
   }
 
@@ -83,7 +88,7 @@ let registrarNoticies = async () => {
 
   /**
    * Funció per netejar el formulari després de registrar una notícia correctament.
-   * @function
+   * @function netejarFormulari
    */
   function netejarFormulari() {
     document.getElementById("dataNoticia").value = "";

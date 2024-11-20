@@ -1,0 +1,56 @@
+main {
+    background-color: #F2F5FD;
+}
+
+.fs-4 {
+    margin-left: 3%;
+}
+
+.tipusAnimal {
+    margin-bottom: 6%;
+    padding: 4%;
+    padding-bottom: 0%;
+    border-radius: 5%;
+    background-image: url('../imatges/fondo.png');
+    background-size: contain;
+    text-decoration: none;
+    transition: transform 0.2s;
+
+    img {
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 5%;
+    }
+
+    h2 {
+        margin-top: 1%;
+        display: inline-block;
+    }
+}
+
+.tipusAnimal:hover {
+    transform: scale(1.05);
+}
+
+
+/***RESPONSIVE***/
+
+/** Tablets **/
+@media (min-width: 768px) {
+    #tipusAnimals {
+        margin-top: 1%;
+    }
+}
+
+/** PC **/
+@media (min-width: 992px) {
+    .tipusAnimal {
+        width: 30% !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .tipusAnimal {
+        width: 20% !important;
+        padding-top: 2%;
+    }
+}

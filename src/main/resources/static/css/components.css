@@ -1,267 +1,277 @@
 /*** Estil Lila ***/
 .lila {
-    /*Botons, enllaços, i */
-    button,
-    .aBtn {
-        background: #887bff;
-        border-color: #b6aeff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-        color: white;
-    }
+  /*Botons, enllaços, i */
+  button,
+  .aBtn {
+      background: #887bff;
+      border-color: #b6aeff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      color: white;
+  }
 
-    button:hover,
-    .aBtn:hover {
-        background: #b6aeff;
-        border-color: #887bff;
-        box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
-        color: white;
-    }
+  button:hover,
+  .aBtn:hover {
+      background: #b6aeff;
+      border-color: #887bff;
+      box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
+      color: white;
+  }
 
-    a {
-        color: #887BFF;
-    }
+  a {
+      color: #887BFF;
+  }
 
-    a:hover {
-        color: #b6aeff;
-    }
+  a:hover {
+      color: #b6aeff;
+  }
 
-    i {
-        color: #887BFF;
-    }
+  i {
+      color: #887BFF;
+  }
 
-    /*Formularis*/
-    .form {
-        label::after {
-            content: " *";
-            color: #887BFF;
-        }
+  /*Formularis*/
+  .form {
+      label::after {
+          content: " *";
+          color: #887BFF;
+      }
 
-        input[required],
-        textarea[required] {
-            border-left: 1px solid #887BFF;
-        }
+      input[required],
+      textarea[required] {
+          border-left: 1px solid #887BFF;
+      }
 
-        input:focus,
-        textarea:focus {
-            border-color: #887BFF !important;
-            box-shadow: 0 0 0 0.25rem rgba(136, 123, 255, 0.35) !important;
-        }
-    }
+      input:focus,
+      textarea:focus {
+          border-color: #887BFF !important;
+          box-shadow: 0 0 0 0.25rem rgba(136, 123, 255, 0.35) !important;
+      }
+  }
 }
 
 /*Fons*/
 .fondoLila {
-    background-color: #E4E1FF;
-    box-shadow: 0 0 10px rgba(135, 123, 255, 0.5);
+  background-color: #E4E1FF;
+  box-shadow: 0 0 10px rgba(135, 123, 255, 0.5);
+
+  .h2Color {  /******************************************************************AQUI**************************/
+      background-color: rgba(228, 225, 255, 0.3);
+      color: #5A48FF;
+  }
 }
 
 
 /*** Estil rosa ***/
 .rosa {
-    a {
-        background-color: #FF9F94;
-        border-color: #FF9F94;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
-    }
+  a {
+      background-color: #FF9F94;
+      border-color: #FF9F94;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+  }
 
-    a:hover {
-        background-color: #FFB6AE;
-        box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
-    }
-    
-    .btnA {
-        background: none;
-        border: none;
-        padding: 0;
-        text-decoration: underline;
-        cursor: pointer;
-        color: #FF887B;
-    }
+  a:hover {
+      background-color: #FFB6AE;
+      box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .btnA {
+      background: none;
+      border: none;
+      padding: 0;
+      text-decoration: underline;
+      cursor: pointer;
+      color: #FF887B;
+  }
 
-    i {
-        color: #FF887B;
-    }
+  i {
+      color: #FF887B;
+  }
 
-    .sombraRosa {
-        box-shadow: 0 0 10px rgba(255, 136, 123, 0.6);
-    }
+  .sombraRosa {
+      box-shadow: 0 0 10px rgba(255, 136, 123, 0.6);
+  }
 
-    /*Formularis*/
-    .form {
-        label::after {
-            content: " *";
-            color: #FF887B;
-        }
+  /*Formularis*/
+  .form {
+      label::after {
+          content: " *";
+          color: #FF887B;
+      }
 
-        input[required],
-        textarea[required] {
-            border-left: 1px solid #FF887B;
-        }
+      input[required],
+      textarea[required] {
+          border-left: 1px solid #FF887B;
+      }
 
-        input:focus,
-        textarea:focus {
-            border-color: #FF887B !important;
-            box-shadow: 0 0 0 0.25rem rgba(255, 136, 123, 0.25) !important;
-        }
-    }
+      input:focus,
+      textarea:focus {
+          border-color: #FF887B !important;
+          box-shadow: 0 0 0 0.25rem rgba(255, 136, 123, 0.25) !important;
+      }
+  }
 }
 
 /*Fons*/
 .fondoRosa {
-    background-color: #FFE4E1;
-    box-shadow: 0 0 10px rgba(255, 136, 123, 0.6);
+  background-color: #FFE4E1;
+  box-shadow: 0 0 10px rgba(255, 136, 123, 0.6);
+
+  .h2Color { /******************************************************************AQUI**************************/
+      color: #d43c2c;
+      background-color: rgba(255, 228, 225, 0.5)
+  }
 }
 
 /*** HEADER ***/
 #header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
-    ul {
-        list-style-type: none;
-        justify-content: space-around;
-        font-size: large;
-        font-weight: bold;
-    }
+  ul {
+      list-style-type: none;
+      justify-content: space-around;
+      font-size: large;
+      font-weight: bold;
+  }
 }
 
 /*** BANNER ***/
 .banner {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 
-    button {
-        padding: 0.8%;
-        margin-right: 5%;
-    }
+  button {
+      padding: 0.8%;
+      margin-right: 5%;
+  }
 }
 
 .textBanner {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 
 /*LOGIN USUARI*/
 #login {
-    display: none;
-    position: absolute;
-    border: 2px solid #887BFF;
-    border-radius: 8px;
-    background-color: #887BFF;
-    padding-top: 15px;
-    z-index: 100;
-    width: 350px;
-    right: 0;
+  display: none;
+  position: absolute;
+  border: 2px solid #887BFF;
+  border-radius: 8px;
+  background-color: #887BFF;
+  padding-top: 15px;
+  z-index: 100;
+  width: 350px;
+  right: 0;
 
-    .form {
-        background-color: black;
-        margin-top: -40px;
-    }
+  .form {
+      background-color: black;
+      margin-top: -40px;
+  }
 }
 
 /*móvil*/
 .btnUsuari:focus+#login,
 .btnUsuari:active+#login {
-    display: block;
+  display: block;
 }
 
-/*web*/ /*------------------------------------------------------------------AQUI------*/
+/*web*/
 .btnUsuari:hover + #login,
 .btnUsuari:focus + #login,
 #login:hover,
 #login:focus-within {  /* Es manter el menu obert mentres s'interactua. */
-    display: block;
+  display: block;
 }
 
 /*** PORTADA ***/
 .portada {
-    background-image: url('../imatges/perro.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-image: url('../imatges/perro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
-    >div {
-        background-color: rgba(255, 228, 225, 0.7);
-    }
+  >div {
+      background-color: rgba(255, 228, 225, 0.7);
+  }
 }
 
 /*** MENU ***/
 .navbar {
-    background-color: rgba(255, 228, 225, 0.5);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 228, 225, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
-    >div:first-child {
-        margin: 0 auto;
-    }
+  >div:first-child {
+      margin: 0 auto;
+  }
 }
 
 .nav-item {
-    padding: 3%;
+  padding: 3%;
 
-    span {
-        padding: 5%;
-    }
+  span {
+      padding: 5%;
+  }
 
-    span:hover {
-        box-shadow: 0 0 10px #FF9F94;
-        color: #FF887B;
-    }
+  span:hover {
+      box-shadow: 0 0 10px #FF9F94;
+      color: #FF887B;
+  }
 }
 
 #espaiNav {
-    height: 300px;
+  height: 300px;
 }
 
 /*** FOOTER ***/
 footer {
-    border: 2px solid #887BFF;
+  border: 2px solid #887BFF;
 
-    img {
-        box-shadow: 0 0 50px #887BFF;
-    }
+  img {
+      box-shadow: 0 0 50px #887BFF;
+  }
 }
 
 .links {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 
 /*** FORMULARIS ***/
 .form {
-    background-color: #f2f5fd;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1100px;
-    padding: 50px;
-    padding-bottom: 50px;
-    margin: 0 auto;
+  background-color: #f2f5fd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  padding: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
 
-    button {
-        padding: 2%;
-        border-radius: 9%;
-        width: 100px;
-    }
+  button {
+      padding: 2%;
+      border-radius: 9%;
+      width: 100px;
+  }
 }
 
-/*** Botó per imatges ***********************************************************************************************************/
+/*** Botó per imatges ***/
 .botoImatge {
-    border: none; 
-    background-color: #F2F5FD;
-    padding: 0% !important;
-    width: 50px !important;
-    
-    .imgMostrar {
-        width: 27px;
-    }
+  border: none; 
+  background-color: #F2F5FD;
+  padding: 0% !important;
+  width: 50px !important;
+  
+  .imgMostrar {
+      width: 27px;
+  }
 
-    .imgEliminar {
-        width: 20px;
-    }
+  .imgEliminar {
+      width: 20px;
+  }
 }
 
 
@@ -269,71 +279,71 @@ footer {
 
 /** Tablets **/
 @media (min-width: 576px) {
-    .btnUsuari { 
-        padding: 2%;
-        margin-right: 5%;
-        border-radius: 9%;
-        width: 100px;
-    }
+  .btnUsuari { 
+      padding: 2%;
+      margin-right: 5%;
+      border-radius: 9%;
+      width: 100px;
+  }
 
-    .textBanner {
-        padding-top: 3%;
-    }
+  .textBanner {
+      padding-top: 3%;
+  }
 
-    #login { /*------------------------------------------------------------------AQUI------*/
-        right: 1.5%;
-    }
+  #login { 
+      right: 1.5%;
+  }
 }
 
 @media (min-width: 768px) {
-    .textBanner {
-        padding-top: 2%;
-    }
+  .textBanner {
+      padding-top: 2%;
+  }
 
-    .nav-item {
-        padding: 2%;
-        font-size: larger;
-    }
+  .nav-item {
+      padding: 2%;
+      font-size: larger;
+  }
 
-    #espaiNav {
-        height: 400px;
-    }
+  #espaiNav {
+      height: 400px;
+  }
 }
 
 /** PC **/
 @media (min-width: 992px) {
-    #espaiNav {
-        height: 260px;
-    }
+  #espaiNav {
+      height: 260px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .textBanner {
-        padding-top: 1%;
-        text-align: start;
-    }
+  .textBanner {
+      padding-top: 1%;
+      text-align: start;
+  }
 
-    .nav-item {
-        padding: 1%;
-    }
+  .nav-item {
+      padding: 1%;
+  }
 }
 
 /** PC pantalles grans **/
 @media (min-width: 2050px) {
-    body,
-    a {
-        font-size: x-large !important;
-    }
+  body,
+  a {
+      font-size: x-large !important;
+  }
 
-    h2 {
-        font-size: xx-large !important;
-    }
+  h2 {
+      font-size: xx-large !important;
+  }
 
-    h1 {
-        font-size: xxx-large !important;
-    }
+  h1 {
+      font-size: xxx-large !important;
+  }
 
-    #espaiNav {
-        height: 350px;
-    }
+  #espaiNav {
+      height: 350px;
+  }
 }
