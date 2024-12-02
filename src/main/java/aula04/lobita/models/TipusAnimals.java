@@ -1,26 +1,23 @@
 package aula04.lobita.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
-@Table(name = "tipusanimal")
+@Table(name = "tipusanimals")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class TipusAnimal {
+public class TipusAnimals {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idtipusanimal", nullable = false)
     private Integer idTipusAnimal;
 
     @Column(name = "nomtipusanimal", nullable = false)
-    private String nomtipusanimal;
+    private String nomTipusAnimal;
 
     @Column(name="foto", nullable = false)
     private String foto;
@@ -28,13 +25,9 @@ public class TipusAnimal {
     @Column(name="alt", nullable = false)
     private String alt;
 
-   /* @OneToMany(mappedBy = "tipusAnimal")
-    private List<Animals> animals;
-    */
-
-    public TipusAnimal(String nomtipusanimal, String foto, String alt){
+    public TipusAnimals(String nomTipusAnimal, String foto, String alt){
         super();
-        this.nomtipusanimal = nomtipusanimal;
+        this.nomTipusAnimal = nomTipusAnimal;
         this.foto = foto;
         this.alt = alt;
     }

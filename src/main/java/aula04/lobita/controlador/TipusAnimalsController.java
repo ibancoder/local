@@ -1,51 +1,72 @@
 package aula04.lobita.controlador;
-
-import aula04.lobita.models.TipusAnimal;
-import aula04.lobita.repositori.TipusAnimalRepository;
+import aula04.lobita.models.TipusAnimals;
+import aula04.lobita.repositori.TipusAnimalsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class TipusAnimalController {
+public class TipusAnimalsController {
 
-    TipusAnimalRepository tipusAnimalRepository;
-    Logger logger = LoggerFactory.getLogger(TipusAnimalController.class);
+    private final TipusAnimalsRepository tipusAnimalsRepository;
+    private static final Logger logger = LoggerFactory.getLogger(TipusAnimalsController.class);
 
-    public TipusAnimalController(TipusAnimalRepository tipusAnimalRepository){
-        this.tipusAnimalRepository = tipusAnimalRepository;
-    }
-
-    @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500", "http://localhost:8080"})
-    @PostMapping("/api/creartipusanimal")
-    public void crearTipusAnimal(){
-
-        TipusAnimal tipusanimal1 = new TipusAnimal(1,"Gossos","img/gos.jpg","foto de gossos");
-        TipusAnimal tipusanimal2 = new TipusAnimal(2,"Gats", "img/gat.jpg", "foto de gats");
-        TipusAnimal tipusanimal3 = new TipusAnimal(3,"Ocells", "img/Ocells.jpg", "foto de ocells");
-        TipusAnimal tipusanimal4 = new TipusAnimal(4,"Altres", "img/altres.jpg","foto d'altres");
-
-        tipusAnimalRepository.save(tipusanimal1);
-        tipusAnimalRepository.save(tipusanimal2);
-        tipusAnimalRepository.save(tipusanimal3);
-        tipusAnimalRepository.save(tipusanimal4);
+    /**
+     * Controlador REST per gestionar els tipus d'animals de l'aplicació.
+     * @param tipusAnimalsRepository Repositori per accedir als tipus d'animals.
+     */
+    public TipusAnimalsController(TipusAnimalsRepository tipusAnimalsRepository) {
+        this.tipusAnimalsRepository = tipusAnimalsRepository;
     }
 
 
+    /**
+     * Mètode que respon a una petició GET on crea i guarda tipus d'animals predeterminats a la base de dades.
+     * Només en ús per inicialitzar la base de dades en el desenvolupament.
+     */
+    @Profile("dev") // Només disponible en el perfil "dev"
+    @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
+    @GetMapping("/api/crearTipusAnimal")
+    public void crearTipusAnimal() {
+        TipusAnimals tipusAnimal1 = new TipusAnimals("Gossos", "gossos.jpeg", "Imatges de gossos");
+        TipusAnimals tipusAnimal2 = new TipusAnimals("Gats", "gats.jpeg", "Imatges de gats");
+        TipusAnimals tipusAnimal3 = new TipusAnimals("Ocells", "ocells.jpeg", "Imatge d'ocells");
+        tipusAnimalsRepository.save(tipusAnimal1);
+        tipusAnimalsRepository.save(tipusAnimal2);
+        tipusAnimalsRepository.save(tipusAnimal3);
+    }
+
+
+    /**
+     * Mètode que respon a una petició GET per mostrar i visualitzar els tipus d'animals a l'aplicació.
+     * @return La llista de tipus d'animals.
+     */
+    @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
+    @GetMapping("/api/tipusAnimals")
+    public List<TipusAnimals> getTipusAnimals() {
+        return tipusAnimalsRepository.findAll();
+    }
+
+
+    /**
+     * Mètode que respon a una petició GET perquè retorni un tipus d'animal per ID.
+     * @param idTipusAnimal ID del tipus d'animal.
+     * @return un ResponseEntity que pot ser un error si no troba el tipus d'animal.
+     */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/tipusAnimal/{idTipusAnimal}")
-    public ResponseEntity<TipusAnimal> getTipusAnimal(@PathVariable Integer idTipusAnimal) {
-        Optional<TipusAnimal> opt = tipusAnimalRepository.findById(idTipusAnimal);
+    public ResponseEntity<TipusAnimals> getTipusAnimal(@PathVariable Integer idTipusAnimal) {
+        Optional<TipusAnimals> opt = tipusAnimalsRepository.findById(idTipusAnimal);
         if (opt.isEmpty()) {
             return ResponseEntity.badRequest().build();
         } else {
@@ -63,23 +84,23 @@ public class TipusAnimalController {
      */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @PostMapping("/api/tipusAnimals")
-    public ResponseEntity<TipusAnimal> guardarTipusAnimal(
+    public ResponseEntity<TipusAnimals> guardarTipusAnimal(
             @RequestParam("nomTipusAnimal") String nomTipusAnimal,
             @RequestParam("foto") MultipartFile foto,
             @RequestParam("alt") String alt){
 
         //Foto
         if (foto.isEmpty()){
-            return ResponseEntity.badRequest().body(new TipusAnimal());
+            return ResponseEntity.badRequest().body(new TipusAnimals());
         }
         logger.info("Nom imatge: " + foto.getOriginalFilename());
         logger.info("Alt imatge: " + alt);
         logger.info("Mida imatge: " + foto.getSize() + " bytes");
 
         //Ruta per guardar imatges en el servidor.
-        //String ruta = "/tmp/";
+        String ruta = "/tmp/";
         //Ruta per guardar imatges en proves en local.
-        String ruta = "E:/Cursos Udemy/Universidad_Java/Practicas/lobita/src/main/resources/static/imatges";
+        //String ruta = "E:/Cursos Udemy/Universidad_Java/Practicas/lobita/src/main/resources/static/imatges";
 
         try {
             Path rutaCompleta = Paths.get(ruta, foto.getOriginalFilename());
@@ -92,8 +113,8 @@ public class TipusAnimalController {
         }
 
         //Guardem els tipus d'Animals en la BBDD
-        TipusAnimal tipusAnimals = new TipusAnimal(nomTipusAnimal, foto.getOriginalFilename(), alt);
-        tipusAnimalRepository.save(tipusAnimals);
+        TipusAnimals tipusAnimals = new TipusAnimals(nomTipusAnimal, foto.getOriginalFilename(), alt);
+        tipusAnimalsRepository.save(tipusAnimals);
         return ResponseEntity.status(HttpStatus.CREATED).body(tipusAnimals);
     }
 
@@ -105,11 +126,11 @@ public class TipusAnimalController {
      */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @PutMapping("/api/tipusAnimals")
-    public ResponseEntity<TipusAnimal> actualitzarTipusAnimal(@RequestBody TipusAnimal tipusAnimal) {
-        if (tipusAnimal.getIdTipusAnimal() == null || !tipusAnimalRepository.existsById(tipusAnimal.getIdTipusAnimal())) {
+    public ResponseEntity<TipusAnimals> actualitzarTipusAnimal(@RequestBody TipusAnimals tipusAnimal) {
+        if (tipusAnimal.getIdTipusAnimal() == null || !tipusAnimalsRepository.existsById(tipusAnimal.getIdTipusAnimal())) {
             return ResponseEntity.badRequest().build();
         }
-        tipusAnimalRepository.save(tipusAnimal);
+        tipusAnimalsRepository.save(tipusAnimal);
         return ResponseEntity.ok(tipusAnimal);
     }
 
@@ -120,12 +141,11 @@ public class TipusAnimalController {
      */
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @DeleteMapping("/api/tipusAnimal/{idTipusAnimal}")
-    public ResponseEntity<TipusAnimal> deleteTipusAnimal(@PathVariable Integer idTipusAnimal) {
-        if (idTipusAnimal == null || !tipusAnimalRepository.existsById(idTipusAnimal)) {
+    public ResponseEntity<TipusAnimals> deleteTipusAnimal(@PathVariable Integer idTipusAnimal) {
+        if (idTipusAnimal == null || !tipusAnimalsRepository.existsById(idTipusAnimal)) {
             return ResponseEntity.badRequest().build();
         }
-        tipusAnimalRepository.deleteById(idTipusAnimal);
+        tipusAnimalsRepository.deleteById(idTipusAnimal);
         return ResponseEntity.noContent().build();
     }
-
 }

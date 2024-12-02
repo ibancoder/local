@@ -5,7 +5,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Noticies")
+@Table(name = "noticies")
 @Getter
 @Setter
 public class Noticies {
@@ -55,73 +55,4 @@ public class Noticies {
         this.activa = activa;
     }
 
-    public Integer getIdNoticia() {
-        return idNoticia;
-    }
-
-    public void setIdNoticia(Integer idNoticia) { this.idNoticia = idNoticia; }
-
-    public LocalDate getDataNoticia() {
-        return dataNoticia;
-    }
-
-    public void setDataNoticia(LocalDate dataNoticia) {
-        this.dataNoticia = dataNoticia;
-    }
-
-    public String getTitol() {
-        return titol;
-    }
-
-    public void setTitol(String titol) {
-        this.titol = titol;
-    }
-
-    public String getDescripcio() {
-        return descripcio;
-    }
-
-    public void setDescripcio(String descripcio) {
-        this.descripcio = descripcio;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public String getAlt() {
-        return alt;
-    }
-
-    public void setAlt(String alt) {
-        this.alt = alt;
-    }
-
-    public String getUrlNoticia() {
-        return urlNoticia;
-    }
-
-    public void setUrlNoticia(String urlNoticia) {
-        this.urlNoticia = urlNoticia;
-    }
-
-    public String getNomBoto() {
-        return nomBoto;
-    }
-
-    public void setNomBoto(String nomBoto) {
-        this.nomBoto = nomBoto;
-    }
-
-    public boolean isActiva() {
-        return activa;
-    }
-
-    public void setActiva(boolean activa) {
-        this.activa = activa;
-    }
 }

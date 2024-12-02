@@ -4,6 +4,7 @@ import aula04.lobita.models.Noticies;
 import aula04.lobita.repositori.NoticiesRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,7 @@ public class NoticiesController {
      * Mètode que respon a una petició GET on crea i guarda notícies predeterminades a la base de dades.
      * Només en ús per inicialitzar la base de dades en el desenvolupament.
      */
+    @Profile("dev") // Només disponible en el perfil "dev"
     @CrossOrigin(origins = {"http://localhost:1234", "http://178.156.55.174:8085", "http://localhost:5500"})
     @GetMapping("/api/crearNoticies")
     public void crearNoticies() {
@@ -95,7 +97,7 @@ public class NoticiesController {
             @RequestParam("nomBoto") String nomBoto,
             @RequestParam("activa") boolean activa) {
 
-        //Parseig de la data
+        //Parseig de la data de la notícia.
         LocalDate dataNoticiaParse;
         try {
             dataNoticiaParse = LocalDate.parse(dataNoticia);
@@ -111,9 +113,9 @@ public class NoticiesController {
         logger.info("Mida imatge: " + foto.getSize() + " bytes");
 
         //Ruta per guardar imatges en el servidor.
-        //String ruta = "/tmp/";
+        String ruta = "/tmp/";
         //Ruta per guardar imatges en proves en local.
-        String ruta = "E:/Cursos Udemy/Universidad_Java/Practicas/lobita/src/main/resources/static/imatges";
+        //String ruta = "E:/Cursos Udemy/Universidad_Java/Practicas/lobita/src/main/resources/static/imatges";
 
         try {
             Path rutaCompleta = Paths.get(ruta, foto.getOriginalFilename());
@@ -163,4 +165,3 @@ public class NoticiesController {
         return ResponseEntity.noContent().build();
     }
 }
-
