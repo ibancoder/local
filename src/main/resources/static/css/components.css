@@ -54,7 +54,7 @@
   background-color: #E4E1FF;
   box-shadow: 0 0 10px rgba(135, 123, 255, 0.5);
 
-  .h2Color {  /******************************************************************AQUI**************************/
+  .h2Color { 
       background-color: rgba(228, 225, 255, 0.3);
       color: #5A48FF;
   }
@@ -116,7 +116,7 @@
   background-color: #FFE4E1;
   box-shadow: 0 0 10px rgba(255, 136, 123, 0.6);
 
-  .h2Color { /******************************************************************AQUI**************************/
+  .h2Color { 
       color: #d43c2c;
       background-color: rgba(255, 228, 225, 0.5)
   }

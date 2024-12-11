@@ -1,0 +1,32 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["./js"],
+    "exclude": [
+      "./php",
+      "node_modules",
+      "./components",
+      "./css",
+      "./imatges",
+      "./jar",
+      "./*.html"
+    ],
+    "includePattern": ".+\\.(js)$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "destination": "./documentacio",
+    "recurse": true,
+    "template": "node_modules/minami",
+    "readme": "./README.md",
+    "encoding": "utf8"
+  },
+  "templates": {
+    "name": "ProjecteRefugiLobita",
+    "description": "Documentació de l'aplicació Refugi Lobita",
+    "footer": "Autors: [Eduard Iglesies], [Iban Cervera], [Esther Pont], [Susana Garcia]",
+    "license": "MIT"
+  }
+}

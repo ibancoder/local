@@ -1,9 +1,14 @@
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
+/**
+ * Funció que s'executa quan es carrega el DOM i crida a la funció.
+ * @function registrarNoticies
+ * @event DOMContentLoaded
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  let botoNoticia = document.getElementById("btnRegistreNoticia");  
+  let botoNoticia = document.getElementById("btnRegistreNoticia");
   if (botoNoticia) {
     /**
      * Afegim un esdeveniment "click" al botó de registre per evitar que el formulari es
@@ -20,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /**
  * Registra una notícia amb totes les seves dades mitjançant una petició POST a l'API.
- * @async Funció asincrònica, utilitza await dins la funció.
+ * @async 
  * @function registrarNoticies
  * @throws Mostra un missatge d'alerta si la validació de camps no es compleix o si la petició falla.
  */

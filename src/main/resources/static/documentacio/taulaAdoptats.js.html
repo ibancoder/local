@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>taulaAdoptats.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="global.html#event:DOMContentLoaded">DOMContentLoaded</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#EditarAdopci%25C3%25B3">EditarAdopció</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarApadrinament">actualitzarApadrinament</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarEstat">actualitzarEstat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarLoginSection">actualitzarLoginSection</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#amagarFormulari">amagarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#aplicarActualitzacio">aplicarActualitzacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificar">btnModificar</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAdoptat">btnModificarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAnimal">btnModificarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarApadrinat">btnModificarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarDonacio">btnModificarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarUsuari">btnModificarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#caixaAnimals">caixaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarApadrinat">canviarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarEstatAnimal">canviarEstatAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#carregarComponent">carregarComponent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#comprovarApadrinats">comprovarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#dadesAnimal">dadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarAnimal">editarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarApadrinat">editarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarDonacio">editarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarNoticia">editarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarTipusAnimal">editarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarUsuari">editarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAdoptat">eliminarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAlerta">eliminarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAnimal">eliminarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarApadrinat">eliminarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarDonacio">eliminarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarNoticia">eliminarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarTipusAnimal">eliminarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarUsuari">eliminarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#esborrarPass">esborrarPass</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#genere">genere</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarAdopcio">gestionarAdopcio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarApadrinacio">gestionarApadrinacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarDonacio">gestionarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#idUsuari">idUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#iniciarSessio">iniciarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAdoptats">llistaAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAnimals">llistaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaApadrinats">llistaApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaDonacions">llistaDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaNoticies">llistaNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaTipusAnimals">llistaTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaUsuaris">llistaUsuaris</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#login">login</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesAnimal">mostraDadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesUsuari">mostraDadesUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAdoptats">mostrarAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAlerta">mostrarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAnimal">mostrarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarApadrinats">mostrarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarBotons">mostrarBotons</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarDonacions">mostrarDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarFormulari">mostrarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarLogin">mostrarLogin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#netejarFormulari">netejarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#obtenirImatge">obtenirImatge</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#parametre">parametre</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#passVisible">passVisible</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarAnimals">registrarAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarNoticies">registrarNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarTipusAnimals">registrarTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarUsuari">registrarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#scrollFormulari">scrollFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#tancarSessio">tancarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarCamp">validarCamp</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarFormulari">validarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#verificarSessio">verificarSessio</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">taulaAdoptats.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*********************** URL *********************************/
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
+
+/**
+ * En carregar la pàgina fem la crida a la funció llistaAdoptats.
+ */
+window.onload = function () {
+  llistaAdoptats();
+};
+
+/**
+ * LLista dels animals adoptats en una taula HTML, incloent els botons d'edició i eliminació.
+ * Fa una petició GET a l'API per obtenir la llista dels animals adoptats i mostrar-los.
+ * @async
+ * @function llistaAdoptats
+ * @throws {Error} Mostra un error si la petició falla o la resposta no és vàlida.
+ * @returns {Promise&lt;void>} No retorna cap resultat, però actualitza la taula HTML amb les dades rebudes.
+ */
+let llistaAdoptats = async () => {
+  const peticio = await fetch(`${baseUrl}/api/adoptats`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  const adoptats = await peticio.json();
+
+  let contingutTaula = "";
+  for (let adoptat of adoptats) {
+    const idAnimal = adoptat.animals ? adoptat.animals.idAnimal : "No assignat";
+    const nomAnimal = adoptat.animals ? adoptat.animals.nomAnimal : "No assignat";
+
+    const idUsuari = adoptat.usuaris ? adoptat.usuaris.idUsuari : "No assignat";
+    const nomUsuari = adoptat.usuaris ? adoptat.usuaris.nomUsuari : "No assignat";
+
+    let contingutFila = `&lt;tr>
+        &lt;td>${adoptat.idRelacio}&lt;/td>  
+        &lt;td>${adoptat.dataAlta}&lt;/td>
+        &lt;td>${adoptat.dataBaixa}&lt;/td>        
+        &lt;td>${idAnimal}&lt;/td>  
+        &lt;td>${nomAnimal}&lt;/td>    
+        &lt;td>${idUsuari}&lt;/td>
+        &lt;td>${nomUsuari}&lt;/td>
+        &lt;td>&lt;i onClick="editarAdoptat(${adoptat.idRelacio})" class="material-icons button edit">edit&lt;/i>&lt;/td>
+        &lt;td>&lt;i onClick="eliminarAdoptat(${adoptat.idRelacio})" class="material-icons button delete">delete&lt;/i>&lt;/td>
+        &lt;/tr>`;
+    contingutTaula += contingutFila;
+  }
+  //Mostrem els animals adoptats a la taula
+  document.querySelector("#taula tbody").innerHTML = contingutTaula;
+};
+
+/**
+ * **** EliminarAnimalAdoptat *****
+ * Mètode DELETE de l'API per eliminar un animal adoptat. Un cop eliminat,
+ * actualitza la llista dels adoptats i amaga el formulari.
+ * @param {number} idRelacio - L'identificador de l'animal a eliminar.
+ * @function eliminarAdoptat
+ */
+let eliminarAdoptat = async (idRelacio) => {
+  console.log(idRelacio);
+  //Missatge de confirmació abans d'eliminar l'animal adoptat.
+  const confirmacio = window.confirm("Estàs segur que vols eliminar aquesta adopció?");
+  if (confirmacio) {
+    try {
+      const peticio = await fetch(`${baseUrl}/api/adoptat/${idRelacio}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      //Si l'eliminació té éxit, actualitza la llista i amaga el formulari.
+      if (peticio.ok) {
+        llistaAdoptats();
+        amagarFormulari();
+      } else {
+        alert("No s'ha pogut eliminar l'adopció. Si us plau, intenta-ho més tard.");
+      }
+    } catch (error) {
+      console.error("Error en la petició:", error);
+    }
+  }
+};
+
+/**
+ * ***** EditarAdopció *****
+ * Mètode GET de l'API per obtenir la informació d'una adopció mitjançant el ID per editar-lo.
+ * @async
+ * @function EditarAdopció
+ * @param {number} idRelacio - L'identificador de l'adopció a editar.
+ */
+let idEditar;
+let editarAdoptat = async (idRelacio) => {
+  mostrarFormulari();
+  scrollFormulari();
+
+  idEditar = idRelacio;
+  const peticio = await fetch(`${baseUrl}/api/adoptat/${idRelacio}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  const adoptat = await peticio.json();
+  document.getElementById("dataAlta").value = adoptat.dataAlta;
+  document.getElementById("dataBaixa").value = adoptat.dataBaixa;
+  document.getElementById("idAnimal").value = adoptat.animals.idAnimal;
+  document.getElementById("idUsuari").value = adoptat.usuaris.idUsuari;
+};
+
+/**
+ * En fer click al botó modificar aplicarà les actualitzacions.
+ */
+let btnModificarAdoptat = document.getElementById("btnModificarAdoptat");
+btnModificarAdoptat.addEventListener("click", (event) => {
+  event.preventDefault();
+  aplicarActualitzacio(idEditar);
+});
+
+/**
+ * ***** AplicarActualització *****
+ * Mètode PUT de l'API per aplicar els canvis en la modificació d'una adopció.
+ * Un cop actualitzada, neteja i amaga el formulari i actualitza la llista.
+ * @async
+ * @function aplicarActualitzacio
+ * @param {number} idRelacio - L'identificador de l'adopció a modificar.
+ */
+let aplicarActualitzacio = async (idRelacio) => {
+  let adoptat = {};
+  adoptat.idRelacio = idRelacio;
+  adoptat.dataAlta = document.getElementById("dataAlta").value;
+  adoptat.dataBaixa = document.getElementById("dataBaixa").value;
+  adoptat.animals = { idAnimal: parseInt(document.getElementById("idAnimal").value, 10), };
+  adoptat.usuaris = { idUsuari: parseInt(document.getElementById("idUsuari").value, 10), };
+
+  // Validació del valor de idAnimal abans d'enviar la sol.licitud.
+  if (!adoptat.animals.idAnimal || isNaN(adoptat.animals.idAnimal)) {
+    alert("L'animal és incorrecte.");
+    return;
+  }
+
+  // Validació del valor de idUsuari abans d'enviar la sol.licitud.
+  if (!adoptat.usuaris.idUsuari || isNaN(adoptat.usuaris.idUsuari)) {
+    alert("L'usuari és incorrecte.");
+    return;
+  }
+
+  /**
+   * Petició PUT a l'API.
+   */
+  try {
+    const peticio = await fetch(`${baseUrl}/api/adoptats`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(adoptat),
+    });
+
+    if (peticio.ok) {
+      llistaAdoptats();
+      netejarFormulari();
+      amagarFormulari();
+      // Si hi ha dataBaixa, canviar l'estat de l'animal
+      if (adoptat.dataBaixa) {
+        actualitzarEstat(adoptat);
+      }
+    } else {
+      alert("Error al modificar l'adopció.");
+    }
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    alert("Error de conexión o en el servidor.");
+  }
+};
+
+/**
+ * ***** ActualitzarEstat *****
+ * Actualitza l'estat d'un animal a "0" (lliure) quan una adopció té una data de baixa.
+ * Obté les dades completes de l'animal des del backend, modifica el camp `estatAnimal`
+ * i envia l'actualització mitjançant una petició PUT.
+ * 
+ * @async
+ * @function actualitzarEstat
+ * @param {Object} adoptat - Objecte que conté informació de l'adopció.
+ * @param {Object} adoptat.animals - Dades relacionades amb l'animal de l'adopció.
+ * @param {number} adoptat.animals.idAnimal - L'identificador únic de l'animal.
+ * @throws {Error} Si hi ha algun problema amb la connexió o la resposta del servidor.
+ */
+async function actualitzarEstat(adoptat) {
+  try {
+    // Obtenir l'animal complet
+    const resposta = await fetch(`${baseUrl}/api/animal/${adoptat.animals.idAnimal}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    if (!resposta.ok) {
+      throw new Error(
+        `Error ${resposta.status}: No s'ha pogut obtenir l'animal.`
+      );
+    }
+
+    // Convertir la resposta a JSON
+    const animal = await resposta.json();
+
+    // Actualitzar només el camp 'estat'
+    animal.estatAnimal = 0;
+
+    // Enviar l'animal actualitzat al backend
+    const peticio = await fetch(`${baseUrl}/api/animals`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(animal), // Enviar l'objecte complet
+    });
+
+    if (!peticio.ok) {
+      throw new Error(
+        `Error ${peticio.status}: No s'ha pogut actualitzar l'animal.`
+      );
+    }
+
+    alert("L'estat de l'animal s'ha actualitzat correctament!");
+
+  } catch (error) {
+    console.error("Error en la sol·licitud:", error);
+    alert("Error de connexió o en el servidor.");
+  }
+}
+
+/**
+ * Funció per fer visible el formulari ocult.
+ * @function mostrarFormulari
+ */
+function mostrarFormulari() {
+  let formulari = (document.getElementById("formulario").style.visibility =
+    "visible");
+}
+
+/**
+ * Funció per fer scroll i anar a la part del formulari en clicar el botó modificar.
+ * @function scrollFormulari
+ */
+function scrollFormulari() {
+  setTimeout(() => {
+    document
+      .getElementById("formulario")
+      .scrollIntoView({ behavior: "smooth" });
+  }, 200);
+}
+
+/**
+ * Funció per amagar el formulari visible.
+ * @function amagarFormulari
+ */
+function amagarFormulari() {
+  document.getElementById("formulario").style.visibility = "hidden";
+}
+
+/**
+ * Funció per netejar el formulari.
+ * @function netejarFormulari
+ */
+function netejarFormulari() {
+  document.getElementById("dataAlta").value = "";
+  document.getElementById("dataBaixa").value = "";
+  document.getElementById("idAnimal").value = "";
+  document.getElementById("idUsuari").value = "";
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Tue Dec 03 2024 10:56:12 GMT+0100 (hora estándar de Europa central) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

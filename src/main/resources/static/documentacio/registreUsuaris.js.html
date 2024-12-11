@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>registreUsuaris.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="global.html#event:DOMContentLoaded">DOMContentLoaded</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#EditarAdopci%25C3%25B3">EditarAdopció</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarApadrinament">actualitzarApadrinament</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarEstat">actualitzarEstat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarLoginSection">actualitzarLoginSection</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#amagarFormulari">amagarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#aplicarActualitzacio">aplicarActualitzacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificar">btnModificar</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAdoptat">btnModificarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAnimal">btnModificarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarApadrinat">btnModificarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarDonacio">btnModificarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarUsuari">btnModificarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#caixaAnimals">caixaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarApadrinat">canviarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarEstatAnimal">canviarEstatAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#carregarComponent">carregarComponent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#comprovarApadrinats">comprovarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#dadesAnimal">dadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarAnimal">editarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarApadrinat">editarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarDonacio">editarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarNoticia">editarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarTipusAnimal">editarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarUsuari">editarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAdoptat">eliminarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAlerta">eliminarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAnimal">eliminarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarApadrinat">eliminarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarDonacio">eliminarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarNoticia">eliminarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarTipusAnimal">eliminarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarUsuari">eliminarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#esborrarPass">esborrarPass</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#genere">genere</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarAdopcio">gestionarAdopcio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarApadrinacio">gestionarApadrinacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarDonacio">gestionarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#idUsuari">idUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#iniciarSessio">iniciarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAdoptats">llistaAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAnimals">llistaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaApadrinats">llistaApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaDonacions">llistaDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaNoticies">llistaNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaTipusAnimals">llistaTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaUsuaris">llistaUsuaris</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#login">login</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesAnimal">mostraDadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesUsuari">mostraDadesUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAdoptats">mostrarAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAlerta">mostrarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAnimal">mostrarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarApadrinats">mostrarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarBotons">mostrarBotons</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarDonacions">mostrarDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarFormulari">mostrarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarLogin">mostrarLogin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#netejarFormulari">netejarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#obtenirImatge">obtenirImatge</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#parametre">parametre</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#passVisible">passVisible</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarAnimals">registrarAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarNoticies">registrarNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarTipusAnimals">registrarTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarUsuari">registrarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#scrollFormulari">scrollFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#tancarSessio">tancarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarCamp">validarCamp</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarFormulari">validarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#verificarSessio">verificarSessio</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">registreUsuaris.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*********************** URL *********************************/
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
+
+//*** FORMULARI ***/
+const form = document.getElementById("formulari");
+
+//*** INPUTS ***/
+const nom = document.getElementById("inputNom");
+const cognoms = document.getElementById("inputCognoms");
+const email = document.getElementById("inputEmail");
+const telefon = document.getElementById("inputTelefon");
+const nomUsuari = document.getElementById("inputNomUsuari");
+const password = document.getElementById("inputPassword");
+const password2 = document.getElementById("inputPassword2");
+
+//*** REGEX **/
+const nomCognomRegex = /[A-Za-zÀ-ÿ\s]+/;
+const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+const telefonRegex = /^\d{9}$/;
+const userNameRegex = /^[a-zA-Z0-9\_\-]{4,16}$/;
+const passwordPattern =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&amp;])([A-Za-z\d$@$!%*?&amp;]|[^ ]){8,15}$/;
+
+//*** BOOLEAN **/
+const estatValidacionsCamp = {
+  nom: false,
+  cognoms: false,
+  email: false,
+  telefon: false,
+  nomUsuari: false,
+  password: false,
+};
+
+/**
+ * Inicia el registre en carregar la pàgina, associant els esdeveniments de validació a cada camp del formulari.
+ * @function validarFormulari
+ * @event DOMContentLoaded
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    validarFormulari();
+  });
+
+  //Validem nom, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
+  nom.addEventListener("input", () => {
+    validarCamp(
+      nomCognomRegex,
+      nom,
+      "Nom invàlid: només permés lletres i espais."
+    );
+  });
+
+  //Validem cognoms, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
+  cognoms.addEventListener("input", () => {
+    validarCamp(
+      nomCognomRegex,
+      cognoms,
+      "Cognoms invàlids: només permés lletres i espais."
+    );
+  });
+
+  //Validem email, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
+  email.addEventListener("input", () => {
+    validarCamp(emailRegex, email, "Email amb format: name@exemple.com");
+  });
+
+  //Validem telèfon, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
+  telefon.addEventListener("input", () => {
+    validarCamp(telefonRegex, telefon, "Telèfon només 9 dígits.");
+  });
+
+  //Validem usuari, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
+  nomUsuari.addEventListener("input", () => {
+    validarCamp(
+      userNameRegex,
+      nomUsuari,
+      "Usuari conté mínim 4 i màxim 12 caràcters."
+    );
+  });
+
+  //Validem password, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
+  password.addEventListener("input", () => {
+    validarCamp(
+      passwordPattern,
+      password,
+      "Password conté mín 8 i máx 15 caràcters, inclou lletra majúscula, lletra minúscula, número i caràcter especial."
+    );
+  });
+
+  //Validem que els dos passwords siguin iguals.
+  password2.addEventListener("input", () => {
+    if (password.value !== password2.value) {
+      password2.setCustomValidity("Les contrasenyes no coincideixen.");
+    } else {
+      password2.setCustomValidity("");
+    }
+  });
+});
+
+/**
+ * Funció que valida un camp mitjançant una expressió regular.
+ * Utilitzem una expressió regular per fer la vacidació, el camp del imput i el missatge.
+ * Si els camps es validen, eliminem l'alerta (missatges) i posem els camps validats a true.
+ * Si els camps no es validen, mostrem alerta (missatge) i deixem el focus al imput.
+ * @param {RegExp} regularExpression Expressió regular per validar.
+ * @param {HTMLInputElement} camp Camp que es vol validar.
+ * @param {string} missatge Missatge d'error en cas de fallada.
+ * @function validarCamp
+ */
+function validarCamp(regularExpression, camp, missatge) {
+  const validarCamp = regularExpression.test(camp.value);
+  if (validarCamp) {
+    eliminarAlerta(camp.parentElement);
+    estatValidacionsCamp[camp.name] = true;
+    return;
+  } else {
+    mostrarAlerta(camp.parentElement, missatge);
+    camp.focus();
+  }
+}
+
+/**
+ * Funció per mostrar els alerts (missatges) en cas de validació fallida.
+ * Eliminem alerta que es repeteix, creem un div, afegim la classe alerta, mostrem missatge.
+ * @param {HTMLElement} referencia Element on es mostrarà el missatge.
+ * @param {string} missatge Text del missatge d'error.
+ * @function mostrarAlerta
+ */
+function mostrarAlerta(referencia, missatge) {
+  eliminarAlerta(referencia);
+  const alertaDiv = document.createElement("div");
+  alertaDiv.classList.add("alerta");
+  alertaDiv.textContent = missatge;
+  referencia.appendChild(alertaDiv);
+}
+
+/**
+ * Funció per eliminar els missatges d'error si existeix.
+ * @param{HTMLElement} referencia Element on es troba el missatge d'error.
+ * @function eliminarAlerta
+ */
+function eliminarAlerta(referencia) {
+  const alerta = referencia.querySelector(".alerta");
+  if (alerta) {
+    alerta.remove();
+  }
+}
+
+/**
+ * Valida el formulari abans d'enviar-lo. Si tots els camps són vàlids, crida la funció per registrar l'usuari.
+ * Si algun camp no és vàlid, mostra un missatge a la consola indicant que el formulari és incorrecte.
+ * @function validarFormulari
+ */
+function validarFormulari() {
+  if (
+    estatValidacionsCamp.nom &amp;&amp;
+    estatValidacionsCamp.cognoms &amp;&amp;
+    estatValidacionsCamp.email &amp;&amp;
+    estatValidacionsCamp.telefon &amp;&amp;
+    estatValidacionsCamp.nomUsuari &amp;&amp;
+    estatValidacionsCamp.password
+  ) {
+    registrarUsuari();
+  } else {
+    console.log("Formulari incorrecte");
+  }
+}
+
+/**
+ * Realitza una petició POST a la API per registrar l'usuari.
+ * Si l'usuari ja existeix, mostrarà un error. En cas de registre exitós, netejarà el formulari i mostrarà el login.
+ * @function registrarUsuari
+ */
+let registrarUsuari = async () => {
+  let formData = new FormData();
+  formData.append("nom", nom.value);
+  formData.append("cognoms", cognoms.value);
+  formData.append("email", email.value);
+  formData.append("telefon", telefon.value);
+  formData.append("nomUsuari", nomUsuari.value);
+  formData.append("password", password.value);
+
+  //Crear la petició POST a la api/usuaris.
+  try {
+    const peticio = await fetch(`${baseUrl}/api/usuaris`, {
+      method: "POST",
+      body: formData,
+    });
+
+    if (peticio.status === 409) {
+      const errorMessage = await peticio.text();
+      alert(errorMessage);
+      return;
+    }
+
+    if (!peticio.ok) {
+      const errorMessage = await peticio.text();
+      console.log("Error del servidor: ", errorMessage);
+      throw new Error(`Error ${peticio.status}: ${errorMessage}`);
+    }
+
+    // Resposta de la petició
+    const resposta = await peticio.json();
+    alert("Usuari registrat correctament!");
+    netejarFormulari();
+    mostrarLogin();
+  } catch (error) {
+    console.error("Error durant la petició:", error);
+    alert("Hi ha hagut un error en registrar l'usuari.");
+  }
+};
+
+/**
+ * Funció per netejar tots els camps del formulari, deixant-los en blanc i 
+ * desmarcant els checks.
+ * @function netejarFormulari
+ */
+function netejarFormulari() {
+  document.getElementById("inputNom").value = "";
+  document.getElementById("inputCognoms").value = "";
+  document.getElementById("inputEmail").value = "";
+  document.getElementById("inputTelefon").value = "";
+  document.getElementById("inputNomUsuari").value = "";
+  document.getElementById("inputPassword").value = "";
+  document.getElementById("inputPassword2").value = "";
+  document.getElementById("proteccioDades").checked = false;
+}
+
+/**
+ * Funció per mostrar el login de nou per iniciar sessió.
+ * @function mostrarLogin
+ */
+function mostrarLogin() {
+  const divLogin = document.getElementById("login");
+  console.log("divlogin:" + divLogin);
+  //Mostrar la div
+  divLogin.style.display = "block";
+  //Desplaçar cap a dal
+  divLogin.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/**
+ * Funció per esborrar el password en clicar a l'icona de la paperera.
+ * @param {string} inputId ID de l'input de contrasenya.
+ * @function esborrarPass
+ */
+function esborrarPass(inputId) {
+  const inputField = document.getElementById(inputId);
+  inputField.value = "";
+}
+
+/**
+ * Funció per mostrar/amagar el password amb l'icona de l'ull.
+ * @param {string} inputId ID de l'input de contrasenya.
+ * @param {HTMLImageElement} button Botó que conté la icona per indicar l'estat de visibilitat.
+ * @function passVisible
+ */
+function passVisible(inputId, button) {
+  const inputField = document.getElementById(inputId);
+  const isPassword = inputField.type === "password";
+  //Canvia el tipus d'input
+  inputField.type = isPassword ? "text" : "password";
+  //Canvia l'icona segons l'estat
+  const icon = button.querySelector("img");
+  icon.src = isPassword ? "imatges/open.png" : "imatges/close.png";
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Tue Dec 03 2024 10:56:12 GMT+0100 (hora estándar de Europa central) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

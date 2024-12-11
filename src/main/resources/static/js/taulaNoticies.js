@@ -1,9 +1,10 @@
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
  * En carregar la pàgina fem la crida a la funció llistaNoticies.
+ * @function llistaNoticies
  */
 window.onload = function () {
   llistaNoticies();
@@ -12,7 +13,7 @@ window.onload = function () {
 /**
  * LLista les notícies en una taula HTML, incloent els botons d'edició i eliminació.
  * Fa una petició GET a l'API per obtenir la llista de notícies i mostrar-les.
- * @async Funció asincrònica, utilitza await dins la funció.
+ * @async 
  * @function llistaNoticies
  */
 let llistaNoticies = async () => {
@@ -41,19 +42,11 @@ let llistaNoticies = async () => {
     <td>${noticia.dataNoticia}</td> 
     <td>${noticia.titol}</td>
     <td>${noticia.descripcio}</td>
-    <td>${
-      imageUrl
-        ? `<img src="${imageUrl}" class="img-fluid" width="200" height="200" />`
-        : ""
-    }</td><td>${noticia.alt}</td>
+    <td>${imageUrl? `<img src="${imageUrl}" class="img-fluid" width="200" height="200" />`: ""}</td><td>${noticia.alt}</td>
     <td><a href="${noticia.urlNoticia}">${noticia.nomBoto}</a></td>
     <td>${noticia.activa}</td> 
-    <td><i onClick="editarNoticia(${
-      noticia.idNoticia
-    })" class="material-icons button edit">edit</i></td>
-    <td><i onClick="eliminarNoticia(${
-      noticia.idNoticia
-    })" class="material-icons button delete">delete</i></td>
+    <td><i onClick="editarNoticia(${noticia.idNoticia})" class="material-icons button edit">edit</i></td>
+    <td><i onClick="eliminarNoticia(${noticia.idNoticia})" class="material-icons button delete">delete</i></td>
     </tr>
     `;
     contingutTaula += contingutFila;
@@ -73,9 +66,7 @@ let llistaNoticies = async () => {
 
 let eliminarNoticia = async (idNoticia) => {
   //Missatge de confirmació abans d'eliminar la notícia
-  const confirmacio = window.confirm(
-    "Estàs segur que vols eliminar aquesta notícia?"
-  );
+  const confirmacio = window.confirm("Estàs segur que vols eliminar aquesta notícia?");
   if (confirmacio) {
     try {
       const peticio = await fetch(`${baseUrl}/api/noticia/${idNoticia}`, {
@@ -85,13 +76,12 @@ let eliminarNoticia = async (idNoticia) => {
           "Content-Type": "application/json",
         },
       });
-      //Si l'eliminació te exit, actualitza la llista i amaga el formulari.
+      //Si l'eliminació té éxit, actualitza la llista i amaga el formulari.
       if (peticio.ok) {
         llistaNoticies();
         amagarFormulari();
       } else {
-        alert(
-          "No s'ha pogut eliminar la notícia. Si us plau, intenta-ho més tard.");
+        alert("No s'ha pogut eliminar la notícia. Si us plau, intenta-ho més tard.");
       }
     } catch (error) {
       console.error("Error en la petició:", error);

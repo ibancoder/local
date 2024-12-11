@@ -1,6 +1,6 @@
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 //*** FORMULARI ***/
 const form = document.getElementById("formulari");
@@ -21,7 +21,7 @@ const telefonRegex = /^\d{9}$/;
 const userNameRegex = /^[a-zA-Z0-9\_\-]{4,16}$/;
 const passwordPattern =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
-  
+
 //*** BOOLEAN **/
 const estatValidacionsCamp = {
   nom: false,
@@ -34,6 +34,8 @@ const estatValidacionsCamp = {
 
 /**
  * Inicia el registre en carregar la pàgina, associant els esdeveniments de validació a cada camp del formulari.
+ * @function validarFormulari
+ * @event DOMContentLoaded
  */
 document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (event) {
@@ -105,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * @param {RegExp} regularExpression Expressió regular per validar.
  * @param {HTMLInputElement} camp Camp que es vol validar.
  * @param {string} missatge Missatge d'error en cas de fallada.
+ * @function validarCamp
  */
 function validarCamp(regularExpression, camp, missatge) {
   const validarCamp = regularExpression.test(camp.value);
@@ -123,6 +126,7 @@ function validarCamp(regularExpression, camp, missatge) {
  * Eliminem alerta que es repeteix, creem un div, afegim la classe alerta, mostrem missatge.
  * @param {HTMLElement} referencia Element on es mostrarà el missatge.
  * @param {string} missatge Text del missatge d'error.
+ * @function mostrarAlerta
  */
 function mostrarAlerta(referencia, missatge) {
   eliminarAlerta(referencia);
@@ -135,6 +139,7 @@ function mostrarAlerta(referencia, missatge) {
 /**
  * Funció per eliminar els missatges d'error si existeix.
  * @param{HTMLElement} referencia Element on es troba el missatge d'error.
+ * @function eliminarAlerta
  */
 function eliminarAlerta(referencia) {
   const alerta = referencia.querySelector(".alerta");
@@ -144,9 +149,9 @@ function eliminarAlerta(referencia) {
 }
 
 /**
- * Funció per validar el formulari.
- * Si els estats de validació dels camps son true, registra a l'usuari.
- * Si els estats no son true, mostra a consola, formulari incorrecte.
+ * Valida el formulari abans d'enviar-lo. Si tots els camps són vàlids, crida la funció per registrar l'usuari.
+ * Si algun camp no és vàlid, mostra un missatge a la consola indicant que el formulari és incorrecte.
+ * @function validarFormulari
  */
 function validarFormulari() {
   if (
@@ -164,7 +169,9 @@ function validarFormulari() {
 }
 
 /**
- * Funció que fa la petició POST a la API i fa el registre de l'usuari a la base de dades.
+ * Realitza una petició POST a la API per registrar l'usuari.
+ * Si l'usuari ja existeix, mostrarà un error. En cas de registre exitós, netejarà el formulari i mostrarà el login.
+ * @function registrarUsuari
  */
 let registrarUsuari = async () => {
   let formData = new FormData();
@@ -175,12 +182,7 @@ let registrarUsuari = async () => {
   formData.append("nomUsuari", nomUsuari.value);
   formData.append("password", password.value);
 
-  // Mostrar el contingut del FormData a la consola
-  for (let [key, value] of formData.entries()) {
-    console.log(`${key}: ${value}`);
-  }
-
-  //Crear la petició POST a la api/usuaris
+  //Crear la petició POST a la api/usuaris.
   try {
     const peticio = await fetch(`${baseUrl}/api/usuaris`, {
       method: "POST",
@@ -211,7 +213,9 @@ let registrarUsuari = async () => {
 };
 
 /**
- * Funció per netejar els camps del formulari.
+ * Funció per netejar tots els camps del formulari, deixant-los en blanc i 
+ * desmarcant els checks.
+ * @function netejarFormulari
  */
 function netejarFormulari() {
   document.getElementById("inputNom").value = "";
@@ -225,11 +229,12 @@ function netejarFormulari() {
 }
 
 /**
- * Funció per mostrar el login de nou per iniciar sessió  
+ * Funció per mostrar el login de nou per iniciar sessió.
+ * @function mostrarLogin
  */
 function mostrarLogin() {
   const divLogin = document.getElementById("login");
-  console.log("divlogin:" +divLogin)
+  console.log("divlogin:" + divLogin);
   //Mostrar la div
   divLogin.style.display = "block";
   //Desplaçar cap a dal
@@ -238,7 +243,8 @@ function mostrarLogin() {
 
 /**
  * Funció per esborrar el password en clicar a l'icona de la paperera.
- * @param {string} inputId ID de l'input de contrasenya
+ * @param {string} inputId ID de l'input de contrasenya.
+ * @function esborrarPass
  */
 function esborrarPass(inputId) {
   const inputField = document.getElementById(inputId);
@@ -247,8 +253,9 @@ function esborrarPass(inputId) {
 
 /**
  * Funció per mostrar/amagar el password amb l'icona de l'ull.
- * @param {string} inputId ID de l'input de contrasenya
- * @param {HTMLImageElement} button Botó que conté la icona per indicar l'estat de visibilitat
+ * @param {string} inputId ID de l'input de contrasenya.
+ * @param {HTMLImageElement} button Botó que conté la icona per indicar l'estat de visibilitat.
+ * @function passVisible
  */
 function passVisible(inputId, button) {
   const inputField = document.getElementById(inputId);

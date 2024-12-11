@@ -29,10 +29,10 @@
 
 /*** MAIN ***/
 main {
-  background-color:#f2f5fd; /* blau */
+  background-color:#f2f5fd; /* blau */  
 }
 
-.linia {    /** Modificat aqui  (susana)*/
+#linia {    
   border: 2px solid #FF887B; 
   margin: 20px 0; 
 }

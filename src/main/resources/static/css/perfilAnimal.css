@@ -1,0 +1,136 @@
+#imgAnimal {
+    width: 300px;
+    height: auto; 
+    max-height: 400px; 
+    object-fit: contain; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    border: 3px solid #FF887B;
+    border-radius: 10px; 
+    background: #FFE4E1;
+}
+
+table {
+    width: 100%;
+
+    thead {
+        border-bottom: 1px solid #FF887B;
+
+        th {
+            padding-top: 1%;
+        }
+    }
+
+    tbody td {
+        padding-bottom: 2%;
+    }
+}
+
+#altresDades {
+    width: 93%;
+    margin: 0 auto;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    box-shadow: none;
+    border-left: 1px solid #FF887B;
+    border-right: 1px solid #FF887B;
+
+    i {
+        color: #CDC7FF;
+    }
+
+    button {
+        margin-left: 1%;
+        border-radius: 10px;
+        border: none;
+        color: #5A48FF;
+    }
+
+    button:hover {
+        background-color: #5A48FF;
+        color: #FF887B;
+    }
+}
+
+
+/*** RESPONSIVE ***/
+
+/** Tablets **/
+@media (min-width: 576px) {
+    table {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #altresDades {
+        width: 83%;
+
+        button {
+            margin-left: 5%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #imgAnimal {
+        width: 350px;
+    }
+
+    table {
+        width: 85%;
+    }
+
+    #altresDades {
+        width: 80%;
+    }
+}
+
+/** PC **/
+@media (min-width: 992px) {
+    table {
+        width: 80%;
+    }
+
+    #altresDades {
+        width: 75%;
+
+        button {
+            margin-left: 10%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    table {
+        width: 92%;
+    }
+
+    #altresDades {
+        width: 50%;
+        border: 1px solid #FF887B;
+        border-radius: 10px;
+        padding-top: 1%;
+        padding-bottom: 0%;
+        margin-bottom: 2%;
+    }
+
+    #footer {
+        margin-top: 4%;
+    }
+}
+
+@media (min-width: 1400px) {
+    table {
+        width: 80%;
+    }
+}
+
+/** PC pantalles grans **/
+@media (min-width: 2050px) {
+    #imgAnimal {
+        width: 450px;
+    }
+
+    #botons button {
+        font-size: larger !important;
+    }
+}

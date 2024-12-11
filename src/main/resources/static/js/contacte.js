@@ -11,8 +11,6 @@ const nom = document.getElementById("inputNom");
 const cognom = document.getElementById("inputCognom");
 const email = document.getElementById("inputEmail");
 const telefon = document.getElementById("inputTelefon");
-const consulta = document.getElementById("inputConsulta");
-const $buttonMailto = document.getElementById("mailto");
 
 // Validació nom, si el valor no compleix el patró esperat, mostra missatge d'error personalitzat.
 nom.addEventListener("input", function () {

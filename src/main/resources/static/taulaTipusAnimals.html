@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/taulaNoticies.css">
     <!-- Favicon -->
-    <link rel="icon" href="/imatges/logopetitIcon.ico" type="image/x-icon">
-    <!--Fonts icones Taula Noticies -->
+    <link rel="icon" href="imatges/favicon.ico" type="image/x-icon">
+    <!--Fonts icones Taules -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Enllaços bootstrap -->
@@ -31,14 +31,14 @@
             <br><br>
         </section>
         <br>
-        <!-- TAULA DE NOTICIES -->
+        <!-- TAULA DE TIPUS D'ANIMALS -->
         <section class="form">
             <div class="justify-content-center table-responsive">
                 <h2 class="text-center mb-5"><i class="fa-solid fa-paw"></i> Taula de Tipus d'Animals</h2>
                 <table id="taula">
                     <thead>
                         <tr>
-                            <th colspan="10">Tipus d'animals</th>
+                            <th colspan="6">Tipus d'animals</th>
                         </tr>
                         <tr>
                             <th>ID</th>
@@ -57,39 +57,30 @@
         </section>
         <!-- FORMULARI PER MODIFICAR EL TIPUS D'ANIMAL -->
         <section id="formulario"><br>
-            <form class="form needs-validation" method="POST" id="formulari">
+            <form class="form needs-validation" method="POST">
                 <div class="row justify-content-center">
-                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modificar el tipus d'animal:
-                    </h2>
+                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modificar el tipus d'animal:</h2>
                     <!-- Camp nom de l'animal -->
                     <div class="form-group col-12 mb-3">
-                        <label for="nomTipusAnimal" class="form-label"><i class="fa-solid fa-paw"></i> Nom de
-                            l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="nomTipusAnimal" name="nomTipusAnimal"
-                            maxlength="15" required>
-                    </div>
-                    <!-- Camp imatge dels animals -->
-                    <!--<div class="form-group col-md-12 col-12 mb-3">
-                        <label for="foto" class="form-label"><i class="fa-solid fa-image"></i> Imatge Actual </label>
-                        <img id="previewImage" src="" alt="Preview de la imatge" width="200" height="200" />
-                        <input type="hidden" id="fotoActual" name="fotoActual" value="" />
-                    </div>-->
+                        <label for="nomTipusAnimal" class="form-label"><i class="fa-solid fa-paw"></i> Nom de l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="nomTipusAnimal" name="nomTipusAnimal" maxlength="15" required>
+                    </div>                    
                     <!-- Camp imatge dels animals -->
                     <div class="form-group col-md-12 col-12 mb-3">
                         <label for="foto" class="form-label"><i class="fa-solid fa-image"></i> Imatge </label>
-                        <input type="text" class="form-control form-control-lg" id="foto" name="foto" placeholder="./imatges/gato.jpg" required>
+                        <input type="text" class="form-control form-control-lg" id="foto" name="foto" required>
                     </div>
                     <!-- Camp alt de la imatge -->
                     <div class="form-group col-md-12 col-12 mb-3">
                         <label for="alt" class="form-label"><i class="fa-solid fa-image"></i> Alt </label>
-                        <input type="text" class="form-control form-control-lg" id="alt" name="alt"
-                            placeholder="Descriu la imatge">
+                        <input type="text" class="form-control form-control-lg" id="alt" name="alt" placeholder="Descriu la imatge">
                     </div>
                     <div class="row justify-content-center">
                         <div class="form-group col-md-10 col-12 text-center lila">
-                            <button class="w-50" id="btnModificar" type="submit">Modificar</button>
+                            <button class="w-50 mt-3" id="btnModificar" type="submit">Modificar Tipus Animal</button>
                         </div>
                     </div>
+                </div>
             </form>
             <br>
         </section>

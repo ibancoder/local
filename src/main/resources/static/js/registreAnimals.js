@@ -1,7 +1,12 @@
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
+/**
+ * Funció que s'executa quan es carrega el DOM i crida a la funció.
+ * @function registrarAnimals
+ * @event DOMContentLoaded
+ */
 document.addEventListener("DOMContentLoaded", () => {
   // Botó per registrar la notícia.
   let botoAnimals = document.getElementById("btnRegistreAnimal");
@@ -21,9 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /**
  * Registra un animal amb totes les seves dades mitjançant una petició POST a l'API.
- * @async Funció asincrònica, utilitza await dins la funció.
+ * La funció recull tots els valors del formulari i els envia al servidor.
+ * Si la petició es satisfactoria es neteja el formulari.
+ * @async 
  * @function registrarAnimals
- * @throws Mostra un missatge d'alerta si la validació de camps no es compleix o si la petició falla.
+ * @throws {Error} - Mostra un missatge d'alerta si la validació de camps no es compleix o si la petició falla.
  */
 let registrarAnimals = async () => {
   let nomAnimal = document.getElementById("nomAnimal").value.trim();
@@ -45,6 +52,7 @@ let registrarAnimals = async () => {
   let observacions = document.getElementById("observacions").value.trim();
   let esterilitzat = document.getElementById("esterilitzat").checked;
   let vacunat = document.getElementById("vacunat").checked;
+  let apadrinat = document.getElementById("apadrinat").checked;
   let rip = document.getElementById("rip").checked;
 
   // Verificar que tots els camps requerits tenen un valor.
@@ -94,6 +102,7 @@ let registrarAnimals = async () => {
   formData.append("observacions", observacions);
   formData.append("esterilitzat", esterilitzat);
   formData.append("vacunat", vacunat);
+  formData.append("apadrinat", apadrinat);
   formData.append("rip", rip);
 
   //Crear la petició POST, crida a /api/animals.
@@ -131,9 +140,9 @@ let registrarAnimals = async () => {
   function netejarFormulari() {
     document.getElementById("nomAnimal").value = "";
     document.getElementById("dataEntrada").value = "";
-    document.getElementById("idTipusAnimal").value;
-    document.getElementById("estatSalut").value;
-    document.getElementById("estatAnimal").value;
+    document.getElementById("idTipusAnimal").value = "";
+    document.getElementById("estatSalut").value = "";
+    document.getElementById("estatAnimal").value = "";
     document.getElementById("tipusRaca").value = "";
     document.getElementById("sexe").value = "";
     document.getElementById("color").value = "";
@@ -145,8 +154,10 @@ let registrarAnimals = async () => {
     document.getElementById("necessitats").value = "";
     document.getElementById("foto").value = "";
     document.getElementById("alt").value = "";
-    document.getElementById("observacions").value = "";
+    document.getElementById("observacions").value = "";    
     document.getElementById("esterilitzat").checked = false;
+    document.getElementById("vacunat").checked = false;
+    document.getElementById("apadrinat").checked = false;
     document.getElementById("rip").checked = false;
   }
 };

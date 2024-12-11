@@ -6,21 +6,20 @@
 
 .form-check-label {
   a {
-      background-color: #F2F5FD;
-      box-shadow: none;
+    background-color: #f2f5fd;
+    box-shadow: none;
   }
 }
 
-.linia {  
-  border: 2px solid #FF887B; 
-  margin: 20px 0; 
+.linia {
+  border: 2px solid #ff887b;
+  margin: 20px 0;
 }
 
 /** CSS Registre.html PASSWWORD**/
-.contenidor-pass{
+.contenidor-pass {
   display: inline-flex;
-  border: 2px solid #FF887B;
+  border: 2px solid #ff887b;
   border-radius: 10px;
   padding: 10px;
 }
-

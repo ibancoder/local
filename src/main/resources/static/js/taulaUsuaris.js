@@ -1,9 +1,10 @@
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
  * En carregar la pàgina fem la crida a la funció llistaUsuaris.
+ * @function llistaUsuaris
  */
 window.onload = function () {
   llistaUsuaris();
@@ -58,13 +59,12 @@ let llistaUsuaris = async () => {
  * **** EliminarUsuari *****
  * Mètode DELETE de la API, per eliminar l'usuari en clicar el botó eliminarUsuari
  * Un cop eliminat tornem a llistar els usuaris i amaguem el formulari.
- * @param {*} id selecciona el id de l'usuari a eliminar.
+ * L'usuari LobitaAdmin no es pot eliminar.
+ * @param {number} idUsuari - Selecciona el id de l'usuari a eliminar.
+ * @function eliminarUsuari
  */
 
 let eliminarUsuari = async (idUsuari) => {
-  /**
-   * modificació aqui
-   */
   //No es pot eliminar el usuari admin
   if (idUsuari === 1 ) {
     alert("Ho sento, no es pot eliminar l'usuari LobitaAdmin. Gràcies.");
@@ -86,9 +86,7 @@ let eliminarUsuari = async (idUsuari) => {
         llistaUsuaris();
         amagarFormulari();
       } else {
-        alert(
-          "No s'ha pogut eliminar l'usuari'. Si us plau, intenta-ho més tard."
-        );
+        alert("No s'ha pogut eliminar l'usuari'. Si us plau, intenta-ho més tard." );
       }
     } catch (error) {
       console.error("Error en la petició:", error);
@@ -101,6 +99,7 @@ let eliminarUsuari = async (idUsuari) => {
  * Mètode GET de la API per editar l'usuari. Un cop cliquem al botó Modificar ens mostra l'usuari
  * mitjançant el ID i fa la crida al mètode PUT aplicarActualització.
  * @param {*} idUsuari selecciona el id de l'usuari a editar.
+ * @function editarUsuari
  */
 let idEditar;
 let editarUsuari = async (idUsuari) => {
@@ -126,6 +125,10 @@ let editarUsuari = async (idUsuari) => {
   document.getElementById("password").value = usuaris.password;
   document.getElementById("actiu").checked = usuaris.actiu;
 };
+
+/**
+ * Botó per modificar el usuari.
+ */
 let btnModificarUsuari = document.getElementById("btnModificarUsuari");
 
 btnModificarUsuari.addEventListener("click", (evento) => {
@@ -137,7 +140,8 @@ btnModificarUsuari.addEventListener("click", (evento) => {
  * ***** AplicarActualització *****
  * Mètode PUT de la API per aplicar la modificació feta. Si es fa la modificació
  * tornarà a llistar les noticies, netejara el formulari i amagara el formulari.
- * @param {*} id Selecciona el id a aplicar la actualització
+ * @param {*} id Selecciona el id a aplicar la actualització.
+ * @function aplicarActualitzacio
  */
 let aplicarActualitzacio = async (idUsuari) => {
   let camps = {};
@@ -175,6 +179,7 @@ let aplicarActualitzacio = async (idUsuari) => {
 
 /**
  * Funció per fer visible el formulari ocult.
+ * @function mostrarFormulari
  */
 function mostrarFormulari() {
   let formulari = (document.getElementById("formulario").style.visibility =
@@ -183,6 +188,7 @@ function mostrarFormulari() {
 
 /**
  * Funció per fer scroll i anar a la part del formulari en clicar el botó modificar.
+ * @function scrollFormulari
  */
 function scrollFormulari() {
   setTimeout(() => {
@@ -194,13 +200,15 @@ function scrollFormulari() {
 
 /**
  * Funció per amagar el formulari visible.
+ * @function amagarFormulari
  */
 function amagarFormulari() {
   document.getElementById("formulario").style.visibility = "hidden";
 }
 
 /**
- * Funció per netejar el formulari.
+ * Funció per netejar el formulari deixant els camps en blanc.
+ * @function netejarFormulari
  */
 function netejarFormulari() {
   document.getElementById("nom").value = "";

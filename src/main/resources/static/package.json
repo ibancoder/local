@@ -1,0 +1,16 @@
+{
+  "name": "projecterefugilobita",
+  "version": "1.0.0",
+  "description": "Documentació per al projecte Refugi Lobita",
+  "main": "index.js",
+  "scripts": {
+     "doc": "jsdoc -c jsdoc.json && xcopy \"./imatges\" \"./documentacio/imatges/\" /E /I"
+  },
+  "author": "Eduard Iglesies, Iban Cervera, Esther Pont, Susana Garcia",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc": "^4.0.4",
+    "minami": "^1.2.3",
+    "taffydb": "^2.7.3"
+  }
+}

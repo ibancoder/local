@@ -20,10 +20,19 @@
 }
 
 .arrow-up {
-    display: flex;
-    justify-content: right;
-    position: relative;    
-    margin-bottom: 20px;       
-    padding: auto;
+  display: flex;
+  justify-content: right;
+  position: relative;
+  margin-bottom: 20px;
+  padding: auto;
+}
+
+/** Enllaços **/
+/* Canviar el comportament per a pantalles petites */
+@media (max-width: 768px) {
+  .horizontal-links {
+    flex-direction: column; /* Posa els enllaços en columna */
+    gap: 10px; /* Redueix l'espai entre enllaços */
+    align-items: center; /* Centra els enllaços en mode columna */
   }
-  
+}

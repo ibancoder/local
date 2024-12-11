@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Refugi Lobita - Taula Animals</title>
-    <!-- Enllaços CSS --> 
+    <!-- Enllaços CSS -->
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/componentsAdmin.css"> 
+    <link rel="stylesheet" href="css/componentsAdmin.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/taulaNoticies.css">
     <!-- Favicon -->
-    <link rel="icon" href="/imatges/logopetitIcon.ico" type="image/x-icon">
-    <!--Fonts icones Taula Noticies -->
+    <link rel="icon" href="imatges/favicon.ico" type="image/x-icon">
+    <!--Fonts icones Taules -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Enllaços bootstrap -->
@@ -20,11 +20,11 @@
 </head>
 
 <body>
-    <header id="headerPetit" class="container-fluid"> 
-         <!--El header es col·loca des del js-->
+    <header id="headerPetit" class="container-fluid">
+        <!--El header es col·loca des del js-->
     </header>
 
-    <main class="lila fondoLila"> 
+    <main class="lila fondoLila">
         <section class="fondoRosa">
             <br><br>
             <h1 class="text-center">Administrador</h1>
@@ -33,19 +33,21 @@
         <br>
         <!-- TAULA D'ANIMALS -->
         <section class="form">
-            <div class="justify-content-center table-responsive"> 
-                <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Taula d'Animals</h2> 
+            <div class="justify-content-center table-responsive">
+                <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Taula d'Animals</h2>
                 <table id="taula">
                     <thead>
-                        <tr><th colspan="23">Animals</th></tr>
+                        <tr>
+                            <th colspan="24">Animals</th>
+                        </tr>
                         <tr>
                             <th>ID</th>
                             <th>Nom Animal</th>
                             <th>Data Entrada</th>
-                            <th>Tipus Animal</th>
-                            <th>Tipus Raça</th>
-                            <th>Estat Salut</th>
-                            <th>Estat Animal</th>
+                            <th>Tipus d'Animal</th>
+                            <th>Tipus de Raça</th>
+                            <th>Estat de Salut</th>
+                            <th>Estat de l'Animal</th>
                             <th>Color</th>
                             <th>Edat</th>
                             <th>Pes</th>
@@ -53,162 +55,199 @@
                             <th>Sexe</th>
                             <th>Esterilitzat</th>
                             <th>Vacunat</th>
-                            <th>Xip</th>
+                            <th>Microxip</th>
                             <th>Comportament</th>
                             <th>Necessitats</th>
                             <th>Foto</th>
                             <th>Alt</th>
                             <th>Observacions</th>
-                            <th>R.I.P</th>
+                            <th>Apadrinat</th>
+                            <th>DEP</th>
                             <th>Modificar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Mostrem noticies des de taulaNoticies.js-->
+                        <!-- Mostrem els animals des de taulaAnimals.js-->
                     </tbody>
                 </table>
             </div>
         </section>
         <!-- FORMULARI PER MODIFICAR L'ANIMAL -->
         <section id="formulario"><br>
-            <form class="form needs-validation" method="POST" id="formulari">
+            <form class="form needs-validation" method="POST">
                 <div class="row justify-content-center">
-                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modificar l'animal:</h2> 
+                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modificar l'animal:</h2>
                     <!-- Camp nom de l'animal -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="nomAnimal" class="form-label"><i class="fa-solid fa-file-lines"></i> Nom de l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="nomAnimal" name="nomAnimal" maxlength="50" required>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="nomAnimal" class="form-label"><i class="fa-solid fa-file-lines"></i> Nom de
+                            l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="nomAnimal" name="nomAnimal"
+                            maxlength="50" required>
                     </div>
                     <!-- Camp data d'entrada l'animal -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="dataEntrada" class="form-label"><i class="fa-solid fa-calendar"></i> Data d'entrada de l'animal</label>
-                        <input type="date" class="form-control form-control-lg" id="dataEntrada" name="dataEntrada" required>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="dataEntrada" class="form-label"><i class="fa-solid fa-calendar"></i> Data
+                            d'entrada de l'animal</label>
+                        <input type="date" class="form-control form-control-lg" id="dataEntrada" name="dataEntrada"
+                            required>
                     </div>
                     <!-- Camp ID tipus de animal -->
-                    <div class="form-group col-md-3 col-12 mb-3">
-                        <label for="idTipusAnimal" class="form-label"><i class="fa-solid fa-file-lines"></i> Tipus d'animal</label><br>
-                        <select name="idTipusAnimal" id="idTipusAnimal">
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="idTipusAnimal" class="form-label"><i class="fa-solid fa-file-lines"></i> Tipus
+                            d'animal</label><br>
+                        <select name="idTipusAnimal" id="idTipusAnimal" required>
+                            <option value="" disabled selected>Selecciona el tipus animal</option>
                             <option value="1">Gossos</option>
                             <option value="2">Gats</option>
                             <option value="3">Ocells</option>
-                            <option value="4">Altres</option>
                         </select>
-                    </div>                    
+                    </div>
                     <!-- Camp estat de salut -->
-                    <div class="form-group col-md-3 col-12 mb-3">
-                        <label for="estatSalut" class="form-label"><i class="fa-solid fa-file-lines"></i> Estat de Salut</label><br>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="estatSalut" class="form-label"><i class="fa-solid fa-file-lines"></i> Estat de
+                            Salut</label><br>
                         <select name="estatSalut" id="estatSalut">
+                            <option value="" disabled selected>Selecciona el estat salut</option>
                             <option value="Sa">Sa</option>
                             <option value="Malalt">Malalt</option>
                             <option value="Tractament">Tractament</option>
                         </select>
                     </div>
                     <!-- Camp estat de l'animal -->
-                    <div class="form-group col-md-3 col-12 mb-3">
-                        <label for="estatAnimal" class="form-label"><i class="fa-solid fa-file-lines"></i> Estat de l'animal</label><br>
-                        <select name="estatAnimal" id="estatAnimal">
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="estatAnimal" class="form-label"><i class="fa-solid fa-file-lines"></i> Estat de
+                            l'animal</label><br>
+                        <select name="estatAnimal" id="estatAnimal" required>
+                            <option value="" disabled selected>Selecciona el estat animal</option>
                             <option value="0">Lliure</option>
-                            <option value="1">Adaptat</option>
-                            <option value="2">Apadrinat</option>
-                            <option value="3">Tractament mèdic</option>
-                            <option value="4">En recuperació</option>
-                            <option value="5">En quarentena</option>
-                            <option value="6">Fugit</option>
-                            <option value="7">En acollida temporal</option>
+                            <option value="1">No adoptable</option>
+                            <option value="2">Adoptat</option>
+                            <option value="3">Difunt</option>
                         </select>
                     </div>
-                          <!-- Camp sexe de l'animal -->
-                          <div class="form-group col-md-3 col-12 mb-3">
-                            <label for="sexe" class="form-label"><i class="fa-solid fa-file-lines"></i> Sexe de l'animal</label><br>
-                            <select name="sexe" id="sexe">
-                                <option value="Mascle">Mascle</option>
-                                <option value="Femella">Femella</option>                            
-                            </select>
-                        </div>   
+                    <!-- Camp sexe de l'animal -->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="sexe" class="form-label"><i class="fa-solid fa-file-lines"></i> Sexe de
+                            l'animal</label><br>
+                        <select name="sexe" id="sexe">
+                            <option value="" disabled selected>Selecciona el sexe animal</option>
+                            <option value="Mascle">Mascle</option>
+                            <option value="Femella">Femella</option>
+                        </select>
+                    </div>
                     <!-- Camp tipus de raça -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="tipusRaca" class="form-label"><i class="fa-solid fa-file-lines"></i> Tipus de raça de l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="tipusRaca" name="tipusRaca" maxlength="50">
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="tipusRaca" class="form-label"><i class="fa-solid fa-file-lines"></i> Tipus de
+                            raça de l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="tipusRaca" name="tipusRaca"
+                            maxlength="50">
                     </div>
                     <!-- Camp color -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="color" class="form-label"><i class="fa-solid fa-file-lines"></i> Color de l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="color" name="color" maxlength="25" required>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="color" class="form-label"><i class="fa-solid fa-file-lines"></i> Color de
+                            l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="color" name="color" maxlength="25"
+                            required>
                     </div>
                     <!-- Camp edat -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="edat" class="form-label"><i class="fa-solid fa-file-lines"></i> Edat de l'animal</label>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="edat" class="form-label"><i class="fa-solid fa-file-lines"></i> Edat de
+                            l'animal</label>
                         <input type="number" class="form-control form-control-lg" id="edat" name="edat" required>
                     </div>
                     <!-- Camp pes -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="pes" class="form-label"><i class="fa-solid fa-file-lines"></i> Pes de l'animal</label>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="pes" class="form-label"><i class="fa-solid fa-file-lines"></i> Pes de
+                            l'animal</label>
                         <input type="number" class="form-control form-control-lg" id="pes" name="pes" required>
                     </div>
-                     <!-- Camp mida -->
-                     <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="mida" class="form-label"><i class="fa-solid fa-file-lines"></i> Mida de l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="mida" name="mida" maxlength="10" required>
+                    <!-- Camp mida -->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="mida" class="form-label"><i class="fa-solid fa-file-lines"></i> Mida de
+                            l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="mida" name="mida" maxlength="10"
+                            required>
                     </div>
-                              
                     <!-- Camp xip -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="xip" class="form-label"><i class="fa-solid fa-file-lines"></i> Xip de l'animal</label>
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="xip" class="form-label"><i class="fa-solid fa-file-lines"></i> Xip de
+                            l'animal</label>
                         <input type="text" class="form-control form-control-lg" id="xip" name="xip" maxlength="100">
                     </div>
-                     <!-- Camp comportament -->
-                     <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="comportament" class="form-label"><i class="fa-solid fa-file-lines"></i> Comportament de l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="comportament" name="comportament" maxlength="50" required>
+                    <!-- Camp comportament -->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="comportament" class="form-label"><i class="fa-solid fa-file-lines"></i>
+                            Comportament de l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="comportament" name="comportament"
+                            maxlength="50" required>
                     </div>
-                     <!-- Camp necessitats -->
-                     <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="necessitats" class="form-label"><i class="fa-solid fa-file-lines"></i> Necessitats de l'animal</label>
-                        <input type="text" class="form-control form-control-lg" id="necessitats" name="necessitats" maxlength="100" required>
+                    <!-- Camp necessitats -->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="necessitats" class="form-label"><i class="fa-solid fa-file-lines"></i>
+                            Necessitats de l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="necessitats" name="necessitats"
+                            maxlength="100" required>
                     </div>
                     <!-- Camp imatge de l'animal -->
-                    <div class="form-group col-md-6 col-12 mb-3">
-                        <label for="foto" class="form-label"><i class="fa-solid fa-image"></i> Imatge de l'animal</label>
-                        <input type="file" class="form-control form-control-lg" id="foto" name="foto" accept="imatge/*">
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="foto" class="form-label"><i class="fa-solid fa-image"></i> Imatge de
+                            l'animal</label>
+                        <input type="text" class="form-control form-control-lg" id="foto" name="foto" required>
                     </div>
                     <!-- Camp alt de la imatge -->
-                    <div class="form-group col-md-6 col-12 mb-3">
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
                         <label for="alt" class="form-label"><i class="fa-solid fa-image"></i> Alt </label>
-                        <input type="text" class="form-control form-control-lg" id="alt" name="alt" placeholder="Descriu la imatge">
-                    </div>   
-                     <!-- Camp observacions -->
-                     <div class="form-group col-md-12 col-12 mb-3">
-                        <label for="observacions" class="form-label"><i class="fa-regular fa-file-lines"></i> Observacions </label>
-                        <input type="text" class="form-control form-control-lg" id="observacions" name="observacions" maxlength="150" required>
-                    </div>   
-                     <!-- Camp esterilitzat -->
-                     <div class="form-group col-md-4 col-12 mb-3">
-                        <label for="esterilitzat" class="form-label"><i class="fa-solid fa-check"></i> Esta esterilitzat? </label>
+                        <input type="text" class="form-control form-control-lg" id="alt" name="alt"
+                            placeholder="Descripció de imatge">
+                    </div>
+                    <!-- Camp observacions -->
+                    <div class="form-group col-lg-12 col-md-12 col-12 mb-3">
+                        <label for="observacions" class="form-label"><i class="fa-regular fa-file-lines"></i>
+                            Observacions </label>
+                        <input type="text" class="form-control form-control-lg" id="observacions" name="observacions"
+                            maxlength="150" required>
+                    </div>
+                </div>
+                <div class="row mb-4 justify-content-center">
+                    <!-- Camp esterilitzat -->
+                    <div class="form-group col-lg-3 col-md-3 col-12 mb-3">
+                        <label for="esterilitzat" class="form-label"><i class="fa-solid fa-check"></i> Està
+                            esterilitzat? </label>
                         <input type="checkbox" class="form-check-input" id="esterilitzat" name="esterilitzat">
                     </div>
                     <!-- Camp vacunat -->
-                    <div class="form-group col-md-4 col-12 mb-3">
-                        <label for="vacunat" class="form-label"><i class="fa-solid fa-check"></i> Esta vacunat? </label>
+                    <div class="form-group col-lg-3 col-md-3 col-12 mb-3">
+                        <label for="vacunat" class="form-label"><i class="fa-solid fa-check"></i> Està vacunat?
+                        </label>
                         <input type="checkbox" class="form-check-input" id="vacunat" name="vacunat">
-                    </div>       
+                    </div>
+                    <!-- Camp Apadrinat -->
+                    <div class="form-group col-lg-3 col-md-3 col-12 mb-3">
+                        <label for="apadrinat" class="form-label"><i class="fa-solid fa-check"></i> Apadrinat
+                        </label>
+                        <input type="checkbox" class="form-check-input" id="apadrinat" name="apadrinat">
+                    </div>
                     <!-- Camp RIP -->
-                    <div class="form-group col-md-4 col-12 mb-3">
-                        <label for="rip" class="form-label"><i class="fa-solid fa-check"></i> R.I.P. </label>
+                    <div class="form-group col-lg-3 col-md-3 col-12 mb-3">
+                        <label for="rip" class="form-label"><i class="fa-solid fa-check"></i> DEP </label>
                         <input type="checkbox" class="form-check-input" id="rip" name="rip">
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="form-group col-md-10 col-12 text-center lila">
-                            <button class="w-50" id="btnModificarAnimal" type="submit">Modificar Animal</button>
-                        </div>
-                    </div>  
-                </div>                 
+                </div>
+                <!-- Botó Registrar Animal -->
+                <div class="row justify-content-center">
+                    <div class="form-group col-lg-12 col-md-10 col-12 text-center lila">
+                        <button class="w-50 mt-3" id="btnModificarAnimal" type="submit"
+                            aria-label="Modificar animal">Modificar Animal</button>
+                    </div>
+                </div>
             </form>
             <br>
+
         </section>
     </main>
 
-    <footer id="footerPetit" class="bg-dark container-fluid lila"> 
+    <footer id="footerPetit" class="bg-dark container-fluid lila">
         <!--El footer es col·loca des del js-->
     </footer>
 
@@ -220,10 +259,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Components (banner, nav, footer) -->
     <script type="module" src="js/components.js"></script>
-    <!--taulaNoticies.js-->
+    <!--taulaAnimals.js-->
     <script src="/js/taulaAnimals.js"></script>
-   <!--adminAuth.js-->
-   <script src="js/adminAuth.js"></script>
+    <!--adminAuth.js-->
+    <script src="js/adminAuth.js"></script>
 
 </body>
 

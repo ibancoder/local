@@ -1,23 +1,37 @@
+//Servidor
+import { gestionarDonacio, mostrarDonacions } from 'http://178.156.55.174:8085/js/donacions.js';
+import { mostrarApadrinats } from 'http://178.156.55.174:8085/js/apadrinaments.js';
+import { mostrarAdoptats } from 'http://178.156.55.174:8085/js/adopcions.js';
+
+//En local
+//import { gestionarDonacio, mostrarDonacions } from "./donacions.js";
+//import { mostrarApadrinats } from "./apadrinaments.js";
+//import { mostrarAdoptats } from "./adopcions.js";
+
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
  * ID de l'usuari emmagatzemat en el LocalStorage del navegador.
  */
 const idUsuari = localStorage.getItem("idUsuari") || sessionStorage.getItem("idUsuari");
-console.log(idUsuari);
 
 /**
  * Event DOMContentLoaded per carregar les dades de l'usuari quan el DOM estigui carregat completament.
  * Si tenim l'usuari des de el localStorage monstra les dades, sino mostra error i torna a login.html
  */
 document.addEventListener("DOMContentLoaded", function () {
+  const caixaDonacions = document.getElementById("caixaDonacions");
+  const caixaApadrinats = document.getElementById("caixaApadrinats");
+  const caixaAdoptats = document.getElementById("caixaAdoptats");
   if (idUsuari) {
     mostraDadesUsuari();
+    mostrarDonacions(idUsuari, baseUrl, caixaDonacions);
+    mostrarApadrinats(idUsuari, baseUrl, caixaApadrinats);
+    mostrarAdoptats(idUsuari, baseUrl, caixaAdoptats);
   } else {
-    console.error("No se encontró el idUsuari en localStorage.");
-    //window.location.href = "/index.html"; ???????????????????????????????????????????
+    console.error("No s'ha trobat el idUsuari en el localStorage.");
   }
 });
 
@@ -40,10 +54,10 @@ async function mostraDadesUsuari() {
     document.getElementById("telefon").textContent = usuari.telefon;
     document.getElementById("password").textContent = usuari.password;
     // Si modifiquem l'avatar afegim a imgCanviar la foto, si no hi ha foto mostra la foto per defecte.
-    document.getElementById("imgCanviar").src = usuari.foto || "/imatges/perfilLlop.jpeg";    
-  } catch {
+    document.getElementById("imgCanviar").src = usuari.foto || "/imatges/perfilLlop.jpeg";
+  } catch (error){
     console.error("Error en obtenir les dades de l'usuari:", error);
-    alert("Error en carregar les dades de l'usuari. Torna a intentar-ho més tard.");
+    alert( "Error en carregar les dades de l'usuari. Torna a intentar-ho més tard.");
   }
 }
 
@@ -99,8 +113,7 @@ document.addEventListener("click", async function (event) {
         console.error("Error durant la petició:", error);
         alert("Hi ha hagut un error al carregar la imatge.");
       }
-    } else if (!urlimatge) {
-      /**modifico aqui urlimatge por !urlimatge */
+    } else if (!urlimatge) {     
       alert("Selecciona una imatge abans de desar-la.");
     }
   }
@@ -108,8 +121,9 @@ document.addEventListener("click", async function (event) {
 
 /**
  * Funció que retorna el nom de la imatge en funció del id del botó.
- * @param {string}botonId - ID del botó seleccionat.
+ * @param {string} botonId - ID del botó seleccionat.
  * @returns {string} URL de la imatge corresponent.
+ * @function obtenirImatge
  */
 function obtenirImatge(botonId) {
   switch (botonId) {
@@ -126,7 +140,7 @@ function obtenirImatge(botonId) {
     case "gat":
       return "/imatges/perfilGat.jpeg";
     case "gos":
-      return "/imatges/perfilgos.jpeg";
+      return "/imatges/perfilGos.jpeg";
     case "llop":
       return "/imatges/perfilLlop.jpeg";
     case "pajaro":
@@ -141,3 +155,14 @@ function obtenirImatge(botonId) {
       return "/imatges/perfilLlop.jpeg";
   }
 }
+
+/**
+ * Afegeix un event listener al botó de donació.
+ * Quan l'usuari fa clic, inicia el procés de donació mitjançant la funció `gestionarDonacio`.
+ * @event
+ */
+document.addEventListener("click", (event) => {
+  if (event.target && event.target.id === "btnDonar") {    
+    gestionarDonacio(idUsuari, baseUrl);
+  }
+});

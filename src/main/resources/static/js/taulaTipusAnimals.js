@@ -1,9 +1,10 @@
 /*********************** URL *********************************/
-//const baseUrl = "http://178.156.55.174:1234"; // Per la web
-const baseUrl = "http://localhost:1234"; // Per treballar en local
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
 
 /**
  * En carregar la pàgina fem la crida a la funció llistaTipusAnimals.
+ * @function llistaTipusAnimals
  */
 window.onload = function () {
   llistaTipusAnimals();
@@ -12,7 +13,7 @@ window.onload = function () {
 /**
  * LLista dels tipus d'animals en una taula HTML, incloent els botons d'edició i eliminació.
  * Fa una petició GET a l'API per obtenir la llista dels tipus d'animals i mostrar-los.
- * @async Funció asincrònica, utilitza await dins la funció.
+ * @async 
  * @function llistaTipusAnimals
  */
 let llistaTipusAnimals = async () => {
@@ -28,28 +29,19 @@ let llistaTipusAnimals = async () => {
 
   let contingutTaula = "";
   for (let tipusAnimal of tipusAnimals) {
-    const imageUrl = tipusAnimal.foto
-      ? `${baseUrl}/imatges/${tipusAnimal.foto}`
-      : "";
+    const imageUrl = tipusAnimal.foto ? `${baseUrl}/imatges/${tipusAnimal.foto}`: "";
+    
     let contingutFila = `<tr>
     <td>${tipusAnimal.idTipusAnimal}</td>
     <td>${tipusAnimal.nomTipusAnimal}</td>
-    <td>${
-      imageUrl
-        ? `<img src="${imageUrl}" class="img-fluid" width="200" height="200" />`
-        : ""
-    }</td>
+    <td>${imageUrl ? `<img src="${imageUrl}" class="img-fluid" width="200" height="200" />`: ""}</td>
     <td>${tipusAnimal.alt}</td>
-    <td><i onClick="editarTipusAnimal(${
-      tipusAnimal.idTipusAnimal
-    })" class="material-icons button edit">edit</i></td>
-    <td><i onClick="eliminarTipusAnimal(${
-      tipusAnimal.idTipusAnimal
-    })" class="material-icons button delete">delete</i></td>
+    <td><i onClick="editarTipusAnimal(${tipusAnimal.idTipusAnimal})" class="material-icons button edit">edit</i></td>
+    <td><i onClick="eliminarTipusAnimal(${tipusAnimal.idTipusAnimal})" class="material-icons button delete">delete</i></td>
     </tr>`;
     contingutTaula += contingutFila;
   }
-  //Mostrem els usuaris a la taula
+  //Mostrem els tipus d'animals a la taula.
   document.querySelector("#taula tbody").innerHTML = contingutTaula;
 };
 
@@ -63,14 +55,10 @@ let llistaTipusAnimals = async () => {
  */
 let eliminarTipusAnimal = async (idTipusAnimal) => {
   //Missatge de confirmació abans d'eliminar el tipus d'animal.
-  const confirmacio = window.confirm(
-    "Estàs segur que vols eliminar aquest tipus d'animal?"
-  );
+  const confirmacio = window.confirm("Estàs segur que vols eliminar aquest tipus d'animal?");
   if (confirmacio) {
     try {
-      const peticio = await fetch(
-        `${baseUrl}/api/tipusAnimal/${idTipusAnimal}`,
-        {
+      const peticio = await fetch(`${baseUrl}/api/tipusAnimal/${idTipusAnimal}`,{
           method: "DELETE",
           headers: {
             Accept: "application/json",
@@ -83,9 +71,7 @@ let eliminarTipusAnimal = async (idTipusAnimal) => {
         llistaTipusAnimals();
         amagarFormulari();
       } else {
-        alert(
-          "No s'ha pogut eliminar el tipus d'animal. Si us plau, intenta-ho més tard."
-        );
+        alert("No s'ha pogut eliminar el tipus d'animal. Si us plau, intenta-ho més tard.");
       }
     } catch (error) {
       console.error("Error en la petició:", error);

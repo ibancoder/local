@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>taulaApadrinats.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="global.html#event:DOMContentLoaded">DOMContentLoaded</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#EditarAdopci%25C3%25B3">EditarAdopció</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarApadrinament">actualitzarApadrinament</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarEstat">actualitzarEstat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarLoginSection">actualitzarLoginSection</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#amagarFormulari">amagarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#aplicarActualitzacio">aplicarActualitzacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificar">btnModificar</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAdoptat">btnModificarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAnimal">btnModificarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarApadrinat">btnModificarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarDonacio">btnModificarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarUsuari">btnModificarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#caixaAnimals">caixaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarApadrinat">canviarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarEstatAnimal">canviarEstatAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#carregarComponent">carregarComponent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#comprovarApadrinats">comprovarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#dadesAnimal">dadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarAnimal">editarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarApadrinat">editarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarDonacio">editarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarNoticia">editarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarTipusAnimal">editarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarUsuari">editarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAdoptat">eliminarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAlerta">eliminarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAnimal">eliminarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarApadrinat">eliminarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarDonacio">eliminarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarNoticia">eliminarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarTipusAnimal">eliminarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarUsuari">eliminarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#esborrarPass">esborrarPass</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#genere">genere</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarAdopcio">gestionarAdopcio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarApadrinacio">gestionarApadrinacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarDonacio">gestionarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#idUsuari">idUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#iniciarSessio">iniciarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAdoptats">llistaAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAnimals">llistaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaApadrinats">llistaApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaDonacions">llistaDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaNoticies">llistaNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaTipusAnimals">llistaTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaUsuaris">llistaUsuaris</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#login">login</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesAnimal">mostraDadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesUsuari">mostraDadesUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAdoptats">mostrarAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAlerta">mostrarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAnimal">mostrarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarApadrinats">mostrarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarBotons">mostrarBotons</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarDonacions">mostrarDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarFormulari">mostrarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarLogin">mostrarLogin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#netejarFormulari">netejarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#obtenirImatge">obtenirImatge</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#parametre">parametre</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#passVisible">passVisible</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarAnimals">registrarAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarNoticies">registrarNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarTipusAnimals">registrarTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarUsuari">registrarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#scrollFormulari">scrollFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#tancarSessio">tancarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarCamp">validarCamp</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarFormulari">validarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#verificarSessio">verificarSessio</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">taulaApadrinats.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*********************** URL *********************************/
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
+
+/**
+ * En carregar la pàgina fem la crida a la funció llistaAnimals.
+ * @function llistaApadrinats
+ */
+window.onload = function () {
+  llistaApadrinats();
+};
+
+/**
+ * LLista dels animals apadrinats en una taula HTML, incloent els botons d'edició i eliminació.
+ * Fa una petició GET a l'API per obtenir la llista dels animals apadrinats i mostrar-los.
+ * @async
+ * @function llistaApadrinats
+ */
+let llistaApadrinats = async () => {
+  const peticio = await fetch(`${baseUrl}/api/apadrinats`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  const apadrinats = await peticio.json();
+
+  let contingutTaula = "";
+  for (let apadrinat of apadrinats) {
+    const idAnimal = apadrinat.animals ? apadrinat.animals.idAnimal : "No assignat";
+    const nomAnimal = apadrinat.animals ? apadrinat.animals.nomAnimal : "No assignat";
+    
+    const idUsuari = apadrinat.usuaris ? apadrinat.usuaris.idUsuari : "No assignat";
+    const nomUsuari = apadrinat.usuaris ? apadrinat.usuaris.nomUsuari : "No assignat";    
+
+    let contingutFila = `&lt;tr>
+        &lt;td>${apadrinat.idRelacio}&lt;/td>  
+        &lt;td>${apadrinat.dataAlta}&lt;/td>
+        &lt;td>${apadrinat.dataBaixa}&lt;/td>
+        &lt;td>${apadrinat.quotaMensual}&lt;/td>
+        &lt;td>${idAnimal}&lt;/td>  
+        &lt;td>${nomAnimal}&lt;/td>    
+        &lt;td>${idUsuari}&lt;/td>
+        &lt;td>${nomUsuari}&lt;/td>
+        &lt;td>&lt;i onClick="editarApadrinat(${apadrinat.idRelacio})" class="material-icons button edit">edit&lt;/i>&lt;/td>
+        &lt;td>&lt;i onClick="eliminarApadrinat(${apadrinat.idRelacio})" class="material-icons button delete">delete&lt;/i>&lt;/td>
+        &lt;/tr>`;
+    contingutTaula += contingutFila;
+  }
+  //Mostrem els animals a la taula
+  document.querySelector("#taula tbody").innerHTML = contingutTaula;
+};
+
+/**
+ * **** EliminarAnimalApadrinat *****
+ * Mètode DELETE de l'API per eliminar un animal apadrinat. Un cop eliminat,
+ * actualitza la llista dels apadrinaments i amaga el formulari.
+ * @param {*} idRelacio - L'identificador de l'animal a eliminar
+ * @function eliminarApadrinat
+ */
+let eliminarApadrinat = async (idRelacio) => {
+  console.log(idRelacio);
+  //Missatge de confirmació abans d'eliminar l'animal apadrinat.
+  const confirmacio = window.confirm("Estàs segur que vols eliminar aquest apadrinament?");
+  if (confirmacio) {
+    try {
+      const peticio = await fetch(`${baseUrl}/api/apadrinat/${idRelacio}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      //Si l'eliminació té éxit, actualitza la llista i amaga el formulari.
+      if (peticio.ok) {
+        llistaApadrinats();
+        amagarFormulari();
+      } else {
+        alert(
+          "No s'ha pogut eliminar l'apadrinament. Si us plau, intenta-ho més tard."
+        );
+      }
+    } catch (error) {
+      console.error("Error en la petició:", error);
+    }
+  }
+};
+
+/**
+ * ***** EditarApadrinament *****
+ * Mètode GET de l'API per obtenir la informació d'un apadrinament mitjançant el ID per editar-lo.
+ * @async
+ * @function editarApadrinat
+ * @param {number} idRelacio - L'identificador de l'apadrinament a editar.
+ */
+let idEditar;
+let editarApadrinat = async (idRelacio) => {
+  mostrarFormulari();
+  scrollFormulari();
+
+  idEditar = idRelacio;
+  const peticio = await fetch(`${baseUrl}/api/apadrinat/${idRelacio}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  const apadrinat = await peticio.json();
+  document.getElementById("dataAlta").value = apadrinat.dataAlta;
+  document.getElementById("dataBaixa").value = apadrinat.dataBaixa;
+  document.getElementById("quotaMensual").value = apadrinat.quotaMensual;
+  document.getElementById("idAnimal").value = apadrinat.animals.idAnimal;  
+  document.getElementById("idUsuari").value = apadrinat.usuaris.idUsuari;  
+};
+
+/**
+ * En fer click al botó modificar aplicarà les actualitzacions.
+ */
+let btnModificarApadrinat = document.getElementById("btnModificarApadrinat");
+btnModificarApadrinat.addEventListener("click", (event) => {
+  event.preventDefault();
+  aplicarActualitzacio(idEditar);
+});
+
+/**
+ * ***** AplicarActualització *****
+ * Mètode PUT de l'API per aplicar els canvis en la modificació d'un apadrinament.
+ * Un cop actualitzada, neteja i amaga el formulari i actualitza la llista.
+ * @async
+ * @function aplicarActualitzacio
+ * @param {number} idRelacio - L'identificador de l'apadrinament a modificar.
+ */
+let aplicarActualitzacio = async (idRelacio) => {
+  let apadrinat = {};
+  apadrinat.idRelacio = idRelacio;
+  apadrinat.dataAlta = document.getElementById("dataAlta").value;
+  apadrinat.dataBaixa = document.getElementById("dataBaixa").value;
+  apadrinat.quotaMensual = document.getElementById("quotaMensual").value;
+  apadrinat.animals = {idAnimal: parseInt(document.getElementById("idAnimal").value, 10),};
+  apadrinat.usuaris = {idUsuari: parseInt(document.getElementById("idUsuari").value, 10),};
+  
+  // Validació del valor de idAnimal abans d'enviar la sol.licitud.
+  if (!apadrinat.animals.idAnimal || isNaN(apadrinat.animals.idAnimal)) { alert("L'animal és incorrecte.");
+     return;
+  }
+
+  // Validació del valor de idUsuari abans d'enviar la sol.licitud.
+  if (!apadrinat.usuaris.idUsuari || isNaN(apadrinat.usuaris.idUsuari)) {alert("L'usuari és incorrecte.");
+    return;
+  }
+
+  /**
+   * Petició PUT a l'API.
+   */
+  try {
+    const peticio = await fetch(`${baseUrl}/api/apadrinats`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(apadrinat),
+    });
+
+    if (peticio.ok) {
+      llistaApadrinats();
+      netejarFormulari();
+      amagarFormulari();
+    } else {
+      alert("Error al modificar l'apadrinament.");
+    }
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    alert("Error de conexión o en el servidor.");
+  }
+};
+
+/**
+ * Actualitza el camp `apadrinat` d'un animal a `false` quan una apadrinació té una data de baixa
+ * i no hi ha cap altra apadrinació activa per a l'animal.
+ * 
+ * @async
+ * @function actualitzarApadrinament
+ * @param {Object} apadrinat - Objecte que conté informació de l'apadrinament.
+ * @param {Object} apadrinat.animals - Dades relacionades amb l'animal de l'apadrinament.
+ * @param {number} apadrinat.animals.idAnimal - L'identificador únic de l'animal.
+ * @throws {Error} Si hi ha algun problema amb la connexió o la resposta del servidor.
+ */
+async function actualitzarApadrinament(apadrinat) {
+  try {
+    // Obtenir l'animal complet
+    const resposta = await fetch(`${baseUrl}/api/animal/${apadrinat.animals.idAnimal}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    if (!resposta.ok) {
+      throw new Error(
+        `Error ${resposta.status}: No s'ha pogut obtenir l'animal.`
+      );
+    }
+
+    // Convertir la resposta a JSON
+    const animal = await resposta.json();
+
+    // Si hi ha més apadrinaments, no cal modificar el camp `apadrinat`
+    const apadrinamentsActius = await comprovarApadrinats(animal);    
+    if (apadrinamentsActius.length >= 1) {
+      console.log("L'animal té altres apadrinaments actius. No s'actualitza l'estat.");
+      return;
+    }
+    // Actualitzar només el camp 'apadrinat'
+    animal.apadrinat = false;
+
+    // Enviar l'animal actualitzat al backend
+    const peticio = await fetch(`${baseUrl}/api/animals`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(animal), // Enviar l'objecte complet
+    });
+
+    if (!peticio.ok) {
+      throw new Error(
+        `Error ${peticio.status}: No s'ha pogut actualitzar l'animal.`
+      );
+    }
+
+    alert("Apadrinament de l'animal s'ha actualitzat correctament!");
+
+  } catch (error) {
+    console.error("Error en la sol·licitud:", error);
+    alert("Error de connexió o en el servidor.");
+  }
+}
+
+/**
+ * Comprova els apadrinaments actius d'un animal.
+ * Retorna un array amb els apadrinaments que no tenen data de baixa.
+ * 
+ * @async
+ * @function comprovarApadrinats
+ * @param {Object} animal - Objecte que conté les dades de l'animal.
+ * @param {number} animal.idAnimal - L'identificador únic de l'animal.
+ * @returns {Promise&lt;Array>} - Una llista d'objectes amb els apadrinaments actius.
+ * @throws {Error} Si hi ha algun problema amb la connexió o la resposta del servidor.
+ */
+async function comprovarApadrinats(animal) {
+  const respostaApadrinaments = await fetch(`${baseUrl}/api/apadrinats`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!respostaApadrinaments.ok) {
+    throw new Error(
+      `Error ${respostaApadrinaments.status}: No s'ha pogut obtenir els apadrinaments de l'animal.`
+    );
+  }
+
+  const apadrinats = await respostaApadrinaments.json();
+  // Inicialitzar array buit per emmagatzemar els apadrinaments de l'animal.
+  let animalApadrinat = [];
+  // Filtrar els apadrinaments que corresponen al mateix idAnimal i no tenen dataBaixa.
+  for (let apadrinat of apadrinats) {
+    if (animal.idAnimal == apadrinat.animals.idAnimal &amp;&amp; !apadrinat.dataBaixa) {
+      animalApadrinat.push(apadrinat);
+    }
+  }
+
+  return animalApadrinat;
+}
+
+
+/**
+ * Funció per fer visible el formulari ocult.
+ * @function mostrarFormulari
+ */
+function mostrarFormulari() {
+  let formulari = (document.getElementById("formulario").style.visibility =
+    "visible");
+}
+
+/**
+ * Funció per fer scroll i anar a la part del formulari en clicar el botó modificar.
+ * @function scrollFormulari
+ */
+function scrollFormulari() {
+  setTimeout(() => {
+    document
+      .getElementById("formulario")
+      .scrollIntoView({ behavior: "smooth" });
+  }, 200);
+}
+
+/**
+ * Funció per amagar el formulari visible.
+ * @function amagarFormulari
+ */
+function amagarFormulari() {
+  document.getElementById("formulario").style.visibility = "hidden";
+}
+
+/**
+ * Funció per netejar el formulari.
+ * @function netejarFormulari
+ */
+function netejarFormulari() {
+  document.getElementById("dataAlta").value = "";
+  document.getElementById("dataBaixa").value = "";
+  document.getElementById("quotaMensual").value = "";
+  document.getElementById("idAnimal").value = "";  
+  document.getElementById("idUsuari").value = "";  
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Tue Dec 03 2024 10:56:12 GMT+0100 (hora estándar de Europa central) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

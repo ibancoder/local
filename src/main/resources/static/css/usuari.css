@@ -89,7 +89,7 @@ div:has(h1) {
 }
 
 /*Dades perfil*/
-#nomUsuari { /*********************************************************AQUI**************************/
+#nomUsuari { 
   padding-left: 8%;
 }
 
@@ -124,6 +124,14 @@ div:has(h1) {
   left: 0;   
 }
 
+.animalsUsuari {
+  margin: 0 auto;
+  width: 250px !important;
+  height: auto;
+  padding-top: 0.5%;
+  border: 2px dashed #FF887B;
+}
+
 
 /*** RESPONSIVE ***/
 
@@ -145,7 +153,7 @@ div:has(h1) {
       height: 200px;
   }
 
-  #nomUsuari { /*********************************************************AQUI**************************/
+  #nomUsuari {
       padding-left: 4%;
   }
 
@@ -162,9 +170,14 @@ div:has(h1) {
       text-align: right;
   }
 
-  #nomUsuari { /*********************************************************AQUI**************************/
+  #nomUsuari { 
       text-align: center;
       padding-left: 60%;
+  }
+
+  .animalsUsuari {
+      margin: 0%;
+      margin-left: 3%;
   }
 }
 
@@ -173,13 +186,13 @@ div:has(h1) {
       margin-left: 25%;
   }
 
-  #nomUsuari { /*********************************************************AQUI**************************/
+  #nomUsuari {
       padding-left: 65%;
   }
 }
 
 @media (min-width: 1400px) {
-  #nomUsuari { /*********************************************************AQUI**************************/
+  #nomUsuari { 
       padding-left: 75%;
   }
 
@@ -194,7 +207,7 @@ div:has(h1) {
       width: 360px;
   } 
 
-  #nomUsuari { /*********************************************************AQUI**************************/
+  #nomUsuari {
       padding-left: 80%;
   }
 }

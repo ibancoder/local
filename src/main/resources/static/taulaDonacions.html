@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Refugi Lobita - Taula Donacions</title>
+    <!-- Enllaços CSS -->
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/componentsAdmin.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/taulaNoticies.css">
+    <!-- Favicon -->
+    <link rel="icon" href="imatges/favicon.ico" type="image/x-icon">
+    <!--Fonts icones Taules -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enllaços bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="headerPetit" class="container-fluid">
+        <!--El header es col·loca des del js-->
+    </header>
+
+    <main class="lila fondoLila">
+        <section class="fondoRosa">
+            <br><br>
+            <h1 class="text-center">Administrador</h1>
+            <br><br>
+        </section>
+        <br>
+        <!-- TAULA DE DONACIONS -->
+        <section class="form">
+            <div class="justify-content-center table-responsive">
+                <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Taula de Donacions</h2>
+                <table id="taula">
+                    <thead>
+                        <tr>
+                            <th colspan="7">Donacions</th>
+                        </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data Donacio</th>
+                            <th>Quantitat Donada</th>
+                            <td>Id Usuari</td>
+                            <td>Nom Usuari</td>
+                            <th>Modificar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Mostrem les donacions des de taulaDonacions.js-->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- FORMULARI PER MODIFICAR LES DONACIONS -->
+        <section id="formulario"><br>
+            <form class="form needs-validation" method="POST">
+                <div class="row justify-content-center">
+                    <h2 class="text-center mb-5"><i class="fa-regular fa-address-book"></i> Modificar les donacions:
+                    </h2>
+                    <!-- Camp data de donació -->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="dataDonacio" class="form-label"><i class="fa-solid fa-calendar"></i> Data
+                            Donacio</label>
+                        <input type="date" class="form-control form-control-lg" id="dataDonacio" name="dataDonacio">
+                    </div>
+                    <!-- Camp quantitat -->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="quantitat" class="form-label"><i class="fa-solid fa-dollar"></i> Quantitat
+                            Donació</label>
+                        <input type="number" class="form-control form-control-lg" id="quantitat" name="quantitat">
+                    </div>
+                    <!-- Camp id usuari-->
+                    <div class="form-group col-lg-6 col-md-6 col-12 mb-3">
+                        <label for="idUsuari" class="form-label"><i class="fa-solid fa-user"></i> ID Usuari</label>
+                        <input type="text" class="form-control form-control-lg" id="idUsuari" name="idUsuari">
+                    </div>
+
+                </div>
+                <!-- Botó Registrar Donació -->
+                <div class="row justify-content-center">
+                    <div class="form-group col-lg-12 col-md-10 col-12 text-center lila">
+                        <button class="w-50 mt-3" id="btnModificarDonacio" type="submit"
+                            aria-label="Modificar donacio">Modificar Donació</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+
+        </section>
+    </main>
+
+    <footer id="footerPetit" class="bg-dark container-fluid lila">
+        <!--El footer es col·loca des del js-->
+    </footer>
+
+    <!-- Enllaços bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Enllaç iconos -->
+    <script src="https://kit.fontawesome.com/335713de6f.js" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Components (banner, nav, footer) -->
+    <script type="module" src="js/components.js"></script>
+    <!--taulaDonacions.js-->
+    <script src="/js/taulaDonacions.js"></script>
+    <!--adminAuth.js-->
+    <script src="js/adminAuth.js"></script>
+
+</body>
+
+</html>

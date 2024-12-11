@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>taulaUsuaris.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="global.html#event:DOMContentLoaded">DOMContentLoaded</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#EditarAdopci%25C3%25B3">EditarAdopció</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarApadrinament">actualitzarApadrinament</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarEstat">actualitzarEstat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#actualitzarLoginSection">actualitzarLoginSection</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#amagarFormulari">amagarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#aplicarActualitzacio">aplicarActualitzacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificar">btnModificar</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAdoptat">btnModificarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarAnimal">btnModificarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarApadrinat">btnModificarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarDonacio">btnModificarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#btnModificarUsuari">btnModificarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#caixaAnimals">caixaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarApadrinat">canviarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#canviarEstatAnimal">canviarEstatAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#carregarComponent">carregarComponent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#comprovarApadrinats">comprovarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#dadesAnimal">dadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarAnimal">editarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarApadrinat">editarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarDonacio">editarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarNoticia">editarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarTipusAnimal">editarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editarUsuari">editarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAdoptat">eliminarAdoptat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAlerta">eliminarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarAnimal">eliminarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarApadrinat">eliminarApadrinat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarDonacio">eliminarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarNoticia">eliminarNoticia</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarTipusAnimal">eliminarTipusAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#eliminarUsuari">eliminarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#esborrarPass">esborrarPass</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#genere">genere</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarAdopcio">gestionarAdopcio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarApadrinacio">gestionarApadrinacio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#gestionarDonacio">gestionarDonacio</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#idUsuari">idUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#iniciarSessio">iniciarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAdoptats">llistaAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaAnimals">llistaAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaApadrinats">llistaApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaDonacions">llistaDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaNoticies">llistaNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaTipusAnimals">llistaTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#llistaUsuaris">llistaUsuaris</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#login">login</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesAnimal">mostraDadesAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostraDadesUsuari">mostraDadesUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAdoptats">mostrarAdoptats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAlerta">mostrarAlerta</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarAnimal">mostrarAnimal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarApadrinats">mostrarApadrinats</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarBotons">mostrarBotons</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarDonacions">mostrarDonacions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarFormulari">mostrarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#mostrarLogin">mostrarLogin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#netejarFormulari">netejarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#obtenirImatge">obtenirImatge</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#parametre">parametre</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#passVisible">passVisible</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarAnimals">registrarAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarNoticies">registrarNoticies</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarTipusAnimals">registrarTipusAnimals</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registrarUsuari">registrarUsuari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#scrollFormulari">scrollFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#tancarSessio">tancarSessio</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarCamp">validarCamp</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validarFormulari">validarFormulari</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#verificarSessio">verificarSessio</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">taulaUsuaris.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*********************** URL *********************************/
+const baseUrl = "http://178.156.55.174:1234"; // Per la web
+//const baseUrl = "http://localhost:1234"; // Per treballar en local
+
+/**
+ * En carregar la pàgina fem la crida a la funció llistaUsuaris.
+ * @function llistaUsuaris
+ */
+window.onload = function () {
+  llistaUsuaris();
+};
+
+/**
+ * LLista els usuaris en una taula HTML, incloent els botons d'edició i eliminació.
+ * Fa una petició GET a l'API per obtenir la llista d'usuaris i mostrar-los.
+ * @async 
+ * @function llistaUsuaris
+ */
+let llistaUsuaris = async () => {
+  const peticio = await fetch(`${baseUrl}/api/usuaris`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  /**
+   * Array d'usuaris rebuts de l'API.
+   * @type {Array&lt;Object>}
+   */
+  const usuaris = await peticio.json();
+
+  let contingutTaula = "";
+  /**
+   * Itera sobre cada usuari per mostrar-ho a la taula d'usuaris.
+   */
+  for (let usuari of usuaris) {    
+    let contingutFila = `&lt;tr>
+      &lt;td>${usuari.idUsuari}&lt;/td>      
+      &lt;td>${usuari.nom}&lt;/td>
+      &lt;td>${usuari.cognoms}&lt;/td>      
+      &lt;td>${usuari.email}&lt;/td>      
+      &lt;td>${usuari.telefon}&lt;/td>        
+      &lt;td>${usuari.nomUsuari}&lt;/td>                 
+      &lt;td>${usuari.dataAlta}&lt;/td>  
+      &lt;td>${usuari.actiu}&lt;/td>      
+      &lt;td>&lt;i onClick="editarUsuari(${usuari.idUsuari})" class="material-icons button edit">edit&lt;/i>&lt;/td>
+      &lt;td>&lt;i onClick="eliminarUsuari(${usuari.idUsuari})" class="material-icons button delete">delete&lt;/i>&lt;/td>      
+      &lt;/tr>
+      `;
+    contingutTaula += contingutFila;
+  }
+  //Mostrem els usuaris a la taula
+  document.querySelector("#taula tbody").innerHTML = contingutTaula;
+};
+
+/**
+ * **** EliminarUsuari *****
+ * Mètode DELETE de la API, per eliminar l'usuari en clicar el botó eliminarUsuari
+ * Un cop eliminat tornem a llistar els usuaris i amaguem el formulari.
+ * L'usuari LobitaAdmin no es pot eliminar.
+ * @param {number} idUsuari - Selecciona el id de l'usuari a eliminar.
+ * @function eliminarUsuari
+ */
+
+let eliminarUsuari = async (idUsuari) => {
+  //No es pot eliminar el usuari admin
+  if (idUsuari === 1 ) {
+    alert("Ho sento, no es pot eliminar l'usuari LobitaAdmin. Gràcies.");
+    return;
+  }
+  //Missatge de confirmació abans d'eliminar l'usuari
+  const confirmacio = window.confirm("Estàs segur que vols eliminar l'usuari "+idUsuari+ "?");
+  if (confirmacio) {
+    try {
+      const peticio = await fetch(`${baseUrl}/api/usuari/${idUsuari}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      //Si l'eliminació te exit, actualitza la llista i amaga el formulari.
+      if (peticio.ok) {
+        llistaUsuaris();
+        amagarFormulari();
+      } else {
+        alert("No s'ha pogut eliminar l'usuari'. Si us plau, intenta-ho més tard." );
+      }
+    } catch (error) {
+      console.error("Error en la petició:", error);
+    }
+  }
+};
+
+/**
+ * ***** EditarUsuari *****
+ * Mètode GET de la API per editar l'usuari. Un cop cliquem al botó Modificar ens mostra l'usuari
+ * mitjançant el ID i fa la crida al mètode PUT aplicarActualització.
+ * @param {*} idUsuari selecciona el id de l'usuari a editar.
+ * @function editarUsuari
+ */
+let idEditar;
+let editarUsuari = async (idUsuari) => {
+  mostrarFormulari();
+  scrollFormulari();
+
+  idEditar = idUsuari;
+  const peticio = await fetch(`${baseUrl}/api/usuari/${idUsuari}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+
+  const usuaris = await peticio.json();
+
+  document.getElementById("nom").value = usuaris.nom;
+  document.getElementById("cognoms").value = usuaris.cognoms;
+  document.getElementById("email").value = usuaris.email;
+  document.getElementById("telefon").value = usuaris.telefon;
+  document.getElementById("nomUsuari").value = usuaris.nomUsuari;
+  document.getElementById("password").value = usuaris.password;
+  document.getElementById("actiu").checked = usuaris.actiu;
+};
+
+/**
+ * Botó per modificar el usuari.
+ */
+let btnModificarUsuari = document.getElementById("btnModificarUsuari");
+
+btnModificarUsuari.addEventListener("click", (evento) => {
+  evento.preventDefault();
+  aplicarActualitzacio(idEditar);
+});
+
+/**
+ * ***** AplicarActualització *****
+ * Mètode PUT de la API per aplicar la modificació feta. Si es fa la modificació
+ * tornarà a llistar les noticies, netejara el formulari i amagara el formulari.
+ * @param {*} id Selecciona el id a aplicar la actualització.
+ * @function aplicarActualitzacio
+ */
+let aplicarActualitzacio = async (idUsuari) => {
+  let camps = {};
+  camps.idUsuari = idUsuari;
+  camps.nom = document.getElementById("nom").value;
+  camps.cognoms = document.getElementById("cognoms").value;
+  camps.email = document.getElementById("email").value;
+  camps.telefon = document.getElementById("telefon").value;
+  camps.nomUsuari = document.getElementById("nomUsuari").value;
+  camps.password = document.getElementById("password").value;
+  camps.actiu = document.getElementById("actiu").checked;
+
+  try {
+    const peticio = await fetch(`${baseUrl}/api/usuaris`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(camps),
+    });
+
+    if (peticio.ok) {
+      llistaUsuaris();
+      netejarFormulari();
+      amagarFormulari();
+    } else {
+      alert("Error al modificar el usuari.");
+    }
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    alert("Error de conexión o en el servidor.");
+  }
+};
+
+/**
+ * Funció per fer visible el formulari ocult.
+ * @function mostrarFormulari
+ */
+function mostrarFormulari() {
+  let formulari = (document.getElementById("formulario").style.visibility =
+    "visible");
+}
+
+/**
+ * Funció per fer scroll i anar a la part del formulari en clicar el botó modificar.
+ * @function scrollFormulari
+ */
+function scrollFormulari() {
+  setTimeout(() => {
+    document
+      .getElementById("formulario")
+      .scrollIntoView({ behavior: "smooth" });
+  }, 200);
+}
+
+/**
+ * Funció per amagar el formulari visible.
+ * @function amagarFormulari
+ */
+function amagarFormulari() {
+  document.getElementById("formulario").style.visibility = "hidden";
+}
+
+/**
+ * Funció per netejar el formulari deixant els camps en blanc.
+ * @function netejarFormulari
+ */
+function netejarFormulari() {
+  document.getElementById("nom").value = "";
+  document.getElementById("cognoms").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("telefon").value = "";
+  document.getElementById("nomUsuari").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("actiu").checked = false;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Tue Dec 03 2024 10:56:12 GMT+0100 (hora estándar de Europa central) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

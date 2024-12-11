@@ -1,0 +1,60 @@
+main {
+    background-color: #F2F5FD;
+}
+
+.icona {
+    background: linear-gradient(90deg, #FF887B, #B6AEFF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+article {
+    margin: 0 auto;
+    width: 300px !important;
+    height: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+    img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 4%;
+    }
+}
+
+.animalsRosa {
+    border: 2px dashed #FF887B;
+
+    img {
+        box-shadow: 0 0 10px rgba(255, 136, 123, 0.6);
+    }
+}
+
+.animalsLila {
+    border: 2px dashed #887BFF;
+
+    img {
+        box-shadow: 0 0 10px rgba(135, 123, 255, 0.5);
+    }
+}
+
+/*** RESPONSIVE ***/
+/** PC **/
+@media (min-width: 992px) {
+    article {
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+    }
+}
+
+/** PC pantalles grans **/
+@media (min-width: 2050px) {
+    article {
+        width: 350px !important;
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
